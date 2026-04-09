@@ -1,385 +1,50 @@
-import React, { useMemo, useState } from "react";
-import { motion } from "framer-motion";
-import { Mountain, Cloud, Flag, ChevronUp, ChevronDown, Sparkles, MapPin } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Engineering Journey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-const stops = [
-  {
-    id: 0,
-    title: "Basecamp: Who I Am",
-    subtitle: "Start of the climb",
-    emoji: "🏕️",
-    x: 10,
-    y: 90,
-    content:
-      "Hi! I’m Katie, a student engineer who cares about people-centered design, creativity, and building things that feel both useful and joyful. This is the start of my engineering journey.",
-  },
-  {
-    id: 1,
-    title: "First Lift",
-    subtitle: "Curiosity",
-    emoji: "🌱",
-    x: 24,
-    y: 78,
-    content:
-      "My process starts with curiosity. I like understanding the people behind a problem before jumping into solutions.",
-  },
-  {
-    id: 2,
-    title: "Rocky Dip",
-    subtitle: "Challenges",
-    emoji: "🪨",
-    x: 36,
-    y: 84,
-    content:
-      "Engineering is not linear. This dip represents setbacks, rethinking, prototyping, and learning when the first idea is not the best idea.",
-  },
-  {
-    id: 3,
-    title: "Design Outlook",
-    subtitle: "Ideas take shape",
-    emoji: "💡",
-    x: 50,
-    y: 64,
-    content:
-      "This stop can showcase concept sketches, brainstorming, framing tools, or a design process that helped me move from uncertainty to direction.",
-  },
-  {
-    id: 4,
-    title: "Team Trail",
-    subtitle: "Collaboration",
-    emoji: "🤝",
-    x: 62,
-    y: 71,
-    content:
-      "I care about teamwork, communication, and creating designs that work for real people. This is a great place to talk about a group project or leadership moment.",
-  },
-  {
-    id: 5,
-    title: "Summit Push",
-    subtitle: "Growth",
-    emoji: "⭐",
-    x: 76,
-    y: 46,
-    content:
-      "The closer I get to the top, the more the path reflects growth through iteration, testing, resilience, and confidence.",
-  },
-  {
-    id: 6,
-    title: "Above the Clouds",
-    subtitle: "Where I’m Going",
-    emoji: "🏁",
-    x: 88,
-    y: 20,
-    content:
-      "This summit stop can hold my goals, future opportunities, values as an engineer, and what I hope to keep climbing toward.",
-  },
-];
-
-function KatieCartoon() {
-  return (
-    <svg viewBox="0 0 240 280" className="w-full h-full drop-shadow-xl">
-      <defs>
-        <linearGradient id="shirtGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#1d4ed8" />
-          <stop offset="100%" stopColor="#2563eb" />
-        </linearGradient>
-        <linearGradient id="hairGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#5b3a29" />
-          <stop offset="100%" stopColor="#3b2418" />
-        </linearGradient>
-      </defs>
-
-      <ellipse cx="120" cy="255" rx="68" ry="12" fill="rgba(0,0,0,0.12)" />
-
-      <path
-        d="M64 238 C74 198, 166 198, 176 238 L176 252 L64 252 Z"
-        fill="url(#shirtGrad)"
-      />
-      <rect x="106" y="154" width="28" height="28" rx="10" fill="#f4c6a6" />
-      <path d="M90 173 C102 160, 138 160, 150 173 L150 192 L90 192 Z" fill="#f4c6a6" />
-      <circle cx="120" cy="115" r="56" fill="#f6cfb2" />
-
-      <path
-        d="M61 123 C56 73, 82 40, 120 40 C165 40, 190 78, 182 135 C172 96, 151 84, 127 84 C102 84, 82 98, 61 123 Z"
-        fill="url(#hairGrad)"
-      />
-      <path
-        d="M73 130 C72 177, 88 205, 100 228 L78 236 C60 207, 49 170, 54 127 Z"
-        fill="url(#hairGrad)"
-      />
-      <path
-        d="M167 128 C169 174, 154 203, 142 229 L165 236 C182 208, 193 171, 187 125 Z"
-        fill="url(#hairGrad)"
-      />
-
-      <ellipse cx="98" cy="118" rx="14" ry="11" fill="#fff" />
-      <ellipse cx="142" cy="118" rx="14" ry="11" fill="#fff" />
-      <circle cx="99" cy="119" r="6.5" fill="#8a6f2d" />
-      <circle cx="141" cy="119" r="6.5" fill="#8a6f2d" />
-      <circle cx="101" cy="117" r="1.8" fill="#fff" />
-      <circle cx="143" cy="117" r="1.8" fill="#fff" />
-
-      <path d="M85 101 Q98 93 111 101" stroke="#4b2e22" strokeWidth="4" fill="none" strokeLinecap="round" />
-      <path d="M129 101 Q142 93 155 101" stroke="#4b2e22" strokeWidth="4" fill="none" strokeLinecap="round" />
-      <path d="M120 119 C116 131, 116 135, 121 138" stroke="#d7a07d" strokeWidth="3" fill="none" strokeLinecap="round" />
-      <path d="M100 149 Q120 162 140 149" stroke="#b65a68" strokeWidth="4" fill="none" strokeLinecap="round" />
-      <circle cx="84" cy="137" r="6" fill="#f2a7a7" opacity="0.55" />
-      <circle cx="156" cy="137" r="6" fill="#f2a7a7" opacity="0.55" />
-
-      <path d="M93 182 L147 182" stroke="#ffffff" strokeWidth="3.5" opacity="0.35" strokeLinecap="round" />
-      <text x="120" y="214" textAnchor="middle" fill="#ffffff" fontSize="20" fontWeight="700" fontFamily="Arial, sans-serif">
-        U of T
-      </text>
-      <text x="120" y="233" textAnchor="middle" fill="#dbeafe" fontSize="12" fontWeight="700" fontFamily="Arial, sans-serif">
-        VOLLEYBALL
-      </text>
-    </svg>
-  );
-}
-
-function MountainPath() {
-  return (
-    <svg viewBox="0 0 1000 700" className="absolute inset-0 h-full w-full">
-      <path
-        d="M0 620 C120 610, 160 520, 250 500 C350 478, 360 620, 460 520 C590 390, 620 520, 710 420 C810 300, 880 220, 1000 60"
-        fill="none"
-        stroke="#7c5f3d"
-        strokeWidth="34"
-        strokeLinecap="round"
-      />
-      <path
-        d="M0 620 C120 610, 160 520, 250 500 C350 478, 360 620, 460 520 C590 390, 620 520, 710 420 C810 300, 880 220, 1000 60"
-        fill="none"
-        stroke="#d7b98c"
-        strokeDasharray="1 52"
-        strokeLinecap="round"
-        strokeWidth="8"
-      />
-    </svg>
-  );
-}
-
-function BackgroundMountains() {
-  return (
-    <div className="absolute inset-0 overflow-hidden rounded-[2rem]">
-      <div className="absolute inset-0 bg-gradient-to-b from-sky-200 via-sky-100 to-green-100" />
-
-      <svg viewBox="0 0 1600 900" className="absolute inset-0 h-full w-full">
-        <path d="M0 720 L220 410 L430 650 L650 300 L910 700 L1120 430 L1360 690 L1600 540 L1600 900 L0 900 Z" fill="#a4bba7" />
-        <path d="M0 760 L260 480 L520 750 L760 360 L980 700 L1210 510 L1450 770 L1600 680 L1600 900 L0 900 Z" fill="#6e9a72" />
-        <path d="M0 790 L170 660 L360 760 L575 460 L760 635 L950 430 L1170 665 L1390 330 L1600 160 L1600 900 L0 900 Z" fill="#5f815f" />
-        <path d="M1375 355 L1430 280 L1470 340 L1510 220 L1570 145 L1600 145 L1600 900 L1330 900 Z" fill="#4d6d4e" />
-        <path d="M1450 240 L1490 210 L1520 240 L1548 205 L1600 160 L1600 300 L1430 300 Z" fill="#f8fbff" opacity="0.9" />
-      </svg>
-
-      <motion.div
-        className="absolute top-10 left-10 flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 backdrop-blur"
-        animate={{ y: [0, -7, 0] }}
-        transition={{ duration: 5, repeat: Infinity }}
-      >
-        <Sparkles className="h-4 w-4 text-amber-500" />
-        <span className="text-sm font-medium text-slate-700">Engineering journey</span>
-      </motion.div>
-
-      <motion.div className="absolute top-14 right-24" animate={{ x: [0, 14, 0] }} transition={{ duration: 10, repeat: Infinity }}>
-        <Cloud className="h-16 w-16 text-white/90" strokeWidth={1.5} />
-      </motion.div>
-      <motion.div className="absolute top-24 right-60" animate={{ x: [0, -10, 0] }} transition={{ duration: 12, repeat: Infinity }}>
-        <Cloud className="h-12 w-12 text-white/80" strokeWidth={1.5} />
-      </motion.div>
-      <motion.div className="absolute top-40 right-8" animate={{ x: [0, 8, 0] }} transition={{ duration: 8, repeat: Infinity }}>
-        <Cloud className="h-14 w-14 text-white/75" strokeWidth={1.5} />
-      </motion.div>
+    <div class="sky">
+        <div class="clouds"></div>
     </div>
-  );
-}
 
-function stopPosition(stop) {
-  return {
-    left: `${stop.x}%`,
-    top: `${stop.y}%`,
-  };
-}
+    <div class="mountain-container">
+        <svg class="mountain-path" viewBox="0 0 500 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="climb-path" d="M250 1450 C 350 1300, 100 1200, 150 1000 C 200 800, 450 750, 400 550 C 350 350, 150 300, 250 50" stroke="#4a4a4a" stroke-width="5" stroke-dasharray="10"/>
+        </svg>
 
-export default function MountainPortfolioWebsite() {
-  const [activeStop, setActiveStop] = useState(0);
-  const active = stops[activeStop];
+        <div class="stop" style="top: 90%; left: 50%;" onclick="showInfo('Who I Am', 'I am an engineer and volleyball player at UofT!')">?</div>
+        <div class="stop" style="top: 65%; left: 30%;" onclick="showInfo('First Setback', 'Engineering isn\'t linear! This dip represents a project that failed, but taught me the most.')">?</div>
+        <div class="stop" style="top: 40%; left: 80%;" onclick="showInfo('Major Project', 'This is where I built my first robot.')">?</div>
+        <div class="stop" style="top: 10%; left: 50%;" onclick="showInfo('The Peak', 'Internship at Google/NASA!')">?</div>
 
-  const avatarStyle = useMemo(() => stopPosition(active), [active]);
-
-  const nextStop = () => setActiveStop((s) => Math.min(s + 1, stops.length - 1));
-  const prevStop = () => setActiveStop((s) => Math.max(s - 1, 0));
-
-  return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,#dbeafe_0%,#eff6ff_35%,#f8fafc_100%)] p-4 md:p-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-6 grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
-          <Card className="rounded-[2rem] border-0 bg-white/75 shadow-2xl backdrop-blur">
-            <CardContent className="p-6 md:p-8">
-              <div className="flex flex-wrap items-center gap-3 text-slate-700">
-                <div className="rounded-full bg-blue-100 p-2">
-                  <Mountain className="h-5 w-5 text-blue-700" />
-                </div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">Interactive Design Portfolio</p>
-              </div>
-
-              <div className="mt-4 max-w-3xl">
-                <h1 className="text-4xl font-black tracking-tight text-slate-800 md:text-6xl">
-                  Climbing My Engineering Mountain
-                </h1>
-                <p className="mt-4 text-base leading-7 text-slate-600 md:text-lg">
-                  A playful, scrollable portfolio where each stop along the mountain tells part of my story. The dips in the trail show that growth is not linear — it is full of challenges, pivots, and progress.
-                </p>
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Button className="rounded-full bg-blue-600 px-5 py-6 text-sm font-semibold hover:bg-blue-700" onClick={nextStop}>
-                  Start climbing
-                </Button>
-                <Button variant="outline" className="rounded-full px-5 py-6 text-sm font-semibold" onClick={() => setActiveStop(0)}>
-                  Go to basecamp
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="rounded-[2rem] border-0 bg-white/75 shadow-2xl backdrop-blur">
-            <CardContent className="flex h-full items-center justify-center p-6 md:p-8">
-              <div className="w-full max-w-[280px]">
-                <KatieCartoon />
-                <p className="mt-4 text-center text-sm leading-6 text-slate-600">
-                  Stylized cartoon avatar based on your description: brunette, hazel eyes, U of T volleyball shirt, fun and friendly look.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+        <div id="character" class="character">
+            <svg width="60" height="100" viewBox="0 0 100 150">
+                <path d="M30 40 Q50 10 70 40 L75 70 L25 70 Z" fill="#4B3621"/>
+                <circle cx="50" cy="55" r="20" fill="#FFDBAC"/>
+                <circle cx="43" cy="52" r="3" fill="#8E7618"/>
+                <circle cx="57" cy="52" r="3" fill="#8E7618"/>
+                <rect x="30" y="75" width="40" height="40" fill="#00204E"/>
+                <text x="35" y="95" font-size="8" fill="white" font-family="Arial">UofT</text>
+                <text x="32" y="105" font-size="6" fill="white" font-family="Arial">Volleyball</text>
+                <rect x="35" y="115" width="10" height="20" fill="#FFDBAC"/>
+                <rect x="55" y="115" width="10" height="20" fill="#FFDBAC"/>
+            </svg>
         </div>
-
-        <div className="grid gap-6 xl:grid-cols-[1.35fr_0.65fr]">
-          <Card className="relative overflow-hidden rounded-[2rem] border-0 bg-white/70 shadow-2xl backdrop-blur">
-            <CardContent className="p-3 md:p-4">
-              <div className="relative h-[760px] overflow-hidden rounded-[1.6rem] border border-white/40 bg-slate-50">
-                <BackgroundMountains />
-                <MountainPath />
-
-                <motion.div
-                  className="absolute z-30 -translate-x-1/2 -translate-y-1/2"
-                  style={avatarStyle}
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 2.8, repeat: Infinity }}
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="h-24 w-24 rounded-full border-4 border-white bg-white p-2 shadow-2xl md:h-28 md:w-28">
-                      <KatieCartoon />
-                    </div>
-                    <div className="mt-2 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-slate-700 shadow">
-                      You are here
-                    </div>
-                  </div>
-                </motion.div>
-
-                {stops.map((stop, i) => {
-                  const isActive = i === activeStop;
-                  const isReached = i <= activeStop;
-                  return (
-                    <button
-                      key={stop.id}
-                      onClick={() => setActiveStop(i)}
-                      className="absolute z-20 -translate-x-1/2 -translate-y-1/2 text-left"
-                      style={stopPosition(stop)}
-                    >
-                      <motion.div
-                        whileHover={{ scale: 1.06 }}
-                        className={`rounded-2xl border px-3 py-2 shadow-xl backdrop-blur transition-all ${
-                          isActive
-                            ? "border-blue-300 bg-white text-slate-800 ring-4 ring-blue-200/70"
-                            : isReached
-                            ? "border-emerald-200 bg-white/90 text-slate-800"
-                            : "border-white/50 bg-white/75 text-slate-700"
-                        }`}
-                      >
-                        <div className="flex items-center gap-2">
-                          <div
-                            className={`flex h-10 w-10 items-center justify-center rounded-full text-lg ${
-                              isActive ? "bg-blue-100" : isReached ? "bg-emerald-100" : "bg-amber-50"
-                            }`}
-                          >
-                            {stop.emoji}
-                          </div>
-                          <div>
-                            <div className="text-sm font-bold leading-tight md:text-base">{stop.title}</div>
-                            <div className="text-xs text-slate-500">{stop.subtitle}</div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    </button>
-                  );
-                })}
-
-                <div className="absolute bottom-4 left-4 rounded-2xl bg-white/80 px-4 py-3 text-sm text-slate-600 shadow-lg backdrop-blur">
-                  <div className="flex items-center gap-2 font-semibold text-slate-700">
-                    <MapPin className="h-4 w-4" /> Click any stop to explore the story
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="grid gap-6">
-            <Card className="rounded-[2rem] border-0 bg-white/80 shadow-2xl backdrop-blur">
-              <CardContent className="p-6 md:p-7">
-                <div className="flex items-center gap-2 text-blue-700">
-                  <Flag className="h-5 w-5" />
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em]">Current Stop</p>
-                </div>
-                <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-800">{active.title}</h2>
-                <p className="mt-1 text-sm font-medium text-slate-500">{active.subtitle}</p>
-                <p className="mt-5 text-base leading-7 text-slate-600">{active.content}</p>
-
-                <div className="mt-6 flex gap-3">
-                  <Button variant="outline" className="rounded-full" onClick={prevStop} disabled={activeStop === 0}>
-                    <ChevronDown className="mr-2 h-4 w-4" /> Previous
-                  </Button>
-                  <Button className="rounded-full bg-blue-600 hover:bg-blue-700" onClick={nextStop} disabled={activeStop === stops.length - 1}>
-                    <ChevronUp className="mr-2 h-4 w-4" /> Next
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-[2rem] border-0 bg-gradient-to-br from-blue-600 to-sky-500 text-white shadow-2xl">
-              <CardContent className="p-6 md:p-7">
-                <h3 className="text-xl font-black">How to customize this for your portfolio</h3>
-                <div className="mt-4 space-y-3 text-sm leading-6 text-blue-50">
-                  <p>• Replace each stop’s text with your actual sections, projects, or reflections.</p>
-                  <p>• Add images, project cards, links, or pop-up modals for each stop.</p>
-                  <p>• Swap the avatar for a real illustration or photo later if you want a more personal look.</p>
-                  <p>• You can also connect this to scrolling, keyboard controls, or a side navigation timeline.</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-[2rem] border-0 bg-white/80 shadow-2xl backdrop-blur">
-              <CardContent className="p-6 md:p-7">
-                <div className="mb-3 flex items-center justify-between">
-                  <h3 className="text-lg font-bold text-slate-800">Progress up the mountain</h3>
-                  <span className="text-sm font-semibold text-slate-500">
-                    {activeStop + 1} / {stops.length}
-                  </span>
-                </div>
-                <div className="h-4 overflow-hidden rounded-full bg-slate-100">
-                  <motion.div
-                    className="h-full rounded-full bg-gradient-to-r from-emerald-400 via-sky-500 to-blue-600"
-                    animate={{ width: `${((activeStop + 1) / stops.length) * 100}%` }}
-                  />
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </div>
     </div>
-  );
-}
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-text"></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

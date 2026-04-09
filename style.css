@@ -1,0 +1,55 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 3000px; /* Long page for climbing */
+    background: linear-gradient(to top, #87CEEB, #E0F7FA); /* Daylight sky */
+    font-family: 'Comic Sans MS', sans-serif; /* Child-friendly font */
+}
+
+.mountain-container {
+    position: relative;
+    width: 100%;
+    height: 3000px;
+    background: url('https://cdn.pixabay.com/photo/2016/04/15/04/02/water-1330252_1280.jpg'); /* You can replace with a realistic mountain png */
+    background-size: cover;
+    background-position: bottom;
+}
+
+.character {
+    position: fixed;
+    top: 80%; /* Character stays roughly in center of screen as you scroll */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease-out;
+    z-index: 10;
+}
+
+.stop {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #FFD700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.stop:hover { transform: scale(1.2); background: #FFA500; }
+
+/* Simple Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 100;
+}
