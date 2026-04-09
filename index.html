@@ -1,50 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Engineering Journey</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<div class="sky-background">
+    <div class="clouds"></div>
+</div>
 
-    <div class="sky">
-        <div class="clouds"></div>
+<div class="mountain-stage">
+    <svg class="climb-svg" viewBox="0 0 2000 2000" preserveAspectRatio="none">
+        <path id="mountain-path" 
+              d="M 100 1900 C 400 1700, 200 1500, 600 1300 S 1000 1100, 800 900 S 1400 600, 1800 100" 
+              stroke="rgba(255,255,255,0.3)" stroke-width="8" fill="none" stroke-dasharray="15"/>
+    </svg>
+
+    <div class="stop" style="left: 10%; top: 90%;" onclick="showInfo('The Start', 'UofT Engineering journey begins!')">Start</div>
+    <div class="stop" style="left: 35%; top: 65%;" onclick="showInfo('The Dip', 'Learning that failure is part of the process.')">Insight</div>
+    <div class="stop" style="left: 70%; top: 30%;" onclick="showInfo('High Altitudes', 'Deep learning and robotics projects.')">Project</div>
+    <div class="stop" style="left: 90%; top: 5%;" onclick="showInfo('The Summit', 'Graduation and beyond!')">Goal</div>
+
+    <div id="character" class="character-container">
+        <svg viewBox="0 0 100 100" width="80" height="80">
+            <path d="M20 30 Q50 5 80 30 L85 60 Q50 45 15 60 Z" fill="#3D2B1F"/>
+            <path d="M30 40 Q50 85 70 40" fill="#FFDBAC"/>
+            <circle cx="42" cy="48" r="5" fill="white"/>
+            <circle cx="42" cy="48" r="3" fill="#8E7618"/> <circle cx="58" cy="48" r="5" fill="white"/>
+            <circle cx="58" cy="48" r="3" fill="#8E7618"/> <path d="M30 65 L70 65 L75 95 L25 95 Z" fill="#00204E"/>
+            <text x="38" y="82" font-size="6" fill="white" font-weight="bold">UofT</text>
+            <circle cx="50" cy="90" r="4" fill="white" opacity="0.5"/> </svg>
     </div>
-
-    <div class="mountain-container">
-        <svg class="mountain-path" viewBox="0 0 500 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path id="climb-path" d="M250 1450 C 350 1300, 100 1200, 150 1000 C 200 800, 450 750, 400 550 C 350 350, 150 300, 250 50" stroke="#4a4a4a" stroke-width="5" stroke-dasharray="10"/>
-        </svg>
-
-        <div class="stop" style="top: 90%; left: 50%;" onclick="showInfo('Who I Am', 'I am an engineer and volleyball player at UofT!')">?</div>
-        <div class="stop" style="top: 65%; left: 30%;" onclick="showInfo('First Setback', 'Engineering isn\'t linear! This dip represents a project that failed, but taught me the most.')">?</div>
-        <div class="stop" style="top: 40%; left: 80%;" onclick="showInfo('Major Project', 'This is where I built my first robot.')">?</div>
-        <div class="stop" style="top: 10%; left: 50%;" onclick="showInfo('The Peak', 'Internship at Google/NASA!')">?</div>
-
-        <div id="character" class="character">
-            <svg width="60" height="100" viewBox="0 0 100 150">
-                <path d="M30 40 Q50 10 70 40 L75 70 L25 70 Z" fill="#4B3621"/>
-                <circle cx="50" cy="55" r="20" fill="#FFDBAC"/>
-                <circle cx="43" cy="52" r="3" fill="#8E7618"/>
-                <circle cx="57" cy="52" r="3" fill="#8E7618"/>
-                <rect x="30" y="75" width="40" height="40" fill="#00204E"/>
-                <text x="35" y="95" font-size="8" fill="white" font-family="Arial">UofT</text>
-                <text x="32" y="105" font-size="6" fill="white" font-family="Arial">Volleyball</text>
-                <rect x="35" y="115" width="10" height="20" fill="#FFDBAC"/>
-                <rect x="55" y="115" width="10" height="20" fill="#FFDBAC"/>
-            </svg>
-        </div>
-    </div>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <h2 id="modal-title"></h2>
-            <p id="modal-text"></p>
-            <button onclick="closeModal()">Close</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+</div>
