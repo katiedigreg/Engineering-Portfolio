@@ -3,50 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS & SVG Mountain Landscape</title>
+    <title>Student Engineer Design Portfolio</title>
     <style>
-        /* Reset margins and create the sunset sky */
+        :root {
+            --mountain-dark: #2c3e50;
+            --path-color: #f1c40f;
+            --stop-color: #e74c3c;
+            --text-color: #ecf0f1;
+        }
+
         body {
             margin: 0;
-            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(to bottom, #1a2a6c, #b21f1f, #fdbb2d);
-            height: 100vh;
-            display: flex;
-            align-items: flex-end; /* Pushes the mountains to the bottom */
-            overflow: hidden;
+            color: var(--text-color);
+            overflow-x: hidden;
         }
 
-        /* Container to control the height of the mountains */
-        .mountain-container {
-            width: 100%;
-            height: 50vh; /* Takes up the bottom half of the screen */
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        /* The Mountain Container */
+        .mountain-stage {
             position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-bottom: 100px;
         }
 
-        /* Make the SVG stretch to fit the container */
         svg {
             width: 100%;
-            height: 100%;
-            display: block;
+            filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.5));
         }
+
+        /* Interactive Stops */
+        .stop {
+            cursor: pointer;
+            transition: transform 0.3s ease, fill 0.3s ease;
+        }
+
+        .stop:hover {
+            transform: scale(1.5);
+            fill: #fff;
+        }
+
+        /* Content Panel */
+        #content-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--path-color);
+            display: none;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .close-btn {
+            float: right;
+            cursor: pointer;
+            color: var(--path-color);
+        }
+
+        h2 { color: var(--path-color); margin-top: 0; }
     </style>
 </head>
 <body>
 
-    <div class="mountain-container">
-        <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
+    <div class="header">
+        <h1>Engineering Design Journey</h1>
+        <p>A non-linear ascent through Praxis II</p>
+    </div>
+
+    <div class="mountain-stage">
+        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,600 L150,450 L250,520 L400,200 L550,350 L700,50 L800,600 Z" fill="#2c3e50" />
             
-            <path d="M0,400 L0,200 L150,100 L300,250 L500,50 L700,200 L900,80 L1200,250 L1200,400 Z" 
-                  fill="#2c3e50" opacity="0.6"/>
+            <path id="mountain-path" d="M50,580 L150,450 L250,520 L400,200 L550,350 L700,80" 
+                  fill="none" stroke="#f1c40f" stroke-width="4" stroke-dasharray="8" />
+
+            <circle class="stop" cx="50" cy="580" r="10" fill="#e74c3c" 
+                    onclick="showContent('Position Statement', 'This is where I establish my position in context. My approach to design focuses on rigor and empathy.')" />
             
-            <path d="M0,400 L0,280 L200,150 L400,300 L650,100 L850,280 L1100,120 L1200,200 L1200,400 Z" 
-                  fill="#1a252f" opacity="0.8"/>
-            
-            <path d="M0,400 L0,350 L250,200 L450,320 L750,150 L1000,350 L1200,280 L1200,400 Z" 
-                  fill="#0d1318"/>
-                  
+            <circle class="stop" cx="150" cy="450" r="10" fill="#e74c3c" 
+                    onclick="showContent('Praxis I Project', 'Summary of my first primary design activity. This stop represents the initial climb.')" />
+
+            <circle class="stop" cx="250" cy="520" r="10" fill="#3498db" 
+                    onclick="showContent('Iterative Dip', 'Engineering is not linear. This dip represents a moment where I had to converge and re-evaluate my CTMFs.')" />
+
+            <circle class="stop" cx="400" cy="200" r="10" fill="#e74c3c" 
+                    onclick="showContent('CIV102 Bridge Project', 'A key structural design project where I applied Frame and Diverge strands.')" />
+
+            <circle class="stop" cx="700" cy="80" r="12" fill="#2ecc71" 
+                    onclick="showContent('Praxis II Showcase', 'The summit. Representing my final design concept and total of 9 distinct CTMFs.')" />
         </svg>
     </div>
+
+    <div id="content-panel">
+        <span class="close-btn" onclick="this.parentElement.style.display='none'">[close]</span>
+        <h2 id="panel-title">Stop Title</h2>
+        <p id="panel-text">Content goes here...</p>
+    </div>
+
+    <script>
+        function showContent(title, text) {
+            document.getElementById('content-panel').style.display = 'block';
+            document.getElementById('panel-title').innerText = title;
+            document.getElementById('panel-text').innerText = text;
+        }
+    </script>
 
 </body>
 </html>
