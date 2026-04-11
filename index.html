@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katie | Student Engineer</title>
     <style>
-        /* LUXURY CAR AESTHETIC */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap');
+
+        :root {
+            --bg-color: #fffafaf7; /* Soft pearl/blush white */
+            --text-main: #4a3b3e; /* Deep espresso/plum instead of black */
+            --text-light: #7a6a6c;
+            --accent-rose: #d29197; /* Elegant dusty rose */
+            --accent-champagne: #e8d8d0; /* Soft champagne for borders */
+            --card-bg: #ffffff;
+        }
+
         body {
-            background-color: #050505; /* Deep, sleek black */
-            color: #d1d1d1; /* Metallic silver/grey text */
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Lato', sans-serif;
             font-weight: 300;
             line-height: 1.8;
             max-width: 900px;
@@ -17,65 +27,67 @@
             padding: 50px 20px;
         }
 
-        /* Minimalist, widely-spaced navigation */
+        /* Elegant Navigation */
         nav {
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid var(--accent-champagne);
             padding-bottom: 25px;
             margin-bottom: 60px;
             display: flex;
             gap: 40px;
-            justify-content: center; /* Center the nav for a premium feel */
+            justify-content: center;
         }
         nav a {
             text-decoration: none;
-            color: #777;
+            color: var(--text-light);
             text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            transition: color 0.4s ease;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: 400;
+            transition: color 0.3s ease;
         }
         nav a:hover {
-            color: #ffffff; /* Bright white on hover */
+            color: var(--accent-rose);
         }
 
-        /* Elegant Typography */
-        h1, h2, h3 {
-            color: #ffffff;
-            font-weight: 200; /* Thin, elegant weight */
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-top: 50px;
+        /* Luxury Typography */
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-main);
+            font-weight: 400;
         }
         h1 {
-            font-size: 3rem;
-            margin-bottom: 30px;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
             margin-top: 0;
-            letter-spacing: 6px;
+            letter-spacing: 1px;
         }
         h2 {
-            font-size: 1.5rem;
-            border-bottom: 1px solid #222;
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--accent-champagne);
             padding-bottom: 15px;
             margin-bottom: 30px;
+            margin-top: 50px;
         }
         h3 {
-            font-size: 1rem;
-            letter-spacing: 3px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--accent-rose);
             margin-bottom: 15px;
-            margin-top: 40px;
+            margin-top: 30px;
+            font-style: italic;
         }
         p {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             margin-bottom: 25px;
-            color: #999;
+            color: var(--text-main);
         }
 
-        /* Sleek Cards */
+        /* Soft, Chic Cards */
         .card-container {
             display: flex;
             flex-direction: column;
             gap: 30px;
-            margin-top: 70px;
+            margin-top: 60px;
         }
         @media (min-width: 600px) {
             .card-container {
@@ -84,66 +96,73 @@
         }
         .card {
             flex: 1;
-            padding: 50px 40px;
-            border: 1px solid #1a1a1a;
+            padding: 40px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
             text-decoration: none;
-            background-color: #080808;
-            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(210, 145, 151, 0.08); /* Soft rose shadow */
+            border: 1px solid rgba(232, 216, 208, 0.5);
+            transition: all 0.4s ease;
         }
         .card:hover {
-            border-color: #555; /* Subtle metallic highlight on hover */
-            transform: translateY(-5px);
-            background-color: #0c0c0c;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(210, 145, 151, 0.15);
+            border-color: var(--accent-rose);
         }
         .card h3 {
             margin-top: 0;
+            font-style: normal;
         }
         .card p {
-            font-size: 0.95rem;
+            font-size: 1rem;
+            color: var(--text-light);
             margin-bottom: 0;
         }
 
-        /* Shared Styles for Other Pages (Position, Projects, References) */
-        .quote-block, .annotation-box {
-            border-left: 1px solid #555;
-            padding-left: 30px;
+        /* Shared Styles for Other Pages */
+        .quote-block {
+            background: linear-gradient(to right, rgba(210, 145, 151, 0.05), transparent);
+            border-left: 3px solid var(--accent-rose);
+            padding: 25px 30px;
             margin: 50px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        .quote-block p {
+            font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-weight: 300;
-            font-size: 1.15rem;
-            color: #aaa;
+            font-size: 1.3rem;
+            color: var(--accent-rose);
+            margin: 0;
+            line-height: 1.6;
+        }
+        .annotation-box {
+            background-color: rgba(232, 216, 208, 0.2);
+            border: 1px solid var(--accent-champagne);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 40px 0;
+            font-size: 1.05rem;
+            color: var(--text-light);
         }
         .ctmf-list {
             list-style-type: none;
             padding: 0;
+            margin-top: 30px;
         }
         .ctmf-list li {
-            border-top: 1px solid #1a1a1a;
-            padding: 40px 0;
-            margin-bottom: 0;
-            background: none;
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-champagne);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
         }
         .ctmf-title {
-            color: #fff;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-rose);
+            font-size: 1.2rem;
             display: block;
-            margin-bottom: 15px;
-        }
-        .rubric-note {
-            border: 1px solid #222;
-            padding: 25px;
-            margin: 40px 0;
-            font-size: 0.85rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .reference-list li {
-            color: #888;
-            font-size: 0.95rem;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -159,18 +178,18 @@
     <main>
         <h1>Katie.</h1>
         
-        <p>Student Engineer. Varsity Athlete. Design Portfolio.</p>
+        <p>Student Engineer. Varsity Athlete. Designer.</p>
         
-        <p>This space is a curated record of my engineering design work at the University of Toronto. Inside, you will find documentation of the concepts, tools, models, and frameworks that guide my practice, acting as a personal handbook for navigating uncertainty and making justified decisions.</p>
+        <p>This space is a curated record of my engineering design work at the University of Toronto. Inside, you will find documentation of the concepts, tools, models, and frameworks that guide my practice, acting as a personal handbook for navigating uncertainty and making justified, impactful decisions.</p>
 
         <div class="card-container">
             <a href="position.html" class="card">
-                <h3>Position</h3>
+                <h3>My Position</h3>
                 <p>Explore the "Timeout" design philosophy—how elite competitive athletics shape my approach to engineering teamwork, resilience, and iteration.</p>
             </a>
             
             <a href="projects.html" class="card">
-                <h3>Projects</h3>
+                <h3>The Projects</h3>
                 <p>Review technical summaries and evidence from my primary first-year design activities, including rigorous evaluations of applied methodologies.</p>
             </a>
         </div>
