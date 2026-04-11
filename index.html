@@ -1,27 +1,111 @@
-<div class="sky-background">
-    <div class="clouds"></div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katie | Student Engineer Design Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        nav {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 1.3rem;
+            color: #0056b3;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        /* New styles for the navigation cards on the home page */
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        @media (min-width: 600px) {
+            .card-container {
+                flex-direction: row;
+            }
+        }
+        .card {
+            flex: 1;
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            background-color: #f9f9f9;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-color: #0056b3;
+        }
+        .card p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
 
-<div class="mountain-stage">
-    <svg class="climb-svg" viewBox="0 0 2000 2000" preserveAspectRatio="none">
-        <path id="mountain-path" 
-              d="M 100 1900 C 400 1700, 200 1500, 600 1300 S 1000 1100, 800 900 S 1400 600, 1800 100" 
-              stroke="rgba(255,255,255,0.3)" stroke-width="8" fill="none" stroke-dasharray="15"/>
-    </svg>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="position.html">Position Statement</a>
+        <a href="projects.html">Projects</a>
+        <a href="references.html">References</a>
+    </nav>
 
-    <div class="stop" style="left: 10%; top: 90%;" onclick="showInfo('The Start', 'UofT Engineering journey begins!')">Start</div>
-    <div class="stop" style="left: 35%; top: 65%;" onclick="showInfo('The Dip', 'Learning that failure is part of the process.')">Insight</div>
-    <div class="stop" style="left: 70%; top: 30%;" onclick="showInfo('High Altitudes', 'Deep learning and robotics projects.')">Project</div>
-    <div class="stop" style="left: 90%; top: 5%;" onclick="showInfo('The Summit', 'Graduation and beyond!')">Goal</div>
+    <main>
+        <h1>Hi, I'm Katie. 👋</h1>
+        
+        <p>Welcome to my Student Engineer Design Portfolio. I am a first-year Engineering student at the University of Toronto and a proud member of the women's varsity volleyball team.</p>
+        
+        <p>This portfolio is a curated collection of my engineering design work. It serves as a personal handbook and a record of my developing design practice. Inside, you will find documentation of the concepts, tools, models, and frameworks (CTMFs) I use to navigate uncertainty and make justified design decisions[cite: 24, 76].</p>
 
-    <div id="character" class="character-container">
-        <svg viewBox="0 0 100 100" width="80" height="80">
-            <path d="M20 30 Q50 5 80 30 L85 60 Q50 45 15 60 Z" fill="#3D2B1F"/>
-            <path d="M30 40 Q50 85 70 40" fill="#FFDBAC"/>
-            <circle cx="42" cy="48" r="5" fill="white"/>
-            <circle cx="42" cy="48" r="3" fill="#8E7618"/> <circle cx="58" cy="48" r="5" fill="white"/>
-            <circle cx="58" cy="48" r="3" fill="#8E7618"/> <path d="M30 65 L70 65 L75 95 L25 95 Z" fill="#00204E"/>
-            <text x="38" y="82" font-size="6" fill="white" font-weight="bold">UofT</text>
-            <circle cx="50" cy="90" r="4" fill="white" opacity="0.5"/> </svg>
-    </div>
-</div>
+        <div class="card-container">
+            <a href="position.html" class="card">
+                <h3>My Position in Context</h3>
+                <p>Read about my "Timeout" design philosophy and how competitive athletics shapes my approach to engineering teamwork and iteration.</p>
+            </a>
+            
+            <a href="projects.html" class="card">
+                <h3>Design Experiences</h3>
+                <p>Explore summaries and evidence from my primary first-year design activities, including Praxis I, the CIV102 Bridge Project, and Praxis II.</p>
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>
