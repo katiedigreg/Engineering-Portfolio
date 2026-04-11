@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katie Di Gregorio | References</title>
+    <title>Katie Di Gregorio | References & Extracts</title>
     <style>
+        /* LUXURY ACADEMIC AESTHETIC - Slate & Rose */
         @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
 
         :root {
-            --bg-color: #fcfbfb; /* Clean, soft pearl */
-            --text-main: #2b3a42; /* Deep slate/charcoal - academic and strong */
-            --text-light: #5c6b73; /* Muted slate for secondary text */
-            --accent-rose: #b88b8e; /* Sophisticated dusty rose */
-            --accent-line: #e3dcdb; /* Soft academic divider */
+            --bg-color: #fcfbfb;
+            --text-main: #2b3a42;
+            --text-light: #5c6b73;
+            --accent-rose: #b88b8e;
+            --accent-line: #e3dcdb;
             --card-bg: #ffffff;
+            --shadow-rose: rgba(184, 139, 142, 0.15);
         }
 
         body {
@@ -84,7 +86,7 @@
             font-weight: 400;
             transition: color 0.3s ease;
         }
-        nav a:hover {
+        nav a:hover, nav a.active {
             color: var(--accent-rose);
         }
 
@@ -98,30 +100,107 @@
             margin-top: 0;
             letter-spacing: 0.5px;
         }
-
-        /* Specific Styles for References Page */
-        .rubric-note {
-            background-color: var(--card-bg);
-            border: 1px solid var(--accent-rose);
-            border-radius: 4px;
-            padding: 20px 25px;
-            margin: 40px 0;
-            font-size: 0.95rem;
-            color: var(--text-light);
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--text-main);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            margin-top: 60px;
+            color: var(--text-main);
         }
+
+        /* Reference List Formatting */
         .reference-list {
             padding-left: 0;
             list-style-type: none;
-            margin-top: 40px;
+            margin-top: 30px;
         }
         .reference-list li {
-            margin-bottom: 25px;
-            padding-left: 30px;
-            text-indent: -30px; /* Creates the standard academic hanging indent */
+            margin-bottom: 20px;
+            padding-left: 40px;
+            text-indent: -40px; /* Standard hanging indent */
             font-size: 1.05rem;
             color: var(--text-main);
+            line-height: 1.6;
+        }
+        .reference-list li strong {
+            color: var(--accent-rose);
+            font-weight: 700;
+            margin-right: 5px;
+        }
+
+        /* Source Extracts Styling */
+        .extract-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .extract-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-line);
+            border-left: 5px solid var(--accent-rose);
+            border-radius: 6px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 768px) {
+            .extract-card {
+                flex-direction: row;
+            }
+        }
+
+        .extract-quote {
+            padding: 35px;
+            flex: 3;
+            background-color: #ffffff;
+        }
+        .extract-quote h4 {
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .extract-quote p {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            font-style: italic;
+            line-height: 1.7;
+            margin: 0;
+            position: relative;
+        }
+        
+        .extract-annotation {
+            padding: 35px;
+            flex: 2;
+            background-color: rgba(184, 139, 142, 0.05);
+            border-top: 1px solid var(--accent-line);
+        }
+        @media (min-width: 768px) {
+            .extract-annotation {
+                border-top: none;
+                border-left: 1px solid var(--accent-line);
+            }
+        }
+        .extract-annotation h4 {
+            font-family: 'Lora', serif;
+            color: var(--text-main);
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .extract-annotation p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin: 0;
             line-height: 1.6;
         }
     </style>
@@ -137,31 +216,83 @@
             <a href="index.html">Home</a>
             <a href="position.html">Position</a>
             <a href="projects.html">Projects</a>
-            <a href="references.html">References</a>
+            <a href="references.html" class="active">References</a>
         </nav>
     </header>
 
     <main>
-        <h1>References</h1>
-        
-        <div class="rubric-note">
-            <strong>Note for Assessment:</strong> As per the ESC102 Student Engineer Design Portfolio requirements, this page contains the standard reference list. The required Praxis "embedded source extracts" are included in the single PDF document submitted via Quercus.
-        </div>
+        <h1>References & Source Extracts</h1>
+        <p>This page documents the primary and secondary resources that informed my engineering design decisions, as well as the specific embedded source extracts required to validate my CTMF assessments and personal growth reflections.</p>
 
-        <ul class="reference-list">
-            <li>
-                [1] Praxis II Teaching Team, "ESC102-ENGINEERING SCIENCE PRAXIS II-20261: Student Engineer Design Portfolio," University of Toronto, 2026.
-            </li>
-            <li>
-                [2] K. Di Gregorio, "Timeout Design Position Whiteboard," Personal Collection, Toronto, ON, 2026.
-            </li>
-            <li>
-                [3] [Author Last Name, First Initial]., "[Title of Article/Resource Used for CTMFs]," <em>[Journal or Website Name]</em>, [Year]. [Online]. Available: [URL].
-            </li>
-            <li>
-                [4] [Author Last Name, First Initial]., "[Title of Textbook or Lecture]," in <em>[Course Name]</em>, University of Toronto, [Year].
-            </li>
-        </ul>
+        <section>
+            <h2>Reference List</h2>
+            <ul class="reference-list">
+                <li><strong>[1]</strong> Praxis Teaching Team, "ESC101 & ESC102 Course Materials and Lectures," University of Toronto, 2025-2026.</li>
+                <li><strong>[2]</strong> K. Di Gregorio, "Personal Engineering Design Philosophy & Position Reflections," Personal Archive, 2026.</li>
+                <li><strong>[3]</strong> K. Di Gregorio, et al., "Recommended Design to Prevent Bending When Retrieving a Hand-Held Broom," ESC101 Praxis I Design Report, Dec. 2025.</li>
+                <li><strong>[4]</strong> K. Di Gregorio, "Process Analysis: Lotus Blossom & Toulmin's Structure," ESC101 Praxis I Submission, 2025.</li>
+                <li><strong>[5]</strong> K. Di Gregorio, "Final Exam Process Analysis: Evaluating Credibility," ESC101 Praxis I Submission, 2025.</li>
+                <li><strong>[6]</strong> K. Di Gregorio, et al., "Booklet of our Design Process: Automated Wristband Applicator," ESC102 Praxis II Project Documentation, 2026.</li>
+                <li><strong>[7]</strong> M. Michalko, <em>Thinkertoys: A Handbook of Creative-Thinking Techniques</em>. Berkeley, CA: Ten Speed Press, 2006.</li>
+                <li><strong>[8]</strong> W. G. Perry, <em>Forms of Intellectual and Ethical Development in the College Years: A Scheme</em>. New York: Holt, Rinehart, and Winston, 1970.</li>
+                <li><strong>[9]</strong> S. Toulmin, <em>The Uses of Argument</em>. Cambridge, UK: Cambridge University Press, 1958.</li>
+                <li><strong>[10]</strong> California State University, Chico, "Evaluating Information – Applying the CRAAP Test," Meriam Library, 2010.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Embedded Source Extracts</h2>
+            <p>The following extracts are drawn directly from my submitted Praxis I and Praxis II documentation, providing concrete evidence of my design methodology, quantitative testing, and cognitive development.</p>
+
+            <div class="extract-grid">
+                
+                <div class="extract-card">
+                    <div class="extract-quote">
+                        <h4>Source [4]: Process Analysis - Toulmin's Structure</h4>
+                        <p>"This observation helped me learn that engineering decisions require justification, not just intuition. I realized that even when something is intuitively reasonable, it is not actually valid in a design context unless I can explain why it is reasonable and how I know."</p>
+                    </div>
+                    <div class="extract-annotation">
+                        <h4>Portfolio Annotation</h4>
+                        <p>This extract directly supports my CTMF reflection on Toulmin's Structure of Argument in the Praxis I project. It marks the exact moment I transitioned from an intuition-based ("Dualistic") designer to an evidence-based engineer. It proves my understanding that a "Claim" without a "Warrant" is insufficient in professional design.</p>
+                    </div>
+                </div>
+
+                <div class="extract-card">
+                    <div class="extract-quote">
+                        <h4>Source [5]: Final Exam Process Analysis - CRAAP Test</h4>
+                        <p>"This experience reshaped how I understand the design process by highlighting that credibility is not inherent—credibility must be earned, even when I am the source... This comparison taught me that part of the design process is determining which source—whether external or internal—provides the most defensible evidence, and that 'more credible' is often more important than 'perfect.'"</p>
+                    </div>
+                    <div class="extract-annotation">
+                        <h4>Portfolio Annotation</h4>
+                        <p>This extract validates my third Praxis I CTMF. It demonstrates my deep reflection on the nature of authority in engineering. Rather than blindly accepting poor secondary data or blindly trusting my own calculations, I learned to actively weigh the methodological transparency of primary research against the deficits of external sources.</p>
+                    </div>
+                </div>
+
+                <div class="extract-card">
+                    <div class="extract-quote">
+                        <h4>Source [6]: Praxis II Design Booklet</h4>
+                        <p>"Our results showed that the system can apply a wristband in approximately 10.33 seconds, which is significantly faster than the current manual average of 22.7 seconds. For force and safety, we tested the applied pressure using a scale-based setup. The measured pressures ranged from approximately 3.24 to 7.25 kPa, all safely below the 10 kPa limit."</p>
+                    </div>
+                    <div class="extract-annotation">
+                        <h4>Portfolio Annotation</h4>
+                        <p>This extract provides the hard quantitative evidence used in the Praxis II "Measurement Matrix" CTMF section. It showcases my ability to not only build physical prototypes (overcoming my "analysis paralysis"), but to subject those prototypes to rigorous physical proxy testing to verify safety and efficiency requirements.</p>
+                    </div>
+                </div>
+
+                <div class="extract-card">
+                    <div class="extract-quote">
+                        <h4>Source [6]: Praxis II Design Booklet</h4>
+                        <p>"Finally, after presenting our concept to the daycare, they confirmed that if the device is safe and reduces application time, they are open to implementing it. They also expressed interest in receiving the final design if it is fully usable."</p>
+                    </div>
+                    <div class="extract-annotation">
+                        <h4>Portfolio Annotation</h4>
+                        <p>This extract validates my final Praxis II CTMF on the Stakeholder Feedback Loop. It grounds my entire portfolio in my core "Volleyball Season" philosophy: that the ultimate goal of structuring disorder and moving through the FDCR process is to create a design that actually matters to the community.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
 </body>
