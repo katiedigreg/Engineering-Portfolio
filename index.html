@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katie | Student Engineer</title>
+    <title>Katie Di Gregorio | Engineering Portfolio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
 
         :root {
-            --bg-color: #fffafaf7; /* Soft pearl/blush white */
-            --text-main: #4a3b3e; /* Deep espresso/plum instead of black */
-            --text-light: #7a6a6c;
-            --accent-rose: #d29197; /* Elegant dusty rose */
-            --accent-champagne: #e8d8d0; /* Soft champagne for borders */
+            --bg-color: #fcfbfb; /* Clean, soft pearl */
+            --text-main: #2b3a42; /* Deep slate/charcoal - academic and strong */
+            --text-light: #5c6b73; /* Muted slate for secondary text */
+            --accent-rose: #b88b8e; /* Sophisticated dusty rose */
+            --accent-line: #e3dcdb; /* Soft academic divider */
             --card-bg: #ffffff;
         }
 
@@ -22,19 +22,58 @@
             font-family: 'Lato', sans-serif;
             font-weight: 300;
             line-height: 1.8;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 40px 20px;
         }
 
-        /* Elegant Navigation */
-        nav {
-            border-bottom: 1px solid var(--accent-champagne);
+        /* Academic Header Layout */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 1px solid var(--accent-line);
             padding-bottom: 25px;
             margin-bottom: 60px;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+        }
+        
+        .site-branding {
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .site-branding {
+                text-align: left;
+            }
+        }
+        .brand-name {
+            font-family: 'Lora', serif;
+            font-size: 1.6rem;
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 4px;
+        }
+        .brand-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* Navigation */
+        nav {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             justify-content: center;
+            flex-wrap: wrap;
         }
         nav a {
             text-decoration: none;
@@ -49,27 +88,27 @@
             color: var(--accent-rose);
         }
 
-        /* Luxury Typography */
+        /* Academic Typography */
         h1, h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Lora', serif;
             color: var(--text-main);
-            font-weight: 400;
+            font-weight: 500;
         }
         h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
             margin-top: 0;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         h2 {
             font-size: 1.8rem;
-            border-bottom: 1px solid var(--accent-champagne);
+            border-bottom: 1px solid var(--accent-line);
             padding-bottom: 15px;
             margin-bottom: 30px;
             margin-top: 50px;
         }
         h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Lora', serif;
             font-size: 1.3rem;
             color: var(--accent-rose);
             margin-bottom: 15px;
@@ -82,7 +121,7 @@
             color: var(--text-main);
         }
 
-        /* Soft, Chic Cards */
+        /* Chic Cards */
         .card-container {
             display: flex;
             flex-direction: column;
@@ -98,15 +137,15 @@
             flex: 1;
             padding: 40px;
             background-color: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 8px; /* Slightly sharper corners for academic feel */
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(210, 145, 151, 0.08); /* Soft rose shadow */
-            border: 1px solid rgba(232, 216, 208, 0.5);
+            box-shadow: 0 4px 20px rgba(43, 58, 66, 0.04); 
+            border: 1px solid var(--accent-line);
             transition: all 0.4s ease;
         }
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(210, 145, 151, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(184, 139, 142, 0.15);
             border-color: var(--accent-rose);
         }
         .card h3 {
@@ -121,24 +160,24 @@
 
         /* Shared Styles for Other Pages */
         .quote-block {
-            background: linear-gradient(to right, rgba(210, 145, 151, 0.05), transparent);
+            background-color: #ffffff;
             border-left: 3px solid var(--accent-rose);
             padding: 25px 30px;
             margin: 50px 0;
-            border-radius: 0 12px 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
         .quote-block p {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Lora', serif;
             font-style: italic;
-            font-size: 1.3rem;
-            color: var(--accent-rose);
+            font-size: 1.25rem;
+            color: var(--text-main);
             margin: 0;
             line-height: 1.6;
         }
         .annotation-box {
-            background-color: rgba(232, 216, 208, 0.2);
-            border: 1px solid var(--accent-champagne);
-            border-radius: 8px;
+            background-color: rgba(184, 139, 142, 0.05);
+            border: 1px solid var(--accent-line);
+            border-radius: 4px;
             padding: 20px 25px;
             margin: 40px 0;
             font-size: 1.05rem;
@@ -151,32 +190,39 @@
         }
         .ctmf-list li {
             background-color: var(--card-bg);
-            border: 1px solid var(--accent-champagne);
-            border-radius: 8px;
+            border: 1px solid var(--accent-line);
+            border-radius: 4px;
             padding: 30px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
         .ctmf-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Lora', serif;
             color: var(--accent-rose);
             font-size: 1.2rem;
             display: block;
             margin-bottom: 10px;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="position.html">Position</a>
-        <a href="projects.html">Projects</a>
-        <a href="references.html">References</a>
-    </nav>
+    <header>
+        <div class="site-branding">
+            <span class="brand-name">Katie Di Gregorio</span>
+            <span class="brand-subtitle">ESC102 | Engineering Design Portfolio</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="position.html">Position</a>
+            <a href="projects.html">Projects</a>
+            <a href="references.html">References</a>
+        </nav>
+    </header>
 
     <main>
-        <h1>Katie.</h1>
+        <h1>Welcome.</h1>
         
         <p>Student Engineer. Varsity Athlete. Designer.</p>
         
