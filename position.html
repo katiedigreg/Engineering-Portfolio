@@ -166,6 +166,105 @@
             font-size: 1.5rem;
             line-height: 1;
         }
+        /* Summary of Positions Layout */
+        .summary-intro {
+            background-color: rgba(184, 139, 142, 0.05);
+            border: 1px solid var(--accent-line);
+            padding: 30px;
+            margin: 60px 0 40px 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .summary-intro p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+        
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: 768px) {
+            .timeline-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .timeline-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-line);
+            border-top: 4px solid var(--accent-rose); /* Distinct top border like the inspiration */
+            padding: 30px 25px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(184, 139, 142, 0.1);
+        }
+        .timeline-date {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 700;
+        }
+        .timeline-card h4 {
+            font-family: 'Lora', serif;
+            color: var(--text-main);
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .timeline-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0;
+            color: var(--text-light);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+        @media (min-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .comparison-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-line);
+            border-left: 4px solid var(--text-main);
+            padding: 30px 25px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .comparison-card.stayed-same {
+            border-left-color: var(--accent-rose);
+        }
+        .comparison-card h4 {
+            font-family: 'Lora', serif;
+            color: var(--text-main);
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .comparison-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0;
+            color: var(--text-light);
+        }
     </style>
 </head>
 <body>
