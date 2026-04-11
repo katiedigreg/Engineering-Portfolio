@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katie Di Gregorio | Engineering Portfolio</title>
+    <title>Katie Di Gregorio | Position Statement</title>
     <style>
+        /* LUXURY ACADEMIC AESTHETIC - Slate & Rose */
         @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
 
         :root {
             --bg-color: #fcfbfb; /* Clean, soft pearl */
-            --text-main: #2b3a42; /* Deep slate/charcoal - academic and strong */
+            --text-main: #2b3a42; /* Deep slate/charcoal - authoritative */
             --text-light: #5c6b73; /* Muted slate for secondary text */
             --accent-rose: #b88b8e; /* Sophisticated dusty rose */
             --accent-line: #e3dcdb; /* Soft academic divider */
+            --charcoal-gap: #2b3a42; /* Deep charcoal for gaps & borders */
+            --shadow-rose: rgba(184, 139, 142, 0.15); /* Soft rose shadow for photos */
             --card-bg: #ffffff;
         }
 
@@ -105,14 +108,14 @@
             border-bottom: 1px solid var(--accent-line);
             padding-bottom: 15px;
             margin-bottom: 30px;
-            margin-top: 50px;
+            margin-top: 60px;
         }
         h3 {
             font-family: 'Lora', serif;
             font-size: 1.3rem;
             color: var(--accent-rose);
             margin-bottom: 15px;
-            margin-top: 30px;
+            margin-top: 40px;
             font-style: italic;
         }
         p {
@@ -121,44 +124,7 @@
             color: var(--text-main);
         }
 
-        /* Chic Cards */
-        .card-container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin-top: 60px;
-        }
-        @media (min-width: 600px) {
-            .card-container {
-                flex-direction: row;
-            }
-        }
-        .card {
-            flex: 1;
-            padding: 40px;
-            background-color: var(--card-bg);
-            border-radius: 8px; /* Slightly sharper corners for academic feel */
-            text-decoration: none;
-            box-shadow: 0 4px 20px rgba(43, 58, 66, 0.04); 
-            border: 1px solid var(--accent-line);
-            transition: all 0.4s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(184, 139, 142, 0.15);
-            border-color: var(--accent-rose);
-        }
-        .card h3 {
-            margin-top: 0;
-            font-style: normal;
-        }
-        .card p {
-            font-size: 1rem;
-            color: var(--text-light);
-            margin-bottom: 0;
-        }
-
-        /* Shared Styles for Other Pages */
+        /* Shared Styles for Content */
         .quote-block {
             background-color: #ffffff;
             border-left: 3px solid var(--accent-rose);
@@ -179,30 +145,79 @@
             border: 1px solid var(--accent-line);
             border-radius: 4px;
             padding: 20px 25px;
-            margin: 40px 0;
+            margin: 30px 0;
             font-size: 1.05rem;
             color: var(--text-light);
+            font-style: italic;
         }
-        .ctmf-list {
+        .highlight-list {
             list-style-type: none;
             padding: 0;
-            margin-top: 30px;
+            margin-top: 25px;
         }
-        .ctmf-list li {
-            background-color: var(--card-bg);
-            border: 1px solid var(--accent-line);
-            border-radius: 4px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        .highlight-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
-        .ctmf-title {
-            font-family: 'Lora', serif;
+        .highlight-list li::before {
+            content: "•";
             color: var(--accent-rose);
-            font-size: 1.2rem;
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 500;
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        /* Image Styling - Updated academic look with rose shadows & charcoal borders */
+        /* Specific ID for the headshot portrait */
+        #katie-headshot {
+            max-width: 250px;
+            float: left; /* Make it a portrait style image in the intro */
+            margin-right: 30px;
+            margin-bottom: 15px;
+            border: 2px solid var(--accent-rose);
+            box-shadow: 0 4px 15px var(--shadow-rose);
+            border-radius: 4px; /* Subtle academic corners */
+        }
+
+        /* Styling for the container holding the side-by-side event photos */
+        #experience-photos-container {
+            display: flex;
+            gap: 25px; /* Use deep charcoal for gaps & borders if needed */
+            justify-content: center;
+            margin: 40px 0;
+            clear: both; /* Ensure these photos start fresh after floated content */
+            border-top: 1px solid var(--charcoal-gap);
+            border-bottom: 1px solid var(--charcoal-gap);
+            padding: 20px 0;
+        }
+        /* Specific IDs for the bake sale and terry fox photos */
+        #bakesale-image, #terryfox-image {
+            flex: 1; /* Allow images to share container space */
+            max-width: calc(50% - 13px); /* Ensure max 50% width on wider screens, considering gap */
+            height: auto;
+            border: 2px solid var(--accent-rose);
+            box-shadow: 0 4px 15px var(--shadow-rose);
+            border-radius: 4px;
+            object-fit: contain; /* Ensure full image is visible, potentially adding slate gaps on sides if needed */
+        }
+        @media (max-width: 600px) {
+            #katie-headshot {
+                float: none;
+                margin: 0 auto 15px auto;
+                display: block;
+            }
+            #experience-photos-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            #bakesale-image, #terryfox-image {
+                max-width: 100%;
+                width: 100%; /* Fully stack on smaller screens */
+            }
         }
     </style>
 </head>
@@ -222,23 +237,77 @@
     </header>
 
     <main>
-        <h1>Welcome.</h1>
-        
-        <p>Student Engineer. Varsity Athlete. Designer.</p>
-        
-        <p>This space is a curated record of my engineering design work at the University of Toronto. Inside, you will find documentation of the concepts, tools, models, and frameworks that guide my practice, acting as a personal handbook for navigating uncertainty and making justified, impactful decisions.</p>
+        <h1>Position Statement</h1>
 
-        <div class="card-container">
-            <a href="position.html" class="card">
-                <h3>My Position</h3>
-                <p>Explore the "Timeout" design philosophy—how elite competitive athletics shape my approach to engineering teamwork, resilience, and iteration.</p>
-            </a>
+        <section>
+            <img src="headshot.jpg" alt="Portrait of Katie Di Gregorio" id="katie-headshot">
             
-            <a href="projects.html" class="card">
-                <h3>The Projects</h3>
-                <p>Review technical summaries and evidence from my primary first-year design activities, including rigorous evaluations of applied methodologies.</p>
-            </a>
-        </div>
+            <p>My name is Katie Di Gregorio. I am a first-year Engineering Science student at the University of Toronto and a proud member of the varsity women's volleyball team. Since I was young, my goal has been remarkably simple: to make a positive difference in the world. While I wasn't always sure exactly how I would achieve this, I have always trusted that God has a bright future in store for me and that I will follow the path He guides me along.</p>
+            
+            <p>In high school, I envisioned making an impact through one-on-one patient care as a doctor, demonstrating my commitment to healthcare by leading initiatives like a SickKids Bake Sale and serving as Student Council President for our Terry Fox Run. However, in grade 12, my perspective broadened. I realized I could impact lives on a global scale, and engineering offered the platform to do so. My ultimate goal is to leverage my undergraduate education to develop large-scale biomedical products that improve lives worldwide.</p>
+
+            <p>Before coming to UofT, I mistakenly believed that engineering simply meant turning an idea into reality with minimal planning. Through Praxis I and II, this perception has been completely transformed. While my core values—teamwork, communication, integrity, and courage—remain steadfast, my approach to engineering design has evolved into a comprehensive, non-linear process.</p>
+
+            <div class="quote-block">
+                <p>"In my original position statement, I used a volleyball timeout as a metaphor for design. Now, having completed Praxis II, I see engineering design not just as a momentary pause, but as an entire volleyball season."</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>A Volleyball Season</h2>
+
+            <h3>The Pre-Season (Framing)</h3>
+            <p>At the start of a volleyball season, excitement is high, possibilities are endless, and we establish our team norms and goals. The foundation we build here dictates the success of the entire season. I now understand that engineering design demands the same rigorous foundation, which begins with strong framing.</p>
+            <p>Even minor adjustments to the framing of a problem can drastically alter a project's scope. For instance, in our Praxis II project, maintaining a requirement like "full automation" significantly increased complexity and forced us to carefully weigh constraints and trade-offs. Because of this, I prioritize extensive early-stage research to thoroughly understand a problem before committing to a solution. I no longer view framing as a preliminary step, but as the most critical, ongoing phase of the design process.</p>
+
+            <h3>Practice (Preparation & Teamwork)</h3>
+            <p>Before stepping onto the court for a weekend game, hours of unseen preparation occur. We hold game-plan meetings, practice relentlessly, and analyze our opponents' strengths and weaknesses. Similarly, before I begin diverging in a design project, I conduct rigorous primary and secondary research to deeply understand the opportunity landscape.</p>
+            
+            <div id="experience-photos-container">
+                <img src="bakesale.jpg" alt="Beaches Metro news article about SickKids BakeSale" id="bakesale-image">
+                <img src="terryfox.jpg" alt="Instagram post screenshot of Terry Fox Run" id="terryfox-image">
+            </div>
+            
+            <div class="annotation-box">
+                "Be a great teammate." <br>— Mark Heese, Assistant Coach (Olympic Beach Volleyball Medalist)
+            </div>
+            
+            <p>None of this preparation matters without a unified front. Volleyball demands constant communication and mutual trust; leadership means doing my part while empowering others to do theirs. I apply this directly to my design teams. I actively monitor group dynamics, address conflicts early, and foster an environment where everyone feels comfortable contributing. Trust is not a byproduct of teamwork; it is a prerequisite for it.</p>
+
+            <h3>The Game (Diverging & Representing)</h3>
+            <p>My relationship with planning has fluctuated. Before university, I barely planned. After Praxis I, I over-planned to the point of hesitation. Today, I understand that there is a moment where you simply have to jump in. In our locker room, a painted quote reminds us: <em>"You are as ready as you need to be right now."</em> In engineering, this is the essence of diverging. I generate ideas freely, no matter how unconventional.</p>
+            <p>During a game, we are told to stick to our formula. In design, my "formula" consists of Needs, Goals, Objectives (NGOs), requirements, and evaluation criteria. Guided by this framework, I lean heavily into my visual and creative strengths. I use sketching and physical prototyping to represent my ideas. When it is time to execute, overthinking must stop, and building must begin.</p>
+
+            <h3>The Timeout (Converging & Reflecting)</h3>
+            <p>Once a concept is formed, my process becomes highly iterative. Translating user needs into measurable metrics allows me to evaluate concepts using tools like Pugh charts, ensuring decisions are driven by evidence rather than intuition.</p>
+            <p>After converging on an idea, it is crucial to step back. Just as my coach calls a timeout to reground the team, I pause to evaluate our design against the established requirements. This reflection often reveals better pathways, sending me back into divergence. It is the practice of stepping back in order to move forward.</p>
+
+            <div class="annotation-box">
+                "Don't let the past point define the next." & "Control the controllables." <br>— Kristine Drakich, Head Coach of UofT Women's Volleyball
+            </div>
+
+            <p>Mistakes will happen. A failed prototype is not incompetence; it is data. While I cannot control stakeholder needs or unforeseen failures, I can control how I frame opportunities and respond to feedback.</p>
+
+            <div class="annotation-box">
+                "Do not fear, for I am with you." — Isaiah 41:10
+            </div>
+            <p>This resilience is deeply rooted in my faith. In high-pressure moments, my faith reminds me that design is a long, uncertain journey. Fixating solely on the final outcome obscures the learning process. I choose to value the journey, remain grateful for the opportunity to learn and create, and to persist without fear.</p>
+
+            <h3>The Off-Season (Iteration & Continuous Growth)</h3>
+            <p>This year, my team’s season ended in a heartbreaking quarter-final loss. But on Monday, we were back in the gym. The season may have ended, but the work hadn't. Engineering design is much the same: it is never truly finished. A design can always be optimized, refined, and expanded. There is always room to grow, which is why I am eager to continue developing a functioning wristband applicator for Balmy Beach Day Care.</p>
+        </section>
+
+        <section>
+            <h2>My Philosophy & FDCR</h2>
+            <p>My "Volleyball Season" philosophy maps closely to the Framing, Diverging, Converging, and Representing (FDCR) model, but I experience it as a highly fluid, non-linear cycle. My process involves:</p>
+            <ul class="highlight-list">
+                <li>Investing heavily in framing and reframing upfront.</li>
+                <li>Moving fluidly into divergence to explore possibilities without hesitation.</li>
+                <li>Relying heavily on physical models and sketching to visualize and test concepts (Representing).</li>
+                <li>Converging on decisions based on metrics, then taking a step back to evaluate and often diverge again.</li>
+            </ul>
+            <p>Prototyping often uncovers gaps that require reframing the problem entirely. This non-linearity reflects the reality of engineering design: progress is rarely a straight line, and intentional iteration is the key to meaningful impact.</p>
+        </section>
     </main>
 
 </body>
