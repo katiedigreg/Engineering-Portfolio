@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katie Di Gregorio | Projects</title>
     <style>
+        /* LUXURY ACADEMIC AESTHETIC - Slate & Rose */
         @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
 
         :root {
-            --bg-color: #fcfbfb; /* Clean, soft pearl */
-            --text-main: #2b3a42; /* Deep slate/charcoal - academic and strong */
-            --text-light: #5c6b73; /* Muted slate for secondary text */
-            --accent-rose: #b88b8e; /* Sophisticated dusty rose */
-            --accent-line: #e3dcdb; /* Soft academic divider */
+            --bg-color: #fcfbfb;
+            --text-main: #2b3a42;
+            --text-light: #5c6b73;
+            --accent-rose: #b88b8e;
+            --accent-line: #e3dcdb;
+            --charcoal-gap: #2b3a42;
+            --shadow-rose: rgba(184, 139, 142, 0.15);
             --card-bg: #ffffff;
         }
 
@@ -101,15 +104,15 @@
             letter-spacing: 0.5px;
         }
         h2 {
-            font-size: 1.8rem;
-            border-bottom: 1px solid var(--accent-line);
+            font-size: 2rem;
+            border-bottom: 2px solid var(--text-main);
             padding-bottom: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             margin-top: 60px;
         }
         h3 {
             font-family: 'Lora', serif;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--accent-rose);
             margin-bottom: 15px;
             margin-top: 40px;
@@ -125,13 +128,86 @@
         .annotation-box {
             background-color: rgba(184, 139, 142, 0.05);
             border: 1px solid var(--accent-line);
-            border-radius: 4px;
-            padding: 20px 25px;
+            border-left: 4px solid var(--accent-rose);
+            padding: 20px 30px;
             margin: 30px 0;
-            font-size: 1.05rem;
-            color: var(--text-light);
+            font-size: 1.1rem;
+            color: var(--text-main);
             font-style: italic;
+            border-radius: 0 4px 4px 0;
         }
+        
+        /* One-Pager Specific Layout */
+        .one-pager-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-line);
+            border-top: 5px solid var(--text-main);
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            margin-bottom: 60px;
+        }
+        
+        .op-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: 768px) {
+            .op-grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Divergence Concept Grid */
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .concept-card {
+            border: 1px solid var(--accent-line);
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+            background-color: var(--bg-color);
+        }
+        .concept-card h4 {
+            font-family: 'Lora', serif;
+            color: var(--text-main);
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+        .concept-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border: 1px solid var(--accent-line);
+        }
+
+        /* Highlighted Reflection Box */
+        .reflection-box {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(43, 58, 66, 0.2);
+        }
+        .reflection-box h3 {
+            color: var(--accent-rose);
+            margin-top: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+        .reflection-box p {
+            color: #e0e5e8;
+        }
+
+        /* CTMF List */
         .ctmf-list {
             list-style-type: none;
             padding: 0;
@@ -144,14 +220,27 @@
             padding: 30px;
             margin-bottom: 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+        .ctmf-list li:hover {
+            transform: translateX(5px);
+            border-color: var(--accent-rose);
         }
         .ctmf-title {
             font-family: 'Lora', serif;
             color: var(--accent-rose);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             display: block;
             margin-bottom: 10px;
             font-weight: 500;
+        }
+        
+        .project-image {
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid var(--accent-line);
+            box-shadow: 0 4px 15px var(--shadow-rose);
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -172,85 +261,105 @@
 
     <main>
         <h1>Design Experiences</h1>
-        <p>This section documents my primary engineering design activities since September 2025. For each project, I have detailed the context, summarized the outcomes, and evaluated the specific Concepts, Tools, Models, and Frameworks (CTMFs) that guided my team's process.</p>
+        <p>This section documents my primary engineering design activities. For each project, I have detailed the context, summarized the outcomes, and evaluated the specific Concepts, Tools, Models, and Frameworks (CTMFs) that guided my team's process[cite: 7, 72, 76].</p>
 
         <section>
-            <h2>Praxis I: [Insert Project Title Here]</h2>
+            <h2>Praxis I: Hand-Held Broom Optimization</h2>
             
             <div class="annotation-box">
-                <strong>Context Annotation:</strong> [Write 2-3 sentences explaining this project in the context of your overall development. E.g., This was my first exposure to open-ended engineering design. It challenged my assumption that problems are clearly defined and forced me to rely on my "Timeout" philosophy to pause and reframe the opportunity.]
+                <strong>Context in my "Volleyball Season":</strong> This was my first exposure to open-ended engineering design. It challenged my assumption that problems are clearly defined and forced me to confront my bias of jumping straight to execution without proper planning or divergence[cite: 1142, 1148].
             </div>
 
-            <p>[Insert your one-page summary content here. Describe the problem, the stakeholders, what your team did, and the final proposed design. Make sure a reader who knows nothing about the project can understand it!]</p>
+            <div class="one-pager-container">
+                
+                <div class="op-grid-2">
+                    <div>
+                        <h3>Background & Opportunity</h3>
+                        <p>Hand-held brooms (HHBs) are notoriously unstable when rested upright against a wall due to their small base and uneven bristles[cite: 291, 292]. When they fall, retrieving them requires five steps and an uncomfortable bending motion[cite: 294]. This presents a significant challenge for our primary stakeholders: Engineering Science students experiencing mild to moderate leg and lower back pain, for whom bending causes unnecessary stress and discomfort[cite: 544, 548, 563]. The opportunity was to design a mechanism to prevent HHBs from falling[cite: 1129].</p>
+                    </div>
+                    <div>
+                        <h3>Rigorous Framing</h3>
+                        <p>To ensure our design truly solved the problem, we established strict Requirements and Evaluation Criteria (ECs)[cite: 1130]. The attachment needed to:</p>
+                        <ul>
+                            <li>Withstand an accidental sideways force of at least 1.5 N without tipping[cite: 313].</li>
+                            <li>Allow the broom to be retrieved in under 5 steps to ensure convenience[cite: 315].</li>
+                            <li>Maintain compactability (base < 0.35m x 0.35m)[cite: 321].</li>
+                            <li>Add minimal weight, keeping the total broom weight under 2.3 kg to prevent ergonomic strain[cite: 323, 669].</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Diverging & Exploring Possibilities</h3>
+                <p>Guided by our framing, we engaged in structured divergence to generate multiple potential solutions[cite: 1135]. We developed four distinct concepts[cite: 1134]:</p>
+                
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h4>1. Suction Cup</h4>
+                        <img src="suction-cup.jpg" alt="Suction Cup Concept">
+                        <p>A foot-actuated nitrile suction cup that creates a firm seal with the floor[cite: 337, 338].</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>2. Tripod Stand</h4>
+                        <img src="tripod.jpg" alt="Tripod Concept">
+                        <p>A collapsible, three-legged aluminum system that deploys outward[cite: 367, 369].</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>3. Weighted Base</h4>
+                        <img src="weighted-base.jpg" alt="Weighted Base Concept">
+                        <p>A heavy, High-Density Polyethylene block attached to the broom handle[cite: 383, 385].</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>4. Magnetic Stand</h4>
+                        <img src="magnetic-stand.jpg" alt="Magnetic Stand Concept">
+                        <p>A standalone pole utilizing Neodymium magnets to hold the broom upright[cite: 395, 397].</p>
+                    </div>
+                </div>
+
+                <h3>Converging on a Solution</h3>
+                <p>We utilized a Measurement Matrix, Pugh Charts, and Pairwise Comparison to evaluate our designs against our ECs[cite: 435, 441, 451, 1138]. While the Magnetic Stand was the fastest to retrieve (2 steps) [cite: 433, 457], horizontal force resistance (EC1.2) was our most critical metric[cite: 414, 415]. Engineering calculations revealed the Suction Cup could withstand an incredible 14.33 N of horizontal force—vastly outperforming the others (which all withstood under 2.1 N) while remaining exceptionally lightweight at 0.471 kg[cite: 423, 425, 427, 437, 438]. Consequently, the Suction Cup was selected as the optimal recommendation[cite: 458, 464].</p>
+
+                <div class="reflection-box">
+                    <h3>Influence of My Position & What I Learned</h3>
+                    <p>I entered this project heavily biased. Once I visualized the suction cup idea, I didn't want to challenge it, and I actively resisted the planning phase in favor of jumping straight into building[cite: 1141, 1142]. My groupmates had to pull me back and enforce the divergence process[cite: 1144].</p>
+                    <p>Through this, I had a major realization: while the suction cup *did* ultimately win, structured divergence revealed that other designs (like the magnetic stand) actually met specific requirements better[cite: 1145]. I learned the critical importance of extensive planning and evaluating options through rigorous metrics. You cannot just jump to a final design based on intuition; you must justify it[cite: 1148]. This perfectly encapsulates the "Practice" and "Timeout" phases of my design philosophy.</p>
+                </div>
+
+            </div>
 
             <h3>CTMFs Assessed</h3>
             <ul class="ctmf-list">
                 <li>
-                    <span class="ctmf-title">1. [Name of CTMF, e.g., Stakeholder Mapping]</span>
-                    [Explain how you used it, why you used it, and assess its effectiveness. Did it work? Would you use it again? Connect it back to your design philosophy if possible.]
+                    <span class="ctmf-title">1. Measurement Matrix</span>
+                    <strong>Context:</strong> We used a Measurement Matrix to quantify the physical capabilities of our four designs (e.g., calculating exactly how many Newtons of force each could withstand and their total weights)[cite: 435].<br><br>
+                    <strong>Assessment:</strong> This tool was incredibly effective. As someone who previously relied on intuition, seeing the raw math—that the suction cup held 14.33 N compared to the tripod's 1.717 N—provided undeniable, objective evidence[cite: 437]. It removed personal bias and grounded our convergence in reality. I will continue to use this tool to validate structural assumptions.
                 </li>
                 <li>
-                    <span class="ctmf-title">2. [Name of CTMF, e.g., Pairwise Comparison]</span>
-                    [Explain how you used it, why you used it, and assess its effectiveness.]
+                    <span class="ctmf-title">2. Pugh Charts</span>
+                    <strong>Context:</strong> We utilized a series of Pugh Charts, rotating the reference design, to compare our concepts against our qualitative and quantitative Evaluation Criteria[cite: 441, 442, 809].<br><br>
+                    <strong>Assessment:</strong> Pugh charts were highly valuable for visualizing trade-offs. It clearly highlighted the suction cup's weakness regarding compatibility with different brooms (EC2.1)[cite: 445, 446], while showcasing its strength in stability. It forced me to acknowledge the flaws in my favored design, which is essential for the "Reflection" phase of my design process.
                 </li>
                 <li>
-                    <span class="ctmf-title">3. [Name of CTMF, e.g., Morphological Chart]</span>
-                    [Explain how you used it, why you used it, and assess its effectiveness.]
+                    <span class="ctmf-title">3. Pairwise Comparison</span>
+                    <strong>Context:</strong> After analyzing the Pugh charts and Measurement Matrix, we used Pairwise Comparison for our final convergence to rank the holistic viability of the four designs[cite: 451, 452].<br><br>
+                    <strong>Assessment:</strong> Because we had already established that horizontal force resistance was our most critical metric [cite: 414], the Pairwise Comparison provided a clean, definitive framework to eliminate the weaker designs (like the tripod and magnetic stand) [cite: 456, 457] and confidently select the suction cup[cite: 458]. It acts as an excellent final "Timeout" before committing to a design direction.
                 </li>
             </ul>
         </section>
 
         <section>
             <h2>CIV102: Bridge Design</h2>
-            
             <div class="annotation-box">
-                <strong>Context Annotation:</strong> [Write 2-3 sentences explaining the CIV102 project. E.g., This project required intense technical modeling and balancing strict constraints. It taught me how to justify decisions using mathematical models rather than intuition.]
+                <strong>Context Annotation:</strong> [This section is ready for your CIV102 project details!]
             </div>
-
-            <p>[Insert your summary of the bridge project here. Mention the constraints, your structural choices, the testing process, and the final failure load/efficiency.]</p>
-
-            <h3>CTMFs Assessed</h3>
-            <ul class="ctmf-list">
-                <li>
-                    <span class="ctmf-title">1. [Name of CTMF, e.g., Mathematical Modeling]</span>
-                    [Explain how you used it to predict failure and assess its effectiveness.]
-                </li>
-                <li>
-                    <span class="ctmf-title">2. [Name of CTMF, e.g., Prototyping]</span>
-                    [Explain your physical building process and how the model compared to reality.]
-                </li>
-                <li>
-                    <span class="ctmf-title">3. [Name of CTMF, e.g., Factor of Safety]</span>
-                    [Explain how you used this concept to manage risk and uncertainty in the design.]
-                </li>
-            </ul>
         </section>
 
         <section>
             <h2>Praxis II: [Insert RFP Title]</h2>
-            
             <div class="annotation-box">
-                <strong>Context Annotation:</strong> [Write 2-3 sentences explaining this project. E.g., This project required the most deliberate application of my design philosophy. We had to navigate a complex RFP, requiring constant communication and active structuring of disorder.]
+                <strong>Context Annotation:</strong> [This section is ready for your Praxis II project details!]
             </div>
-
-            <p>[Insert your one-page summary content here. Describe the RFP, the detailed framing, the divergence process, and your final engineered solution.]</p>
-
-            <h3>CTMFs Assessed</h3>
-            <ul class="ctmf-list">
-                <li>
-                    <span class="ctmf-title">1. [Name of CTMF, e.g., R&M Framework]</span>
-                    [Explain how you used it to structure decisions and assess its effectiveness.]
-                </li>
-                <li>
-                    <span class="ctmf-title">2. [Name of CTMF, e.g., Pugh Chart]</span>
-                    [Explain how you used it to converge on a solution and assess its effectiveness.]
-                </li>
-                <li>
-                    <span class="ctmf-title">3. [Name of CTMF, e.g., FMEA]</span>
-                    [Explain how you used it to anticipate problems and assess its effectiveness.]
-                </li>
-            </ul>
         </section>
+
     </main>
 
 </body>
