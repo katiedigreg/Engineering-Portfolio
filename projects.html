@@ -3,74 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katie | Projects & Experiences</title>
+    <title>Katie | Projects</title>
     <style>
+        /* LUXURY CAR AESTHETIC */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            background-color: #050505;
+            color: #d1d1d1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
         nav {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 20px;
-            margin-bottom: 40px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 25px;
+            margin-bottom: 60px;
             display: flex;
-            gap: 20px;
+            gap: 40px;
+            justify-content: center;
         }
         nav a {
             text-decoration: none;
-            color: #0056b3;
-            font-weight: 600;
-            font-size: 1.1rem;
+            color: #777;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            transition: color 0.4s ease;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #ffffff;
+        }
+        h1, h2, h3 {
+            color: #ffffff;
+            font-weight: 200;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 50px;
         }
         h1 {
             font-size: 2.5rem;
-            color: #1a1a1a;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            margin-top: 0;
+            letter-spacing: 6px;
         }
         h2 {
-            font-size: 1.8rem;
-            color: #1a1a1a;
-            margin-top: 50px;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 10px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #222;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
         }
         h3 {
-            font-size: 1.3rem;
-            color: #0056b3;
-            margin-top: 25px;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            margin-top: 40px;
+        }
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+            color: #999;
         }
         .annotation-box {
-            background-color: #f0f7ff;
-            border-left: 4px solid #0056b3;
-            padding: 15px 20px;
-            margin: 20px 0;
+            border-left: 1px solid #555;
+            padding-left: 30px;
+            margin: 40px 0;
             font-style: italic;
-            color: #444;
+            font-weight: 300;
+            font-size: 1.05rem;
+            color: #aaa;
         }
         .ctmf-list {
             list-style-type: none;
             padding: 0;
+            margin-top: 30px;
         }
         .ctmf-list li {
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 6px;
+            border-top: 1px solid #1a1a1a;
+            padding: 40px 0;
+            margin-bottom: 0;
         }
         .ctmf-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #1a1a1a;
+            color: #fff;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -78,13 +99,13 @@
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="position.html">Position Statement</a>
+        <a href="position.html">Position</a>
         <a href="projects.html">Projects</a>
         <a href="references.html">References</a>
     </nav>
 
     <main>
-        <h1>Design Experiences</h1>
+        <h1>Projects</h1>
         <p>This section documents my primary engineering design activities since September 2025. For each project, I have detailed the context, summarized the outcomes, and evaluated the specific Concepts, Tools, Models, and Frameworks (CTMFs) that guided my team's process.</p>
 
         <section>
@@ -97,7 +118,7 @@
             <h3>Project Summary</h3>
             <p>[Insert your one-page summary content here. Describe the problem, the stakeholders, what your team did, and the final proposed design. Make sure a reader who knows nothing about the project can understand it!]</p>
 
-            <h3>CTMFs Utilized & Assessed</h3>
+            <h3>CTMFs Assessed</h3>
             <ul class="ctmf-list">
                 <li>
                     <span class="ctmf-title">1. [Name of CTMF, e.g., Stakeholder Mapping]</span>
@@ -115,7 +136,7 @@
         </section>
 
         <section>
-            <h2>CIV102: Bridge Design Project</h2>
+            <h2>CIV102: Bridge Design</h2>
             
             <div class="annotation-box">
                 <strong>Context Annotation:</strong> [Write 2-3 sentences explaining the CIV102 project. E.g., This project required intense technical modeling and balancing strict constraints. It taught me how to justify decisions using mathematical models rather than intuition.]
@@ -124,14 +145,14 @@
             <h3>Project Summary</h3>
             <p>[Insert your summary of the bridge project here. Mention the constraints, your structural choices, the testing process, and the final failure load/efficiency.]</p>
 
-            <h3>CTMFs Utilized & Assessed</h3>
+            <h3>CTMFs Assessed</h3>
             <ul class="ctmf-list">
                 <li>
-                    <span class="ctmf-title">1. [Name of CTMF, e.g., Mathematical Modeling / MatLab]</span>
+                    <span class="ctmf-title">1. [Name of CTMF, e.g., Mathematical Modeling]</span>
                     [Explain how you used it to predict failure and assess its effectiveness.]
                 </li>
                 <li>
-                    <span class="ctmf-title">2. [Name of CTMF, e.g., Prototyping / Physical Testing]</span>
+                    <span class="ctmf-title">2. [Name of CTMF, e.g., Prototyping]</span>
                     [Explain your physical building process and how the model compared to reality.]
                 </li>
                 <li>
@@ -142,7 +163,7 @@
         </section>
 
         <section>
-            <h2>Praxis II: [Insert RFP/Project Title Here]</h2>
+            <h2>Praxis II: [Insert RFP Title]</h2>
             
             <div class="annotation-box">
                 <strong>Context Annotation:</strong> [Write 2-3 sentences explaining this project. E.g., This project required the most deliberate application of my design philosophy. We had to navigate a complex RFP, requiring constant communication and active structuring of disorder.]
@@ -151,10 +172,10 @@
             <h3>Project Summary</h3>
             <p>[Insert your one-page summary content here. Describe the RFP, the detailed framing, the divergence process, and your final engineered solution.]</p>
 
-            <h3>CTMFs Utilized & Assessed</h3>
+            <h3>CTMFs Assessed</h3>
             <ul class="ctmf-list">
                 <li>
-                    <span class="ctmf-title">1. [Name of CTMF, e.g., Requirements & Metrics (R&M) Framework]</span>
+                    <span class="ctmf-title">1. [Name of CTMF, e.g., R&M Framework]</span>
                     [Explain how you used it to structure decisions and assess its effectiveness.]
                 </li>
                 <li>
@@ -162,7 +183,7 @@
                     [Explain how you used it to converge on a solution and assess its effectiveness.]
                 </li>
                 <li>
-                    <span class="ctmf-title">3. [Name of CTMF, e.g., FMEA (Failure Mode and Effects Analysis)]</span>
+                    <span class="ctmf-title">3. [Name of CTMF, e.g., FMEA]</span>
                     [Explain how you used it to anticipate problems and assess its effectiveness.]
                 </li>
             </ul>
