@@ -8,11 +8,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
 
         :root {
-            --bg-color: #fcfbfb; /* Clean, soft pearl */
-            --text-main: #2b3a42; /* Deep slate/charcoal - academic and strong */
-            --text-light: #5c6b73; /* Muted slate for secondary text */
-            --accent-rose: #b88b8e; /* Sophisticated dusty rose */
-            --accent-line: #e3dcdb; /* Soft academic divider */
+            --bg-color: #fcfbfb;
+            --text-main: #2b3a42;
+            --text-light: #5c6b73;
+            --accent-rose: #b88b8e;
+            --accent-line: #e3dcdb;
             --card-bg: #ffffff;
         }
 
@@ -105,14 +105,14 @@
             border-bottom: 1px solid var(--accent-line);
             padding-bottom: 15px;
             margin-bottom: 30px;
-            margin-top: 50px;
+            margin-top: 60px;
         }
         h3 {
             font-family: 'Lora', serif;
             font-size: 1.3rem;
             color: var(--accent-rose);
             margin-bottom: 15px;
-            margin-top: 30px;
+            margin-top: 40px;
             font-style: italic;
         }
         p {
@@ -137,6 +137,35 @@
             margin: 0;
             line-height: 1.6;
         }
+        .annotation-box {
+            background-color: rgba(184, 139, 142, 0.05);
+            border: 1px solid var(--accent-line);
+            border-radius: 4px;
+            padding: 20px 25px;
+            margin: 30px 0;
+            font-size: 1.05rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        .highlight-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 25px;
+        }
+        .highlight-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .highlight-list li::before {
+            content: "•";
+            color: var(--accent-rose);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
     </style>
 </head>
 <body>
@@ -156,32 +185,68 @@
 
     <main>
         <h1>Position Statement</h1>
-        
-        <div class="quote-block">
-            <p>"When my team needs a moment to ground ourselves during a match, my coach calls a timeout. During the timeout, motion pauses. We breathe. We refocus. Intention replaces panic. I approach engineering design through this same lens."</p>
-        </div>
 
         <section>
-            <h2>Introduction</h2>
-            <p>Hello, my name is Katie. I am incredibly grateful for the privilege of playing on the UofT women's varsity volleyball team. Competitive athletics has placed me in high-pressure situations where resilience, focus, and trust are constantly tested.</p>
-            <p>Problems are not solved by rushing towards solutions. Meaningful design requires us to pause, reflect, reframe, and then act. Just as timeouts are essential to regaining control in a game, reflection is essential in navigating engineering design. Design is not linear; it is an iterative process, requiring moments of stepping back in order to move forward with purpose.</p>
+            <p>My name is Katie Di Gregorio. I am a first-year Engineering Science student at the University of Toronto, and I have had the privilege of playing on the varsity women's volleyball team. My whole life, my goal has been quite simple: to make a positive difference in this world. I was never quite sure how I was going to do it, though. All I knew is that God has a bright future in store for me and that I am going to follow the path that He guides me along.</p>
+            
+            <p>In high school, I thought I could make this positive impact by becoming a doctor through one-on-one interactions. I demonstrated this determination by leading the SickKids BakeSale and my high school's Terry Fox Run as Student Council President. However, in grade 12, I realized that I was capable of making an impact on a large scale, and that engineering provided a platform to do so. My ultimate goal is to use the knowledge I gain from my undergrad to create large-scale biomedical products that help people around the world.</p>
+
+            <div class="quote-block">
+                <p>"In my original position statement, I used a volleyball timeout to explain my position on engineering design. But reflecting on that after completing Praxis II, I now want to change my analogy to model how I practice engineering design as an entire volleyball season."</p>
+            </div>
+
+            <p>I thought I knew what it meant to be an engineer before coming to UofT. I knew nothing about what it truly takes to build a design. I used to believe that as soon as I had an idea, I should make it into reality with very little planning. Through Praxis I and II, this perception has changed significantly. Although my core values of teamwork, communication, integrity, and courage have stayed the same, the way that I go about engineering design has evolved into a complete, non-linear process.</p>
         </section>
 
         <section>
-            <h2>The Timeout Philosophy</h2>
-            <p>Over my years of playing volleyball, my coaches have given me advice that translates directly into my engineering practice:</p>
-            
-            <h3>1. Do not fear failure. Stick to our system.</h3>
-            <p>In the game of volleyball, mistakes are inevitable. We miss serves, shank passes, and errors happen publicly. In these moments, my coach reminds us not to let the past point define the next one. I bring this mindset directly into engineering design. Because design is inherently iterative, a failed design is not a sign of incompetence, but an opportunity to learn. I value disciplined practice: testing assumptions, refining approaches, and committing to continuous improvement.</p>
+            <h2>A Volleyball Season</h2>
 
-            <h3>2. Be a great teammate. Constant Communication.</h3>
+            <h3>The Beginning... (Framing)</h3>
+            <p>At the beginning of a volleyball season, the possibilities and excitement are endless. This is when we establish our goals and start laying down our team norms. The foundation on which an entire season is built is incredibly important. This is similar to how I have learned that engineering design requires strong framing.</p>
+            <p>Small changes in the framing of a design completely change the scope. This was evident in our Praxis II project, where we consistently framed and reframed our design, significantly changing our path. Maintaining a requirement such as full automation can dramatically increase complexity, forcing deeper consideration of constraints and trade-offs. As a result, I prioritize early-stage research to ensure the problem is well understood before committing to solutions. I now recognize framing not as a preliminary step, but as one of the most critical parts of the entire design process.</p>
+
+            <h3>Practice (Preparation & Teamwork)</h3>
+            <p>Before stepping onto the court for a game, there is so much that happens behind the scenes. There are game plan meetings and practices all week. We scope out the other team's strengths and weaknesses. Just as I practice in preparation for games, before I start diverging, I do significant primary and secondary research to better understand the opportunity.</p>
+            
+            <div class="annotation-box">
+                "Be a great teammate." <br>— Mark Heese, Assistant Coach (Olympic Beach Volleyball Medalist)
+            </div>
+            
             <p>Being a part of my volleyball team requires constant communication and mutual trust on and off the court. Leadership is doing my part while supporting others in doing theirs. As engineering design requires strong teamwork and collaboration, these lessons shape how I work in design teams. I pay attention to group dynamics, address problems early, and create space for groupmates to openly contribute. Trust is not a byproduct of teamwork; it is a condition for it.</p>
 
-            <h3>3. Control the controllables.</h3>
-            <p>During a game, I cannot control the referees or the opponents. However, I can control being ready in the right position on defence. The same is true in engineering design. I cannot control stakeholder needs, unexpected constraints, or unforeseen failures. But I can control how I frame opportunities, test assumptions, and respond to feedback. When design work feels uncertain, I interpret that discomfort as a signal that the opportunity has not yet been fully understood—an invitation to pause, reflect, and reframe.</p>
+            <h3>The Game (Diverging & Representing)</h3>
+            <p>Before coming to UofT, I barely focused on planning. After Praxis I, I went to the other extreme and focused a bit too much on planning and less on doing. However, I now believe that there comes a point where you just have to jump in headfirst. During a game, you have to remember that "you are as ready as you need to be right now" (a quote painted on my locker room wall). This demonstrates the idea of diverging in engineering design. I start coming up with ideas, no matter how crazy.</p>
+            <p>During a game, we are constantly told to stick to our formula. Just as we have a game plan to follow, I use the NGOs, requirements, and evaluation criteria as my game plan when diverging. I have leaned into my creative side significantly, heavily relying on sketches and physical prototypes to act as my representing. Just like during a game, the time to think too hard is over, and I go straight into building.</p>
 
-            <h3>4. Believe. Be brave.</h3>
-            <p>Volleyball led me to discover my faith in God, particularly in moments of pressure where my team depended on me to perform. This perspective has reshaped how I engage in engineering design. Design is a long and uncertain process, and an excessive focus on outcomes can obscure learning along the way. My faith reminds me to value the journey, remain grateful for the opportunity to learn and create, and to persist without fear.</p>
+            <h3>The Timeout (Converging & Reflecting)</h3>
+            <p>Once a problem is framed, my process becomes highly iterative and action-oriented. Creating sketches and prototypes allows me to externalize ideas, identify flaws, and refine designs based on real feedback. In Praxis I, we translated user needs into measurable requirements and used tools like Pugh charts to compare concepts. These tools allowed us to make decisions based on evidence rather than intuition.</p>
+            <p>After converging on an idea, it is time to take a step back and reflect. Just as my coach calls a timeout to help us reground ourselves, I evaluate the design against the requirements. This often reveals a better way to do something, which takes me back to divergence. Stepping back in order to move forward.</p>
+
+            <div class="annotation-box">
+                "Don't let the past point define the next." & "Control the controllables." <br>— Kristine Drakich, Head Coach of UofT Women's Volleyball
+            </div>
+
+            <p>Mistakes are inevitable. A failed design is not a sign of incompetence, but an opportunity to learn. Furthermore, I cannot control stakeholder needs or unforeseen failures, but I can control how I frame opportunities and respond to feedback. When design work feels uncertain, I interpret that discomfort as a signal that the opportunity has not yet been fully understood—an invitation to pause, reflect, and reframe.</p>
+
+            <div class="annotation-box">
+                "Do not fear, for I am with you." — Isaiah 41:10
+            </div>
+            <p>Volleyball led me to discover my faith in God, particularly in moments of pressure. This has reshaped how I engage in design. Design is a long and uncertain process, and an excessive focus on outcomes can obscure learning. My faith reminds me to value the journey, remain grateful for the opportunity to learn, and to persist without fear.</p>
+
+            <h3>The End of a Season... (Iteration)</h3>
+            <p>Unfortunately, my team lost this season in the quarter-finals. But it's not over. After that heartbreaking weekend, we stood back up and got back to work on Monday. This is similar to the fact that engineering design is never really over. Your design can always be improved. There is always room to keep growing, which is why I am strongly considering continuing to work with Balmy Beach Day Care to create a functioning wristband applicator.</p>
+        </section>
+
+        <section>
+            <h2>My Philosophy & FDCR</h2>
+            <p>Although my approach aligns with the Framing, Diverging, Converging, and Representing (FDCR) model, I do not experience it as a strictly linear process. Instead, I move fluidly between stages. My process involves:</p>
+            <ul class="highlight-list">
+                <li>A strong emphasis on framing and reframing early on.</li>
+                <li>Less emphasis on initial diverging, moving to converge quicker.</li>
+                <li>Relying heavily on physical models and sketches to help visualize.</li>
+                <li>Evaluating a converged idea, taking a step back to diverge again, and reconverging as the process continues.</li>
+            </ul>
+            <p>Prototyping often reveals gaps in understanding that require reframing the problem altogether. This non-linearity reflects the reality of design, where progress is not always straightforward, and iteration is essential.</p>
         </section>
     </main>
 
