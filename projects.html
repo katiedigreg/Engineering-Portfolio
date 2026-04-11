@@ -4,7 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katie Di Gregorio | Projects</title>
-    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
+
+        :root {
+            --bg-color: #fcfbfb; /* Clean, soft pearl */
+            --text-main: #2b3a42; /* Deep slate/charcoal - academic and strong */
+            --text-light: #5c6b73; /* Muted slate for secondary text */
+            --accent-rose: #b88b8e; /* Sophisticated dusty rose */
+            --accent-line: #e3dcdb; /* Soft academic divider */
+            --card-bg: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Academic Header Layout */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 1px solid var(--accent-line);
+            padding-bottom: 25px;
+            margin-bottom: 60px;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+        }
+        
+        .site-branding {
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .site-branding {
+                text-align: left;
+            }
+        }
+        .brand-name {
+            font-family: 'Lora', serif;
+            font-size: 1.6rem;
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 4px;
+        }
+        .brand-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--accent-rose);
+        }
+
+        /* Academic Typography */
+        h1, h2 {
+            font-family: 'Lora', serif;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            margin-top: 0;
+            letter-spacing: 0.5px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--accent-line);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            margin-top: 60px;
+        }
+        h3 {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            color: var(--accent-rose);
+            margin-bottom: 15px;
+            margin-top: 40px;
+            font-style: italic;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--text-main);
+        }
+
+        /* Shared Styles for Content */
+        .annotation-box {
+            background-color: rgba(184, 139, 142, 0.05);
+            border: 1px solid var(--accent-line);
+            border-radius: 4px;
+            padding: 20px 25px;
+            margin: 30px 0;
+            font-size: 1.05rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        .ctmf-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 25px;
+        }
+        .ctmf-list li {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-line);
+            border-radius: 4px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+        .ctmf-title {
+            font-family: 'Lora', serif;
+            color: var(--accent-rose);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+    </style>
+</head>
 <body>
 
     <header>
@@ -25,7 +175,7 @@
         <p>This section documents my primary engineering design activities since September 2025. For each project, I have detailed the context, summarized the outcomes, and evaluated the specific Concepts, Tools, Models, and Frameworks (CTMFs) that guided my team's process.</p>
 
         <section>
-            <h2>Praxis I: [Insert Project Title]</h2>
+            <h2>Praxis I: [Insert Project Title Here]</h2>
             
             <div class="annotation-box">
                 <strong>Context Annotation:</strong> [Write 2-3 sentences explaining this project in the context of your overall development. E.g., This was my first exposure to open-ended engineering design. It challenged my assumption that problems are clearly defined and forced me to rely on my "Timeout" philosophy to pause and reframe the opportunity.]
@@ -36,15 +186,15 @@
             <h3>CTMFs Assessed</h3>
             <ul class="ctmf-list">
                 <li>
-                    <span class="ctmf-title">1. [Name of CTMF]</span>
+                    <span class="ctmf-title">1. [Name of CTMF, e.g., Stakeholder Mapping]</span>
                     [Explain how you used it, why you used it, and assess its effectiveness. Did it work? Would you use it again? Connect it back to your design philosophy if possible.]
                 </li>
                 <li>
-                    <span class="ctmf-title">2. [Name of CTMF]</span>
+                    <span class="ctmf-title">2. [Name of CTMF, e.g., Pairwise Comparison]</span>
                     [Explain how you used it, why you used it, and assess its effectiveness.]
                 </li>
                 <li>
-                    <span class="ctmf-title">3. [Name of CTMF]</span>
+                    <span class="ctmf-title">3. [Name of CTMF, e.g., Morphological Chart]</span>
                     [Explain how you used it, why you used it, and assess its effectiveness.]
                 </li>
             </ul>
@@ -62,15 +212,15 @@
             <h3>CTMFs Assessed</h3>
             <ul class="ctmf-list">
                 <li>
-                    <span class="ctmf-title">1. [Name of CTMF]</span>
+                    <span class="ctmf-title">1. [Name of CTMF, e.g., Mathematical Modeling]</span>
                     [Explain how you used it to predict failure and assess its effectiveness.]
                 </li>
                 <li>
-                    <span class="ctmf-title">2. [Name of CTMF]</span>
+                    <span class="ctmf-title">2. [Name of CTMF, e.g., Prototyping]</span>
                     [Explain your physical building process and how the model compared to reality.]
                 </li>
                 <li>
-                    <span class="ctmf-title">3. [Name of CTMF]</span>
+                    <span class="ctmf-title">3. [Name of CTMF, e.g., Factor of Safety]</span>
                     [Explain how you used this concept to manage risk and uncertainty in the design.]
                 </li>
             </ul>
@@ -88,15 +238,15 @@
             <h3>CTMFs Assessed</h3>
             <ul class="ctmf-list">
                 <li>
-                    <span class="ctmf-title">1. [Name of CTMF]</span>
+                    <span class="ctmf-title">1. [Name of CTMF, e.g., R&M Framework]</span>
                     [Explain how you used it to structure decisions and assess its effectiveness.]
                 </li>
                 <li>
-                    <span class="ctmf-title">2. [Name of CTMF]</span>
+                    <span class="ctmf-title">2. [Name of CTMF, e.g., Pugh Chart]</span>
                     [Explain how you used it to converge on a solution and assess its effectiveness.]
                 </li>
                 <li>
-                    <span class="ctmf-title">3. [Name of CTMF]</span>
+                    <span class="ctmf-title">3. [Name of CTMF, e.g., FMEA]</span>
                     [Explain how you used it to anticipate problems and assess its effectiveness.]
                 </li>
             </ul>
