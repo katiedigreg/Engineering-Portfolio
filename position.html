@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katie Di Gregorio | Position</title>
+    <title>Katie Di Gregorio | Position Statement</title>
     <style>
+        /* LUXURY ACADEMIC AESTHETIC - Slate & Rose */
         @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap');
 
         :root {
             --bg-color: #fcfbfb; /* Clean, soft pearl */
-            --text-main: #2b3a42; /* Deep slate/charcoal - academic and strong */
+            --text-main: #2b3a42; /* Deep slate/charcoal - authoritative */
             --text-light: #5c6b73; /* Muted slate for secondary text */
             --accent-rose: #b88b8e; /* Sophisticated dusty rose */
             --accent-line: #e3dcdb; /* Soft academic divider */
+            --charcoal-gap: #2b3a42; /* Deep charcoal for gaps & borders */
+            --shadow-rose: rgba(184, 139, 142, 0.15); /* Soft rose shadow for photos */
             --card-bg: #ffffff;
         }
 
@@ -123,7 +126,7 @@
 
         /* Shared Styles for Content */
         .quote-block {
-            background-color: #ffffff;
+            background-color: var(--card-bg);
             border-left: 3px solid var(--accent-rose);
             padding: 25px 30px;
             margin: 50px 0;
@@ -166,6 +169,54 @@
             font-size: 1.5rem;
             line-height: 1;
         }
+
+        /* Image Styling */
+        #katie-headshot {
+            max-width: 250px;
+            float: left;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            border: 2px solid var(--accent-rose);
+            box-shadow: 0 4px 15px var(--shadow-rose);
+            border-radius: 4px;
+        }
+
+        #experience-photos-container {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            margin: 40px 0;
+            clear: both;
+            border-top: 1px solid var(--charcoal-gap);
+            border-bottom: 1px solid var(--charcoal-gap);
+            padding: 20px 0;
+        }
+        #bakesale-image, #terryfox-image {
+            flex: 1;
+            max-width: calc(50% - 13px);
+            height: auto;
+            border: 2px solid var(--accent-rose);
+            box-shadow: 0 4px 15px var(--shadow-rose);
+            border-radius: 4px;
+            object-fit: contain;
+        }
+        @media (max-width: 600px) {
+            #katie-headshot {
+                float: none;
+                margin: 0 auto 15px auto;
+                display: block;
+            }
+            #experience-photos-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            #bakesale-image, #terryfox-image {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
         /* Summary of Positions Layout */
         .summary-intro {
             background-color: rgba(184, 139, 142, 0.05);
@@ -195,7 +246,7 @@
         .timeline-card {
             background-color: var(--card-bg);
             border: 1px solid var(--accent-line);
-            border-top: 4px solid var(--accent-rose); /* Distinct top border like the inspiration */
+            border-top: 4px solid var(--accent-rose); 
             padding: 30px 25px;
             border-radius: 4px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
@@ -286,6 +337,8 @@
         <h1>Position Statement</h1>
 
         <section>
+            <img src="headshot.jpg" alt="Portrait of Katie Di Gregorio" id="katie-headshot">
+            
             <p>My name is Katie Di Gregorio. I am a first-year Engineering Science student at the University of Toronto and a proud member of the varsity women's volleyball team. Since I was young, my goal has been remarkably simple: to make a positive difference in the world. While I wasn't always sure exactly how I would achieve this, I have always trusted that God has a bright future in store for me and that I will follow the path He guides me along.</p>
             
             <p>In high school, I envisioned making an impact through one-on-one patient care as a doctor, demonstrating my commitment to healthcare by leading initiatives like a SickKids Bake Sale and serving as Student Council President for our Terry Fox Run. However, in grade 12, my perspective broadened. I realized I could impact lives on a global scale, and engineering offered the platform to do so. My ultimate goal is to leverage my undergraduate education to develop large-scale biomedical products that improve lives worldwide.</p>
@@ -307,6 +360,11 @@
             <h3>Practice (Preparation & Teamwork)</h3>
             <p>Before stepping onto the court for a weekend game, hours of unseen preparation occur. We hold game-plan meetings, practice relentlessly, and analyze our opponents' strengths and weaknesses. Similarly, before I begin diverging in a design project, I conduct rigorous primary and secondary research to deeply understand the opportunity landscape.</p>
             
+            <div id="experience-photos-container">
+                <img src="bakesale.jpg" alt="Beaches Metro news article about SickKids BakeSale" id="bakesale-image">
+                <img src="terryfox.jpg" alt="Instagram post screenshot of Terry Fox Run" id="terryfox-image">
+            </div>
+            
             <div class="annotation-box">
                 "Be a great teammate." <br>— Mark Heese, Assistant Coach (Olympic Beach Volleyball Medalist)
             </div>
@@ -325,12 +383,12 @@
                 "Don't let the past point define the next." & "Control the controllables." <br>— Kristine Drakich, Head Coach of UofT Women's Volleyball
             </div>
 
-            <p>Mistakes will happen. A failed prototype is not incompetence; it is data. While I cannot control stakeholder shifts or unforeseen failures, I can control how I frame opportunities and respond to feedback.</p>
+            <p>Mistakes will happen. A failed prototype is not incompetence; it is data. While I cannot control stakeholder needs or unforeseen failures, I can control how I frame opportunities and respond to feedback.</p>
 
             <div class="annotation-box">
                 "Do not fear, for I am with you." — Isaiah 41:10
             </div>
-            <p>This resilience is deeply rooted in my faith. In high-pressure moments, my faith reminds me that design is a long, uncertain journey. Fixating solely on the final outcome obscures the learning process. I choose to value the journey, remain grateful for the opportunity to create, and persist without fear.</p>
+            <p>This resilience is deeply rooted in my faith. In high-pressure moments, my faith reminds me that design is a long, uncertain journey. Fixating solely on the final outcome obscures the learning process. I choose to value the journey, remain grateful for the opportunity to learn and create, and to persist without fear.</p>
 
             <h3>The Off-Season (Iteration & Continuous Growth)</h3>
             <p>This year, my team’s season ended in a heartbreaking quarter-final loss. But on Monday, we were back in the gym. The season may have ended, but the work hadn't. Engineering design is much the same: it is never truly finished. A design can always be optimized, refined, and expanded. There is always room to grow, which is why I am eager to continue developing a functioning wristband applicator for Balmy Beach Day Care.</p>
@@ -346,6 +404,46 @@
                 <li>Converging on decisions based on metrics, then taking a step back to evaluate and often diverge again.</li>
             </ul>
             <p>Prototyping often uncovers gaps that require reframing the problem entirely. This non-linearity reflects the reality of engineering design: progress is rarely a straight line, and intentional iteration is the key to meaningful impact.</p>
+        </section>
+
+        <section id="summary-of-positions">
+            <h2>Summary Of Positions</h2>
+            
+            <div class="summary-intro">
+                <p>My perspective on engineering design has evolved significantly over this past year. I moved from an outcome-fixated approach, to an over-planned approach, and finally to a balanced, non-linear practice. The timeline below tracks this progression.</p>
+            </div>
+
+            <div class="timeline-grid">
+                <div class="timeline-card">
+                    <span class="timeline-date">Before EngSci</span>
+                    <h4>Outcome-Focused & Intuitive</h4>
+                    <p>I believed engineering design was simply the act of making products that impact the world. I was entirely focused on the final outcome and unaware of the rigorous process required to get there. I relied heavily on my own intuition rather than data, jumped to conclusions, and rushed into execution without a structured plan.</p>
+                </div>
+
+                <div class="timeline-card" style="border-top-color: var(--text-light);">
+                    <span class="timeline-date">January</span>
+                    <h4>Over-planned & Hesitant</h4>
+                    <p>After my first semester, I swung to the opposite extreme. I realized design was highly iterative and required extensive framing. However, I prioritized planning and divergence to a fault. I often hesitated to make concrete design decisions, feeling paralyzed by the belief that more research was always needed before acting.</p>
+                </div>
+
+                <div class="timeline-card" style="border-top-color: var(--text-main);">
+                    <span class="timeline-date">Now</span>
+                    <h4>Balanced & Non-Linear</h4>
+                    <p>I now understand engineering design as a fluid process that integrates Framing, Diverging, Converging, and Representing. I have struck a balance: rigorous framing is essential, but at a certain point, I must boldly jump in and build. I am comfortable converging on an idea knowing I can always loop back to divergence.</p>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card stayed-same">
+                    <h4>What stayed the same</h4>
+                    <p>My core motivation. My ultimate goal—to make a meaningful, positive difference in the world—has never wavered. Working closely with communities during Praxis II grounded me in this fundamental "why," reminding me that the purpose of this complex process is human impact.</p>
+                </div>
+
+                <div class="comparison-card changed">
+                    <h4>What changed</h4>
+                    <p>My understanding of the <em>how</em>. I transitioned from relying on unchecked intuition, to being paralyzed by research, to confidently navigating a complex, structured, yet highly adaptable design process to turn that initial desire for impact into a justified reality.</p>
+                </div>
+            </div>
         </section>
     </main>
 
