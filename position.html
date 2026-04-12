@@ -104,11 +104,11 @@
             letter-spacing: 0.5px;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             border-bottom: 1px solid var(--accent-line);
             padding-bottom: 15px;
             margin-bottom: 30px;
-            margin-top: 60px;
+            margin-top: 70px;
         }
         h3 {
             font-family: 'Lora', serif;
@@ -125,21 +125,23 @@
         }
 
         /* Shared Styles for Content */
-        .quote-block {
-            background-color: var(--card-bg);
-            border-left: 3px solid var(--accent-rose);
-            padding: 25px 30px;
-            margin: 50px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        .thesis-statement {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            padding: 35px 40px;
+            border-radius: 6px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(43, 58, 66, 0.15);
         }
-        .quote-block p {
+        .thesis-statement p {
             font-family: 'Lora', serif;
-            font-style: italic;
-            font-size: 1.25rem;
-            color: var(--text-main);
+            font-size: 1.35rem;
+            color: var(--bg-color);
             margin: 0;
             line-height: 1.6;
         }
+
         .annotation-box {
             background-color: rgba(184, 139, 142, 0.05);
             border: 1px solid var(--accent-line);
@@ -183,16 +185,14 @@
 
         #experience-photos-container {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             justify-content: center;
-            margin: 40px 0 10px 0;
+            margin: 40px auto;
+            max-width: 650px;
             clear: both;
-            border-top: 1px solid var(--charcoal-gap);
-            padding-top: 20px;
         }
         .experience-image-wrapper {
             flex: 1;
-            max-width: calc(50% - 13px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -216,7 +216,7 @@
         
         .experience-container-bottom-border {
             border-bottom: 1px solid var(--charcoal-gap);
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             width: 100%;
         }
 
@@ -229,29 +229,10 @@
             #experience-photos-container {
                 flex-direction: column;
                 align-items: center;
-                gap: 25px;
-            }
-            .experience-image-wrapper {
-                max-width: 100%;
-                width: 100%;
             }
         }
 
         /* Summary of Positions Layout */
-        .summary-intro {
-            background-color: rgba(184, 139, 142, 0.05);
-            border: 1px solid var(--accent-line);
-            padding: 30px;
-            margin: 60px 0 40px 0;
-            border-radius: 4px;
-            text-align: center;
-        }
-        .summary-intro p {
-            margin: 0;
-            font-size: 1.1rem;
-            color: var(--text-main);
-        }
-        
         .timeline-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -363,23 +344,6 @@
             
             <p>In high school, I envisioned making an impact through one-on-one patient care as a doctor, demonstrating my commitment to healthcare by leading initiatives like a SickKids Bake Sale and serving as Student Council President for our Terry Fox Run. However, in grade 12, my perspective broadened. I realized I could impact lives on a global scale, and engineering offered the platform to do so. My ultimate goal is to leverage my undergraduate education to develop large-scale biomedical products that improve lives worldwide.</p>
 
-            <p>Before coming to UofT, I mistakenly believed that engineering simply meant turning an idea into reality with minimal planning. Through Praxis I and II, this perception has been completely transformed. While my core values—teamwork, communication, integrity, and courage—remain steadfast, my approach to engineering design has evolved into a comprehensive, non-linear process.</p>
-
-            <div class="quote-block">
-                <p>"In my original position statement, I used a volleyball timeout as a metaphor for design. Now, having completed Praxis II, I see engineering design not just as a momentary pause, but as an entire volleyball season."</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>A Volleyball Season</h2>
-
-            <h3>The Pre-Season (Framing)</h3>
-            <p>At the start of a volleyball season, excitement is high, possibilities are endless, and we establish our team norms and goals. The foundation we build here dictates the success of the entire season. I now understand that engineering design demands the same rigorous foundation, which begins with strong framing.</p>
-            <p>Even minor adjustments to the framing of a problem can drastically alter a project's scope. For instance, in our Praxis II project, maintaining a requirement like "full automation" significantly increased complexity and forced us to carefully weigh constraints and trade-offs. Because of this, I prioritize extensive early-stage research to thoroughly understand a problem before committing to a solution. I no longer view framing as a preliminary step, but as the most critical, ongoing phase of the design process.</p>
-
-            <h3>Practice (Preparation & Teamwork)</h3>
-            <p>Before stepping onto the court for a weekend game, hours of unseen preparation occur. We hold game-plan meetings, practice relentlessly, and analyze our opponents' strengths and weaknesses. Similarly, before I begin diverging in a design project, I conduct rigorous primary and secondary research to deeply understand the opportunity landscape.</p>
-            
             <div id="experience-photos-container">
                 <div class="experience-image-wrapper">
                     <img src="bakesale.jpg" alt="Beaches Metro news article about SickKids BakeSale">
@@ -391,6 +355,30 @@
                 </div>
             </div>
             <div class="experience-container-bottom-border"></div>
+        </section>
+
+        <section>
+            <h2>The Evolution of My Position</h2>
+            <p>Before coming to UofT, I mistakenly believed that engineering simply meant turning an idea into reality with minimal planning. I was entirely focused on the final outcome and unaware of the rigorous process required to get there. I relied heavily on my own intuition rather than data, jumped to conclusions, and rushed into execution without a structured plan.</p>
+            
+            <p>Through Praxis I, this perception was completely transformed—but I swung to the opposite extreme. I realized design was highly iterative and required extensive framing, but I prioritized planning and divergence to a fault. I often hesitated to make concrete design decisions, feeling paralyzed by the belief that more research was always needed before acting.</p>
+            
+            <p>Now, having completed Praxis II, I have struck a balance. I understand engineering design as a fluid, non-linear process. While my core values—teamwork, communication, integrity, and courage—have remained steadfast, my approach has evolved into a structured, highly analytical practice.</p>
+        </section>
+
+        <section>
+            <h2>Current Practice: A Volleyball Season</h2>
+            
+            <div class="thesis-statement">
+                <p>In my original position statement, I used a volleyball timeout as a metaphor for design. Now, I see engineering design not just as a momentary pause, but as an entire volleyball season.</p>
+            </div>
+
+            <h3>The Pre-Season (Framing)</h3>
+            <p>At the start of a volleyball season, excitement is high, possibilities are endless, and we establish our team norms and goals. The foundation we build here dictates the success of the entire season. I now understand that engineering design demands the same rigorous foundation, which begins with strong framing.</p>
+            <p>Even minor adjustments to the framing of a problem can drastically alter a project's scope. For instance, in our Praxis II project, maintaining a requirement like "full automation" significantly increased complexity and forced us to carefully weigh constraints and trade-offs. Because of this, I prioritize extensive early-stage research to thoroughly understand a problem before committing to a solution. I no longer view framing as a preliminary step, but as the most critical, ongoing phase of the design process.</p>
+
+            <h3>Practice (Preparation & Teamwork)</h3>
+            <p>Before stepping onto the court for a weekend game, hours of unseen preparation occur. We hold game-plan meetings, practice relentlessly, and analyze our opponents' strengths and weaknesses. Similarly, before I begin diverging in a design project, I conduct rigorous primary and secondary research to deeply understand the opportunity landscape.</p>
             
             <div class="annotation-box">
                 "Be a great teammate." <br>— Mark Heese, Assistant Coach (Olympic Beach Volleyball Medalist) [11]
@@ -422,7 +410,7 @@
         </section>
 
         <section>
-            <h2>My Philosophy & FDCR</h2>
+            <h2>Evaluation & FDCR Alignment</h2>
             <p>My "Volleyball Season" philosophy maps closely to the Framing, Diverging, Converging, and Representing (FDCR) model, but I experience it as a highly fluid, non-linear cycle. My process involves:</p>
             <ul class="highlight-list">
                 <li>Investing heavily in framing and reframing upfront.</li>
@@ -436,10 +424,6 @@
         <section id="summary-of-positions">
             <h2>Summary Of Positions</h2>
             
-            <div class="summary-intro">
-                <p>My perspective on engineering design has evolved significantly over this past year. I moved from an outcome-fixated approach, to an over-planned approach, and finally to a balanced, non-linear practice. The timeline below tracks this progression.</p>
-            </div>
-
             <div class="timeline-grid">
                 <div class="timeline-card">
                     <span class="timeline-date">Before EngSci</span>
