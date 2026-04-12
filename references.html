@@ -16,6 +16,7 @@
             --accent-line: #e3dcdb;
             --card-bg: #ffffff;
             --shadow-rose: rgba(184, 139, 142, 0.15);
+            --link-color: #8c6b70; /* Slightly darker rose for links */
         }
 
         body {
@@ -109,25 +110,39 @@
             margin-top: 60px;
             color: var(--text-main);
         }
+        p {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
 
-        /* Reference List Formatting */
+        /* Reference List Formatting - APA Hanging Indent */
         .reference-list {
             padding-left: 0;
             list-style-type: none;
             margin-top: 30px;
         }
         .reference-list li {
-            margin-bottom: 20px;
-            padding-left: 40px;
-            text-indent: -40px; /* Standard hanging indent */
+            margin-bottom: 25px;
+            padding-left: 45px;
+            text-indent: -45px; /* Creates the standard APA hanging indent */
             font-size: 1.05rem;
             color: var(--text-main);
             line-height: 1.6;
         }
         .reference-list li strong {
-            color: var(--accent-rose);
+            color: var(--text-main);
             font-weight: 700;
-            margin-right: 5px;
+            margin-right: 8px;
+        }
+        .reference-list a {
+            color: var(--link-color);
+            text-decoration: none;
+            word-break: break-all;
+            transition: color 0.3s ease;
+        }
+        .reference-list a:hover {
+            color: var(--text-main);
+            text-decoration: underline;
         }
 
         /* Source Extracts Styling */
@@ -227,22 +242,27 @@
         <section>
             <h2>Reference List</h2>
             <ul class="reference-list">
-                <li><strong>[1]</strong> Praxis Teaching Team, "ESC101 & ESC102 Course Materials and Lectures," University of Toronto, 2025-2026.</li>
-                <li><strong>[2]</strong> K. Di Gregorio, "Personal Engineering Design Philosophy & Position Reflections," Personal Archive, 2026.</li>
-                <li><strong>[3]</strong> K. Di Gregorio, et al., "Recommended Design to Prevent Bending When Retrieving a Hand-Held Broom," ESC101 Praxis I Design Report, Dec. 2025.</li>
-                <li><strong>[4]</strong> K. Di Gregorio, "Process Analysis: Lotus Blossom & Toulmin's Structure," ESC101 Praxis I Submission, 2025.</li>
-                <li><strong>[5]</strong> K. Di Gregorio, "Final Exam Process Analysis: Evaluating Credibility," ESC101 Praxis I Submission, 2025.</li>
-                <li><strong>[6]</strong> K. Di Gregorio, et al., "Booklet of our Design Process: Automated Wristband Applicator," ESC102 Praxis II Project Documentation, 2026.</li>
-                <li><strong>[7]</strong> M. Michalko, <em>Thinkertoys: A Handbook of Creative-Thinking Techniques</em>. Berkeley, CA: Ten Speed Press, 2006.</li>
-                <li><strong>[8]</strong> W. G. Perry, <em>Forms of Intellectual and Ethical Development in the College Years: A Scheme</em>. New York: Holt, Rinehart, and Winston, 1970.</li>
-                <li><strong>[9]</strong> S. Toulmin, <em>The Uses of Argument</em>. Cambridge, UK: Cambridge University Press, 1958.</li>
-                <li><strong>[10]</strong> California State University, Chico, "Evaluating Information – Applying the CRAAP Test," Meriam Library, 2010.</li>
+                <li><strong>[1]</strong> Beaches Metro. ([Date]). <em>[Insert Title of SickKids Article]</em>. Beaches Metro News. [Insert URL if available]</li>
                 
-                <li><strong>[11]</strong> M. Heese, Personal Communication, [Insert Date Here].</li>
-                <li><strong>[12]</strong> K. Drakich, Personal Communication, [Insert Date Here].</li>
-                <li><strong>[13]</strong> <em>The Bible</em>, [Insert Version Here, e.g., New International Version].</li>
-                <li><strong>[14]</strong> "[Insert Title of Article Here]," <em>Beaches Metro</em>, [Insert Date Here].</li>
-                <li><strong>[15]</strong> @[Insert Your Instagram Handle], "[Insert first few words of caption...]," Instagram, [Insert Date Here].</li>
+                <li><strong>[2]</strong> Malvern SAC. ([Date]). <em>[Insert Terry Fox Run Post Caption or Title]</em> [Instagram post]. Instagram. [Insert URL if available]</li>
+                
+                <li><strong>[3]</strong> Heese, M., & Drakich, K. (Personal communication, [Insert Year]). <em>Note: As per APA guidelines, personal coaching communications are cited in-text within the position statement, but are included here for portfolio tracking purposes.</em></li>
+                
+                <li><strong>[4]</strong> <em>The Bible</em> ([Insert Version, e.g., New International Version]). ([Insert Year of Publication]). [Insert Publisher, e.g., Zondervan].</li>
+                
+                <li><strong>[5]</strong> Di Gregorio, K., Torkos, J., & Gaspari, A. (2025). <em>Recommended design to prevent bending when retrieving a hand-held broom</em> [Unpublished design report]. Praxis I, University of Toronto.</li>
+                
+                <li><strong>[6]</strong> Ladder Association. (n.d.). <em>Safe use of ladders and stepladders: A brief guide</em>. Retrieved from <a href="https://ladderassociation.org.uk/wp-content/uploads/2021/07/LA455-Safe-Use-of-Ladders-and-Stepladders-A-brief-guide.pdf" target="_blank">https://ladderassociation.org.uk/wp-content/uploads/2021/07/LA455-Safe-Use-of-Ladders-and-Stepladders-A-brief-guide.pdf</a></li>
+                
+                <li><strong>[7]</strong> University of Florida Design Lab. (n.d.). <em>EML2322L – Friction coefficients</em>. Retrieved from <a href="https://web.mae.ufl.edu/designlab/Class%20Projects/Background%20Information/Friction%20coefficients.htm" target="_blank">https://web.mae.ufl.edu/designlab/Class%20Projects/Background%20Information/Friction%20coefficients.htm</a></li>
+                
+                <li><strong>[8]</strong> Canadian Centre for Occupational Health and Safety. (n.d.). <em>Hand tool ergonomics - Tool design</em>. Retrieved from <a href="https://www.ccohs.ca/oshanswers/ergonomics/handtools/tooldesign.html" target="_blank">https://www.ccohs.ca/oshanswers/ergonomics/handtools/tooldesign.html</a></li>
+                
+                <li><strong>[9]</strong> Praxis Teaching Team. (2025). <em>ESC101: Praxis I course materials and lectures</em> [Course materials]. University of Toronto.</li>
+                
+                <li><strong>[10]</strong> Praxis Teaching Team. (2026). <em>ESC102: Praxis II course materials and lectures</em> [Course materials]. University of Toronto.</li>
+                
+                <li><strong>[11]</strong> Di Gregorio, K., Vercelli, B., Barathagan, H., & Luo, J. (2026). <em>Automated wristband applicator</em> [Request for Proposal documentation]. Praxis II, University of Toronto.</li>
             </ul>
         </section>
 
@@ -254,7 +274,7 @@
                 
                 <div class="extract-card">
                     <div class="extract-quote">
-                        <h4>Source [4]: Process Analysis - Toulmin's Structure</h4>
+                        <h4>Source [9]: Process Analysis - Toulmin's Structure</h4>
                         <p>"This observation helped me learn that engineering decisions require justification, not just intuition. I realized that even when something is intuitively reasonable, it is not actually valid in a design context unless I can explain why it is reasonable and how I know."</p>
                     </div>
                     <div class="extract-annotation">
@@ -265,18 +285,18 @@
 
                 <div class="extract-card">
                     <div class="extract-quote">
-                        <h4>Source [5]: Final Exam Process Analysis - CRAAP Test</h4>
+                        <h4>Source [9]: Final Exam Process Analysis - CRAAP Test</h4>
                         <p>"This experience reshaped how I understand the design process by highlighting that credibility is not inherent—credibility must be earned, even when I am the source... This comparison taught me that part of the design process is determining which source—whether external or internal—provides the most defensible evidence, and that 'more credible' is often more important than 'perfect.'"</p>
                     </div>
                     <div class="extract-annotation">
                         <h4>Portfolio Annotation</h4>
-                        <p>This extract validates my third Praxis I CTMF. It demonstrates my deep reflection on the nature of authority in engineering. Rather than blindly accepting poor secondary data or blindly trusting my own calculations, I learned to actively weigh the methodological transparency of primary research against the deficits of external sources.</p>
+                        <p>This extract validates my Praxis I CTMF on evidence evaluation. It demonstrates my deep reflection on the nature of authority in engineering. Rather than blindly accepting poor secondary data or blindly trusting my own calculations, I learned to actively weigh the methodological transparency of primary research against the deficits of external sources.</p>
                     </div>
                 </div>
 
                 <div class="extract-card">
                     <div class="extract-quote">
-                        <h4>Source [6]: Praxis II Design Booklet</h4>
+                        <h4>Source [11]: Praxis II Design Booklet</h4>
                         <p>"Our results showed that the system can apply a wristband in approximately 10.33 seconds, which is significantly faster than the current manual average of 22.7 seconds. For force and safety, we tested the applied pressure using a scale-based setup. The measured pressures ranged from approximately 3.24 to 7.25 kPa, all safely below the 10 kPa limit."</p>
                     </div>
                     <div class="extract-annotation">
@@ -287,7 +307,7 @@
 
                 <div class="extract-card">
                     <div class="extract-quote">
-                        <h4>Source [6]: Praxis II Design Booklet</h4>
+                        <h4>Source [11]: Praxis II Design Booklet</h4>
                         <p>"Finally, after presenting our concept to the daycare, they confirmed that if the device is safe and reduces application time, they are open to implementing it. They also expressed interest in receiving the final design if it is fully usable."</p>
                     </div>
                     <div class="extract-annotation">
