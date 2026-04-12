@@ -319,6 +319,16 @@
         .prototype-gallery img:hover {
             transform: scale(1.05);
         }
+
+        /* Final Design Description Block */
+        .final-design-block {
+            background-color: rgba(184, 139, 142, 0.04);
+            border: 1px solid var(--accent-line);
+            border-radius: 6px;
+            padding: 35px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
     </style>
 </head>
 <body>
@@ -561,11 +571,18 @@
                     </div>
                 </div>
 
-                <h3>Converging & Verification</h3>
-                <p>We utilized a Measurement Matrix to evaluate the subsystems. Our top design, the "Snap Buddy," reduced the application time from 22.7 seconds to a verified <strong>10.33 seconds</strong> [18]. Crucially, we tested the applied pressure using a scale-based setup, measuring between <strong>3.24 to 7.25 kPa</strong>—well below our maximum safety threshold of 10 kPa [18]. Upon presenting this verified data to the daycare, they confirmed that if the high-fidelity prototype maintains this safety and efficiency, they are open to implementing it.</p>
+                <h3>Converging & System Integration</h3>
+                <p>Due to the complexity of the device, converging on a single holistic design immediately was impossible. Instead, we utilized <strong>Pairwise Comparisons</strong> to evaluate the mechanisms at the sub-function level (e.g., comparing feeding mechanisms against each other, wrapping mechanisms against each other). By systematically locking in the highest-scoring components for each function—based on our strict criteria for child safety and application speed—we combined these optimized parts to engineer our final holistic solution.</p>
                 
-                <img src="final-cad.jpg" alt="CAD model of final wristband applicator" class="project-image" style="max-width: 600px; display: block; margin: 15px auto;">
-                <div class="image-caption">Fig 12: Final CAD representation of the automated wristband applicator [18].</div>
+                <div class="final-design-block">
+                    <h3 style="margin-top: 0; border-bottom: none; padding-bottom: 0;">The Final Design: The Snap Buddy</h3>
+                    <p>The Snap Buddy is a fully automated wristband applicator designed to streamline daycare field trip preparations. The device operates through a sequential, electromechanical process: first, it smoothly feeds the existing daycare wristband through a guided track. Next, padded, C-shaped mechanical jaws safely wrap the band around the child's wrist. A motorized tensioning system ensures a secure fit while keeping the applied pressure strictly between 3.24 and 7.25 kPa, guaranteeing child comfort. Finally, an enclosed, guarded cutting mechanism trims the excess band, completely eliminating the safety hazard of open scissors.</p>
+                    
+                    <img src="final-cad.jpg" alt="CAD model of final wristband applicator" class="project-image" style="max-width: 600px; display: block; margin: 20px auto 10px auto;">
+                    <div class="image-caption">Fig 12: Final CAD representation of the Automated Wristband Applicator [18].</div>
+                </div>
+
+                <p>Crucially, our physical proxy tests verified that the Snap Buddy reduced the application time from 22.7 seconds down to <strong>10.33 seconds</strong> [18]. Upon presenting this verified data to the daycare, they confirmed that if the high-fidelity prototype maintains this safety and efficiency, they are open to implementing it.</p>
 
                 <div class="reflection-box">
                     <h3>Influence of My Position & What I Learned</h3>
