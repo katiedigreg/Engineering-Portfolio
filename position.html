@@ -87,7 +87,7 @@
             font-weight: 400;
             transition: color 0.3s ease;
         }
-        nav a:hover {
+        nav a:hover, nav a.active {
             color: var(--accent-rose);
         }
 
@@ -185,21 +185,41 @@
             display: flex;
             gap: 25px;
             justify-content: center;
-            margin: 40px 0;
+            margin: 40px 0 10px 0;
             clear: both;
             border-top: 1px solid var(--charcoal-gap);
-            border-bottom: 1px solid var(--charcoal-gap);
-            padding: 20px 0;
+            padding-top: 20px;
         }
-        #bakesale-image, #terryfox-image {
+        .experience-image-wrapper {
             flex: 1;
             max-width: calc(50% - 13px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .experience-image-wrapper img {
+            width: 100%;
             height: auto;
             border: 2px solid var(--accent-rose);
             box-shadow: 0 4px 15px var(--shadow-rose);
             border-radius: 4px;
             object-fit: contain;
+            margin-bottom: 10px;
         }
+        .image-caption {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            font-style: italic;
+            line-height: 1.4;
+        }
+        
+        .experience-container-bottom-border {
+            border-bottom: 1px solid var(--charcoal-gap);
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
         @media (max-width: 600px) {
             #katie-headshot {
                 float: none;
@@ -209,9 +229,9 @@
             #experience-photos-container {
                 flex-direction: column;
                 align-items: center;
-                gap: 15px;
+                gap: 25px;
             }
-            #bakesale-image, #terryfox-image {
+            .experience-image-wrapper {
                 max-width: 100%;
                 width: 100%;
             }
@@ -327,7 +347,7 @@
         </div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="position.html">Position</a>
+            <a href="position.html" class="active">Position</a>
             <a href="projects.html">Projects</a>
             <a href="references.html">References</a>
         </nav>
@@ -361,12 +381,19 @@
             <p>Before stepping onto the court for a weekend game, hours of unseen preparation occur. We hold game-plan meetings, practice relentlessly, and analyze our opponents' strengths and weaknesses. Similarly, before I begin diverging in a design project, I conduct rigorous primary and secondary research to deeply understand the opportunity landscape.</p>
             
             <div id="experience-photos-container">
-                <img src="bakesale.jpg" alt="Beaches Metro news article about SickKids BakeSale" id="bakesale-image">
-                <img src="terryfox.jpg" alt="Instagram post screenshot of Terry Fox Run" id="terryfox-image">
+                <div class="experience-image-wrapper">
+                    <img src="bakesale.jpg" alt="Beaches Metro news article about SickKids BakeSale">
+                    <div class="image-caption">Coverage of the SickKids Bake Sale I organized [14].</div>
+                </div>
+                <div class="experience-image-wrapper">
+                    <img src="terryfox.jpg" alt="Instagram post screenshot of Terry Fox Run">
+                    <div class="image-caption">Leading my high school's Terry Fox Run [15].</div>
+                </div>
             </div>
+            <div class="experience-container-bottom-border"></div>
             
             <div class="annotation-box">
-                "Be a great teammate." <br>— Mark Heese, Assistant Coach (Olympic Beach Volleyball Medalist)
+                "Be a great teammate." <br>— Mark Heese, Assistant Coach (Olympic Beach Volleyball Medalist) [11]
             </div>
             
             <p>None of this preparation matters without a unified front. Volleyball demands constant communication and mutual trust; leadership means doing my part while empowering others to do theirs. I apply this directly to my design teams. I actively monitor group dynamics, address conflicts early, and foster an environment where everyone feels comfortable contributing. Trust is not a byproduct of teamwork; it is a prerequisite for it.</p>
@@ -380,13 +407,13 @@
             <p>After converging on an idea, it is crucial to step back. Just as my coach calls a timeout to reground the team, I pause to evaluate our design against the established requirements. This reflection often reveals better pathways, sending me back into divergence. It is the practice of stepping back in order to move forward.</p>
 
             <div class="annotation-box">
-                "Don't let the past point define the next." & "Control the controllables." <br>— Kristine Drakich, Head Coach of UofT Women's Volleyball
+                "Don't let the past point define the next." & "Control the controllables." <br>— Kristine Drakich, Head Coach of UofT Women's Volleyball [12]
             </div>
 
             <p>Mistakes will happen. A failed prototype is not incompetence; it is data. While I cannot control stakeholder needs or unforeseen failures, I can control how I frame opportunities and respond to feedback.</p>
 
             <div class="annotation-box">
-                "Do not fear, for I am with you." — Isaiah 41:10
+                "Do not fear, for I am with you." — Isaiah 41:10 [13]
             </div>
             <p>This resilience is deeply rooted in my faith. In high-pressure moments, my faith reminds me that design is a long, uncertain journey. Fixating solely on the final outcome obscures the learning process. I choose to value the journey, remain grateful for the opportunity to learn and create, and to persist without fear.</p>
 
@@ -445,7 +472,8 @@
                 </div>
             </div>
         </section>
-        </main>
+
+    </main>
 
 </body>
 </html>
