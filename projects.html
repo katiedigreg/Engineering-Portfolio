@@ -654,7 +654,7 @@
                         <img src="balmy-beach-logo.png" alt="Balmy Beach Day Care Logo" class="project-image" style="max-width: 200px; display: block; border: none; box-shadow: none; margin: 10px auto 20px auto; object-fit: contain;">
                         
                         <h3>Background & Opportunity</h3>
-                        <p>Balmy Beach Community Day Care serves 166 children in a fast-paced environment. During high-stress transitions like field trips, staff must manage rolling arrivals while maintaining strict 1:13 supervision ratios. Currently, staff must manually wrap, fasten, and cut wristbands for each child. This manual application takes an average of 22.7 seconds per child, creating severe bottlenecks, cognitive overload, and potential safety risks (using scissors near active kids) [18]. <strong>The opportunity is to improve the wristband application process within the daycare environment</strong>, ensuring a safer and more efficient transition for both staff and children.</p>
+                        <p>Balmy Beach Community Day Care serves 166 children in a fast-paced environment. During high-stress transitions like field trips, staff must manage rolling arrivals while maintaining strict 1:13 supervision ratios. Currently, staff must manually wrap, fasten, and cut wristbands for each child. This manual application takes an average of 22.7 seconds per child, creating severe bottlenecks, cognitive overload, and potential safety risks (using scissors near active kids) [11]. <strong>The opportunity is to improve the wristband application process within the daycare environment</strong>, ensuring a safer and more efficient transition for both staff and children.</p>
                     </div>
                     <div>
                         <h3>Reframing & Key Requirements</h3>
@@ -662,8 +662,8 @@
                         <ul>
                             <li><strong>Full Automation:</strong> The device must automatically wrap, fasten, and cut the wristband.</li>
                             <li><strong>Wristband Compatibility:</strong> The design must utilize the daycare's existing adjustable snap-closure ID wristbands [11].</li>
-                            <li><strong>Application Efficiency:</strong> Must significantly reduce the current 22.7-second application time [18].</li>
-                            <li><strong>Force Safety:</strong> The applied pressure on the child's wrist must remain safely below the 10 kPa threshold [18].</li>
+                            <li><strong>Application Efficiency:</strong> Must significantly reduce the current 22.7-second application time [11].</li>
+                            <li><strong>Force Safety:</strong> The applied pressure on the child's wrist must remain safely below the 10 kPa threshold [11].</li>
                         </ul>
                         
                         <img src="wristband-dimensions.png" alt="Dimensions of the standard snap-closure wristband" class="project-image" style="max-width: 350px; display: block; margin: 20px auto 10px auto; border: 1px solid var(--accent-line); border-radius: 4px; box-shadow: none;">
@@ -672,7 +672,7 @@
                 </div>
 
                 <h3>Divergence & Rapid Prototyping</h3>
-                <p>Because the automation process was so complex, we broke the process down into sub-functions and diverged widely. To communicate these concepts clearly, we created "Pokémon Cards" outlining the stats, pros, and cons of our leading subsystem concepts [18].</p>
+                <p>Because the automation process was so complex, we broke the process down into sub-functions and diverged widely. To communicate these concepts clearly, we created "Pokémon Cards" outlining the stats, pros, and cons of our leading subsystem concepts [11].</p>
                 
                 <div class="pokemon-grid">
                     <div>
@@ -693,7 +693,7 @@
                     </div>
                 </div>
 
-                <p>To break through our initial analysis paralysis, we relied heavily on rapid physical prototyping. By immediately translating our ideas from paper into low-fidelity cardboard models, we were able to physically visualize the mechanisms, test constraints, and quickly iterate on our designs without committing to detailed CAD too early.</p>
+                <p>To break through our initial analysis paralysis, we relied heavily on rapid physical prototyping. By immediately translating our ideas from paper into low-fidelity cardboard models, we were able to physically visualize the mechanisms, test constraints, and quickly iterate on our designs without committing to detailed CAD too early [11].</p>
                 
                 <div class="prototype-gallery">
                     <img src="sketch-1.jpg" alt="Mechanism sketch">
@@ -704,7 +704,7 @@
                 <div class="image-caption">Fig 14: Rapid sketches and low-fidelity cardboard prototypes used during divergence to visualize mechanism limitations [11].</div>
 
                 <h3>Converging & System Integration</h3>
-                <p>Due to the complexity of the device, converging on a single holistic design immediately was impossible. Instead, we utilized <strong>Pairwise Comparisons</strong> to evaluate the mechanisms at the sub-function level (e.g., comparing feeding mechanisms against each other, wrapping mechanisms against each other). By systematically locking in the highest-scoring components for each function—based on our strict criteria for child safety and application speed—we combined these optimized parts to engineer our final holistic solution.</p>
+                <p>Due to the complexity of the device, converging on a single holistic design immediately was impossible. Instead, we utilized <strong>Pairwise Comparisons</strong> to evaluate the mechanisms at the sub-function level (e.g., comparing feeding mechanisms against each other, wrapping mechanisms against each other). By systematically locking in the highest-scoring components for each function—based on our strict criteria for child safety and application speed—we combined these optimized parts to engineer our final holistic solution [11].</p>
                 
                 <div class="final-design-block">
                     <h3 style="margin-top: 0; border-bottom: none; padding-bottom: 0;">The Final Design: The Snap Buddy</h3>
@@ -716,7 +716,7 @@
                             <img src="component-1.jpg" alt="Friction Rollers" class="component-image">
                             <div class="component-text">
                                 <h4>Friction Rollers</h4>
-                                <p>Powered by the DC motors, these friction rollers respectively feed the bracelet through the mechanism [18].</p>
+                                <p>Powered by the DC motors, these friction rollers respectively feed the bracelet through the mechanism [11].</p>
                             </div>
                         </div>
                         <div class="component-item">
@@ -724,7 +724,7 @@
                             <img src="component-2.jpg" alt="Thin Film Pressure Sensor" class="component-image">
                             <div class="component-text">
                                 <h4>Thin Film Pressure Sensor</h4>
-                                <p>A sensor whose resistance changes with applied force. The Arduino reads this as a 0-1023 signal, which can be calibrated to estimate force [18].</p>
+                                <p>A sensor whose resistance changes with applied force. The Arduino reads this as a 0-1023 signal, which can be calibrated to estimate force [11].</p>
                             </div>
                         </div>
                         <div class="component-item">
@@ -732,7 +732,7 @@
                             <img src="component-3.jpg" alt="Buttoning Mechanism" class="component-image">
                             <div class="component-text">
                                 <h4>Buttoning Mechanism</h4>
-                                <p>A servo bends the bracelet tab into place, followed by a small piston that secures the button [18].</p>
+                                <p>A servo bends the bracelet tab into place, followed by a small piston that secures the button [11].</p>
                             </div>
                         </div>
                         <div class="component-item">
@@ -740,29 +740,50 @@
                             <img src="component-4.jpg" alt="Cutting Mechanism" class="component-image">
                             <div class="component-text">
                                 <h4>Cutting Mechanism</h4>
-                                <p>A linear actuator raises a razor blade that pushes the bracelet tail towards the button, then cuts the excess bracelet after the buttoning mechanism completes [18].</p>
+                                <p>A linear actuator raises a razor blade that pushes the bracelet tail towards the button, then cuts the excess bracelet after the buttoning mechanism completes [11].</p>
                             </div>
                         </div>
                     </div>
 
                     <img src="final-cad.jpg" alt="CAD model of final wristband applicator" class="project-image" style="max-width: 600px; display: block; margin: 30px auto 10px auto;">
-                    <div class="image-caption">Fig 15: Final CAD representation of the Automated Wristband Applicator outlining the 4-stage mechanism [18].</div>
+                    <div class="image-caption">Fig 15: Final CAD representation of the Automated Wristband Applicator outlining the 4-stage mechanism [11].</div>
                 </div>
 
-                <p>Crucially, our physical proxy tests verified that the Snap Buddy reduced the application time from 22.7 seconds down to <strong>10.33 seconds</strong> [18]. Upon presenting this verified data to the daycare, they confirmed that if the high-fidelity prototype maintains this safety and efficiency, they are open to implementing it.</p>
+                <p>Crucially, our physical proxy tests verified that the Snap Buddy reduced the application time from 22.7 seconds down to <strong>10.33 seconds</strong> [11]. Upon presenting this verified data to the daycare, they confirmed that if the high-fidelity prototype maintains this safety and efficiency, they are open to implementing it.</p>
 
                 <div class="reflection-box">
                     <h3>Influence of My Position & What I Learned</h3>
                     <p>After Praxis I, I swung to an extreme: I prioritized planning so much that I hesitated to make concrete design decisions. I spent an immense amount of time researching and diverging on paper.</p>
-                    <p>During Praxis II, I realized that theory only goes so far. I had to force myself to embrace the "Game" phase of my philosophy: I stopped over-planning and started sketching and building low-fidelity physical prototypes. This was a breakthrough. The physical prototypes immediately revealed real-world limitations that no amount of research could have shown me. It sent me back to the divergence phase, but this time with grounded, physical evidence. I learned that doing <em>is</em> a form of planning, and you must keep the stakeholder at the forefront of every iteration [18].</p>
+                    <p>During Praxis II, I realized that theory only goes so far. I had to force myself to embrace the "Game" phase of my philosophy: I stopped over-planning and started sketching and building low-fidelity physical prototypes. This was a breakthrough. The physical prototypes immediately revealed real-world limitations that no amount of research could have shown me. It sent me back to the divergence phase, but this time with grounded, physical evidence. I learned that doing <em>is</em> a form of planning, and you must keep the stakeholder at the forefront of every iteration [11].</p>
                 </div>
             </div>
 
             <h3>CTMFs Assessed (Praxis II)</h3>
             <ul class="ctmf-list">
+
+                <li>
+                    <span class="ctmf-title">1. Empathy & Contextual Inquiry: Deep Stakeholder Analysis</span>
+                    <span class="ctmf-subtitle">Description & Application</span>
+                    <p>Stakeholder analysis in engineering design extends beyond merely listing individuals affected by a product; it requires active, empathetic engagement to uncover lived experiences, operational pain points, and latent needs. Rather than relying solely on secondary research, we anchored our Framing phase in direct contextual inquiry. For our Request for Proposal (RFP), we traveled directly to the community to engage with Balmy Beach Day Care staff [11]. Through extended conversations, follow-up emails, and Zoom calls with our primary contact, Christine, we identified that manual wristband application was a severe operational bottleneck. We also interviewed parents to understand their safety expectations [11].</p>
+                    
+                    <img src="daycare-classroom.jpg" alt="Preschool classroom at Balmy Beach Day Care" class="project-image" style="max-width: 600px; display: block; margin: 20px auto 10px auto;">
+                    <div class="image-caption">Fig 16: The 'Creative Area' inside the Balmy Beach Day Care preschool classroom, observed during our site visit [11].</div>
+                    
+                    <p>Interestingly, during these discussions, Christine initially stated she did not need the device to be portable. However, as engineers, we critically evaluated the transit environment and the reality of managing 166 children, leading us to deliberately override that constraint. We ultimately reframed the entire scope of the project to center strictly on the child's experience, ensuring the device alleviated the staff's burden without compromising mobility or safety [11].</p>
+
+                    <span class="ctmf-subtitle">Critique & Effectiveness</span>
+                    <p>Primary research and stakeholder analysis form the absolute core of effective engineering design. Engaging directly with the daycare was incredibly effective because it prevented us from designing in a theoretical vacuum. It taught us that we, as designers, are also stakeholders—our personal investment and passion directly impact the quality of the solution. However, this process also highlighted a critical limitation: stakeholders do not always know exactly what they need (such as the portability requirement). Effective analysis requires listening empathetically but designing critically [11].</p>
+
+                    <span class="ctmf-subtitle">Impact on My Position in Context</span>
+                    <p>After the heavily metric-driven, theoretical convergence of Praxis I, I felt somewhat disconnected from the human element of engineering. However, I actually attended Balmy Beach Day Care as a child, which gave me a profound personal connection to this project. Physically visiting the daycare and seeing the classrooms served as a powerful reminder of my core motivation: engineering design is ultimately about making a tangible difference. It re-inspired me. In the context of my "Volleyball Season" philosophy, this deep community engagement acted as the ultimate "Pre-Season" framing activity, ensuring our entire season was grounded in real human impact rather than abstract academic requirements.</p>
+
+                    <div class="future-self-box">
+                        <strong>Note to Future Self:</strong> Always conduct in-person primary research whenever possible; never design exclusively from behind a desk. Furthermore, remember that while you must listen to stakeholders, you must also use your engineering judgment to identify their latent needs. Only commit to designing solutions that hold true value and ignite your passion.
+                    </div>
+                </li>
                 
                 <li>
-                    <span class="ctmf-title">1. Managing Complexity: The Morphological Chart</span>
+                    <span class="ctmf-title">2. Managing Complexity: The Morphological Chart</span>
                     <span class="ctmf-subtitle">Description & Application</span>
                     <p>Because automating the wristband application involved multiple sequential steps (feeding, wrapping, fastening, cutting), attempting to brainstorm complete, all-in-one solutions was overwhelming. We utilized a Morphological Chart to deconstruct the device into discrete sub-functions [11]. We then diverged on each sub-function independently.</p>
                     
@@ -775,7 +796,7 @@
                 </li>
 
                 <li>
-                    <span class="ctmf-title">2. Granular Convergence: Function-Level Pairwise Comparison</span>
+                    <span class="ctmf-title">3. Granular Convergence: Function-Level Pairwise Comparison</span>
                     <span class="ctmf-subtitle">Description & Application</span>
                     <p>Due to the massive number of permutations generated by our Morph Chart, converging on an entire device at once was impossible. Instead, we adapted the Pairwise Comparison tool to evaluate the mechanisms at the <em>sub-function</em> level (e.g., comparing feeding mechanisms against each other, rather than whole devices against each other) [11].</p>
 
@@ -784,7 +805,7 @@
                 </li>
 
                 <li>
-                    <span class="ctmf-title">3. Breaking Paralysis: Low-Fidelity Physical Prototyping</span>
+                    <span class="ctmf-title">4. Breaking Paralysis: Low-Fidelity Physical Prototyping</span>
                     <span class="ctmf-subtitle">Description & Application</span>
                     <p>Representation is a core component of FDCR. In Praxis II, I relied heavily on rapid physical prototyping using cardboard, string, and tape, alongside extensive sketching, to test our fastening mechanisms [11]. (See Fig 14 in the Divergence section for visual evidence).</p>
                     
@@ -793,21 +814,12 @@
                 </li>
 
                 <li>
-                    <span class="ctmf-title">4. Quantitative Verification: The Measurement Matrix</span>
+                    <span class="ctmf-title">5. Quantitative Verification: The Measurement Matrix</span>
                     <span class="ctmf-subtitle">Description & Application</span>
-                    <p>To ensure our design was viable, we built a comprehensive Measurement Matrix. We conducted physical proxy tests to determine that our "Snap Buddy" concept applied the wristband in 10.33 seconds (a 54% reduction in time) [18]. Furthermore, we built a scale-based testing setup to measure applied pressure, verifying our device operated between 3.24 and 7.25 kPa (safely below the 10 kPa limit) [18].</p>
+                    <p>To ensure our design was viable, we built a comprehensive Measurement Matrix. We conducted physical proxy tests to determine that our "Snap Buddy" concept applied the wristband in 10.33 seconds (a 54% reduction in time) [11]. Furthermore, we built a scale-based testing setup to measure applied pressure, verifying our device operated between 3.24 and 7.25 kPa (safely below the 10 kPa limit) [11].</p>
 
                     <span class="ctmf-subtitle">Impact on My Position</span>
                     <p>This confirmed the lesson I learned in Praxis I: intuition must be backed by data. Proving mathematically that our device would not harm a child gave us the absolute confidence required to proceed with the design and present it to our stakeholders.</p>
-                </li>
-
-                <li>
-                    <span class="ctmf-title">5. Empathy & Validation: Active Stakeholder Engagement</span>
-                    <span class="ctmf-subtitle">Description & Application</span>
-                    <p>Engineering design does not exist in a vacuum. The final framework we applied was the Stakeholder Feedback Loop. We took our conceptual data and presented it directly to the staff at Balmy Beach Day Care to validate our assumptions. They confirmed our metric thresholds, stating that if the device is safe and reduces application time to our proposed numbers, they would actively implement it [18].</p>
-
-                    <span class="ctmf-subtitle">Impact on My Position</span>
-                    <p>This was the most rewarding part of the process. It brought my entire engineering journey full circle back to my core motivation: making a positive difference. Engaging with the community reminded me that we aren't just hitting metrics for a grade; we are structuring disorder to improve the daily lives of real people.</p>
                 </li>
 
             </ul>
