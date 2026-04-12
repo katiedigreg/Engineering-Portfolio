@@ -299,27 +299,32 @@
             box-shadow: 0 4px 10px var(--shadow-rose);
         }
 
-        /* Prototype Gallery - RESIZED BIGGER & CONTAINED */
+        /* Prototype Gallery - SIZED TO FIT SIDE BY SIDE */
         .prototype-gallery {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap; /* Forces them to stay in a row */
             margin: 30px 0 10px 0;
         }
         .prototype-gallery img {
-            width: 200px; /* Bigger squares */
-            height: 200px;
-            object-fit: contain; /* Prevents cutting off, adds letterboxing if needed */
+            width: 145px; /* Smaller to fit 4 across cleanly */
+            height: 145px;
+            object-fit: contain; 
             border-radius: 6px;
             border: 1px solid var(--accent-line);
-            background-color: #ffffff; /* Clean bg for containment */
+            background-color: #ffffff;
             padding: 5px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
             transition: transform 0.2s ease;
         }
         .prototype-gallery img:hover {
             transform: scale(1.05);
+        }
+        @media (max-width: 650px) {
+            .prototype-gallery {
+                flex-wrap: wrap; /* Allows wrapping only on very small screens */
+            }
         }
 
         /* Final Design Description Block & Components */
@@ -493,7 +498,7 @@
                     <p>The Lotus Blossom Technique is a structured brainstorming tool used to expand a central concept outward into multiple sub-concepts. We used this as our primary divergence tool to generate a vast, uninhibited array of solutions for the HHB splartz without overanalyzing feasibility (e.g., generating ideas ranging from magnetic stands to "robots that follow the broom") [16].</p>
                     
                     <span class="ctmf-subtitle">Application</span>
-                    <p>I analyzed my experience using this tool through the lens of the Perry Model of Cognitive Development [13]. This model tracks intellectual growth from <em>Dualism</em> (believing there is only one absolute right answer) through <em>Multiplicity</em> and into <em>Relativism</em> (understanding that knowledge and Contextual and multiple valid solutions exist).</p>
+                    <p>I analyzed my experience using this tool through the lens of the Perry Model of Cognitive Development [13]. This model tracks intellectual growth from <em>Dualism</em> (believing there is only one absolute right answer) through <em>Multiplicity</em> and into <em>Relativism</em> (understanding that knowledge is contextual and multiple valid solutions exist).</p>
                     
                     <img src="lotus-blossom.jpg" alt="Whiteboard image of the Lotus Blossom brainstorming technique" class="project-image" style="max-width: 350px; display: block; margin: 0 auto;">
                     <div class="image-caption">Fig 5: Lotus Blossom brainstorming technique mapped on a whiteboard during initial divergence [16].</div>
@@ -600,9 +605,9 @@
             <div class="one-pager-container">
                 <div class="op-grid-2">
                     <div>
-                        <img src="balmy-beach-logo.png" alt="Balmy Beach Day Care Logo" class="project-image" style="max-width: 200px; display: block; border: none; box-shadow: none; margin: 0 auto 20px auto; object-fit: contain;">
-                        
                         <h3>Background & Opportunity</h3>
+                        <img src="balmy-beach-logo.png" alt="Balmy Beach Day Care Logo" class="project-image" style="max-width: 200px; display: block; border: none; box-shadow: none; margin: 10px auto 20px auto; object-fit: contain;">
+                        
                         <p>Balmy Beach Community Day Care serves 166 children in a fast-paced environment. During high-stress transitions like field trips, staff must manage rolling arrivals while maintaining strict 1:13 supervision ratios. Currently, staff must manually wrap, fasten, and cut wristbands for each child. This manual application takes an average of 22.7 seconds per child, creating severe bottlenecks, cognitive overload, and potential safety risks (using scissors near active kids) [18]. <strong>The opportunity is to improve the wristband application process within the daycare environment</strong>, ensuring a safer and more efficient transition for both staff and children.</p>
                     </div>
                     <div>
