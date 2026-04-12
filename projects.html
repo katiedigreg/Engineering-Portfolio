@@ -339,13 +339,24 @@
         
         .component-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 20px;
             background-color: var(--card-bg);
             padding: 20px;
             border-radius: 6px;
             border: 1px solid var(--accent-line);
             box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .component-image {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            border-radius: 4px;
+            border: 1px solid var(--accent-line);
+            background-color: #fff;
+            padding: 5px;
+            flex-shrink: 0;
         }
         
         .component-number {
@@ -374,6 +385,13 @@
             font-size: 0.95rem;
             color: var(--text-light);
             line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .component-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -595,7 +613,7 @@
                     </div>
                 </div>
 
-                <h3>Divergence & The "Pokémon Cards"</h3>
+                <h3>Divergence & Rapid Prototyping</h3>
                 <p>Because the automation process was so complex, we broke the process down into sub-functions and diverged widely. To communicate these concepts clearly, we created "Pokémon Cards" outlining the stats, pros, and cons of our leading subsystem concepts [18].</p>
                 
                 <div class="pokemon-grid">
@@ -617,6 +635,16 @@
                     </div>
                 </div>
 
+                <p>To break through our initial analysis paralysis, we relied heavily on rapid physical prototyping. By immediately translating our ideas from paper into low-fidelity cardboard models, we were able to physically visualize the mechanisms, test constraints, and quickly iterate on our designs.</p>
+                
+                <div class="prototype-gallery">
+                    <img src="sketch-1.jpg" alt="Mechanism sketch">
+                    <img src="sketch-2.jpg" alt="Mechanism sketch">
+                    <img src="cardboard-1.jpg" alt="Cardboard prototype">
+                    <img src="cardboard-2.jpg" alt="Cardboard prototype">
+                </div>
+                <div class="image-caption">Fig 11.5: Rapid sketches and low-fidelity cardboard prototypes used during divergence [11].</div>
+
                 <h3>Converging & System Integration</h3>
                 <p>Due to the complexity of the device, converging on a single holistic design immediately was impossible. Instead, we utilized <strong>Pairwise Comparisons</strong> to evaluate the mechanisms at the sub-function level (e.g., comparing feeding mechanisms against each other, wrapping mechanisms against each other). By systematically locking in the highest-scoring components for each function—based on our strict criteria for child safety and application speed—we combined these optimized parts to engineer our final holistic solution.</p>
                 
@@ -627,6 +655,7 @@
                     <div class="component-list">
                         <div class="component-item">
                             <div class="component-number">1</div>
+                            <img src="component-1.jpg" alt="Friction Rollers" class="component-image">
                             <div class="component-text">
                                 <h4>Friction Rollers</h4>
                                 <p>Powered by the DC motors, these friction rollers respectively feed the bracelet through the mechanism [18].</p>
@@ -634,6 +663,7 @@
                         </div>
                         <div class="component-item">
                             <div class="component-number">2</div>
+                            <img src="component-2.jpg" alt="Thin Film Pressure Sensor" class="component-image">
                             <div class="component-text">
                                 <h4>Thin Film Pressure Sensor</h4>
                                 <p>A sensor whose resistance changes with applied force. The Arduino reads this as a 0-1023 signal, which can be calibrated to estimate force [18].</p>
@@ -641,6 +671,7 @@
                         </div>
                         <div class="component-item">
                             <div class="component-number">3</div>
+                            <img src="component-3.jpg" alt="Buttoning Mechanism" class="component-image">
                             <div class="component-text">
                                 <h4>Buttoning Mechanism</h4>
                                 <p>A servo bends the bracelet tab into place, followed by a small piston that secures the button [18].</p>
@@ -648,6 +679,7 @@
                         </div>
                         <div class="component-item">
                             <div class="component-number">4</div>
+                            <img src="component-4.jpg" alt="Cutting Mechanism" class="component-image">
                             <div class="component-text">
                                 <h4>Cutting Mechanism</h4>
                                 <p>A linear actuator raises a razor blade that pushes the bracelet tail towards the button, then cuts the excess bracelet after the buttoning mechanism completes [18].</p>
@@ -696,15 +728,7 @@
                 <li>
                     <span class="ctmf-title">3. Breaking Paralysis: Low-Fidelity Physical Prototyping</span>
                     <span class="ctmf-subtitle">Description & Application</span>
-                    <p>Representation is a core component of FDCR. In Praxis II, I relied heavily on rapid physical prototyping using cardboard, string, and tape, alongside extensive sketching, to test our fastening mechanisms [11].</p>
-
-                    <div class="prototype-gallery">
-                        <img src="sketch-1.jpg" alt="Mechanism sketch">
-                        <img src="sketch-2.jpg" alt="Mechanism sketch">
-                        <img src="cardboard-1.jpg" alt="Cardboard prototype">
-                        <img src="cardboard-2.jpg" alt="Cardboard prototype">
-                    </div>
-                    <div class="image-caption">Fig 13: A collection of rapid sketches and low-fidelity cardboard prototypes used to quickly visualize and test mechanism limitations [11].</div>
+                    <p>Representation is a core component of FDCR. In Praxis II, I relied heavily on rapid physical prototyping using cardboard, string, and tape, alongside extensive sketching, to test our fastening mechanisms [11]. (See Fig 11.5 above for visual examples).</p>
                     
                     <span class="ctmf-subtitle">Critique & Effectiveness</span>
                     <p>This was arguably the most impactful "tool" I used this semester. While I had been stuck reading research papers, spending 20 minutes building a physical model immediately highlighted friction points and alignment issues that were invisible on paper [11]. It proved that in engineering design, failing fast in the physical world is more efficient than succeeding slowly in theory.</p>
