@@ -279,6 +279,46 @@
         .concept-card .image-caption {
             margin-bottom: 10px;
         }
+
+        /* 2x2 Grid for Pokemon Cards */
+        .pokemon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        @media (max-width: 600px) {
+            .pokemon-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .pokemon-grid img {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid var(--accent-line);
+            box-shadow: 0 4px 10px var(--shadow-rose);
+        }
+
+        /* Prototype Small Gallery */
+        .prototype-gallery {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .prototype-gallery img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid var(--accent-line);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+        .prototype-gallery img:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -408,15 +448,15 @@
                     <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; margin: 30px 0;">
                         <div>
                             <img src="toulmin-table-1.jpg" alt="Toulmin Goal description" class="project-image" style="margin-bottom: 5px;">
-                            <div class="image-caption">Fig 2.1: Toulmin's structure applied to define the overarching Safety Goal [5].</div>
+                            <div class="image-caption">Fig 7.1: Toulmin's structure applied to define the overarching Safety Goal [5].</div>
                         </div>
                         <div>
                             <img src="toulmin-table-2.jpg" alt="Toulmin Objective description" class="project-image" style="margin-bottom: 5px;">
-                            <div class="image-caption">Fig 2.2: Toulmin's structure applied to establish the Objective metric [5].</div>
+                            <div class="image-caption">Fig 7.2: Toulmin's structure applied to establish the Objective metric [5].</div>
                         </div>
                         <div>
                             <img src="toulmin-table-3.jpg" alt="Toulmin Justification description" class="project-image" style="margin-bottom: 5px;">
-                            <div class="image-caption">Fig 2.3: Toulmin's structure applied to justify the Evidence supporting the claim [5].</div>
+                            <div class="image-caption">Fig 7.3: Toulmin's structure applied to justify the Evidence supporting the claim [5].</div>
                         </div>
                     </div>
 
@@ -485,22 +525,47 @@
                 <div class="op-grid-2">
                     <div>
                         <h3>Background & Opportunity</h3>
-                        <p>Balmy Beach Community Day Care serves 166 children in a fast-paced environment. During high-stress transitions like field trips, staff must manually wrap, fasten, and cut wristbands for each child while managing the group [18]. This manual application takes an average of 22.7 seconds per child, creating severe bottlenecks, cognitive overload, and potential safety risks (using scissors near active kids) [18].</p>
+                        <p>Balmy Beach Community Day Care serves 166 children in a fast-paced environment. During high-stress transitions like field trips, staff must manage rolling arrivals while maintaining strict 1:13 supervision ratios. Currently, staff must manually wrap, fasten, and cut wristbands for each child. This manual application takes an average of 22.7 seconds per child, creating severe bottlenecks, cognitive overload, and potential safety risks (using scissors near active kids) [18]. <strong>The opportunity is to improve the wristband application process within the daycare environment</strong>, ensuring a safer and more efficient transition for both staff and children.</p>
                     </div>
                     <div>
-                        <h3>Reframing with Constraints</h3>
-                        <p>We spent significant time framing the opportunity. We made the deliberate, challenging decision to center the design strictly around the child's experience and to make the device fully automated <em>without</em> changing the actual wristbands the daycare already uses [11]. This self-imposed constraint made the design exceptionally complex, but ensured high adoption viability.</p>
+                        <h3>Reframing & Key Requirements</h3>
+                        <p>We made the deliberate, challenging decision to center the design strictly around the child's experience and to make the device fully automated <em>without</em> changing the actual wristbands the daycare already uses [11]. Our key requirements included:</p>
+                        <ul>
+                            <li><strong>Full Automation:</strong> The device must automatically wrap, fasten, and cut the wristband.</li>
+                            <li><strong>Wristband Compatibility:</strong> The design must utilize the daycare's existing adjustable snap-closure ID wristbands [11].</li>
+                            <li><strong>Application Efficiency:</strong> Must significantly reduce the current 22.7-second application time [18].</li>
+                            <li><strong>Force Safety:</strong> The applied pressure on the child's wrist must remain safely below the 10 kPa threshold [18].</li>
+                        </ul>
                     </div>
                 </div>
 
                 <h3>Divergence & The "Pokémon Cards"</h3>
-                <p>Because the automation process was so complex, we could not simply diverge on "whole" devices. We broke the process down into sub-functions and diverged widely. To communicate these concepts clearly, we created "Pokémon Cards" outlining the stats, pros, and cons of our leading subsystem concepts (e.g., Snap Buddy, Air Puff, Ziptron, Tentablob, SafeSnip) [18].</p>
+                <p>Because the automation process was so complex, we broke the process down into sub-functions and diverged widely. To communicate these concepts clearly, we created "Pokémon Cards" outlining the stats, pros, and cons of our leading subsystem concepts [18].</p>
                 
-                <img src="pokemon-cards.jpg" alt="Visual representation of our design concepts displayed like trading cards" class="project-image">
-                <div class="image-caption">Fig 11: Concept generation "Pokémon Cards" used to evaluate the capabilities of different application mechanisms [18].</div>
+                <div class="pokemon-grid">
+                    <div>
+                        <img src="pokemon-card-1.jpg" alt="Pokemon Concept Card 1">
+                        <div class="image-caption">Fig 11.1: Concept Generation Card 1</div>
+                    </div>
+                    <div>
+                        <img src="pokemon-card-2.jpg" alt="Pokemon Concept Card 2">
+                        <div class="image-caption">Fig 11.2: Concept Generation Card 2</div>
+                    </div>
+                    <div>
+                        <img src="pokemon-card-3.jpg" alt="Pokemon Concept Card 3">
+                        <div class="image-caption">Fig 11.3: Concept Generation Card 3</div>
+                    </div>
+                    <div>
+                        <img src="pokemon-card-4.jpg" alt="Pokemon Concept Card 4">
+                        <div class="image-caption">Fig 11.4: Concept Generation Card 4</div>
+                    </div>
+                </div>
 
                 <h3>Converging & Verification</h3>
                 <p>We utilized a Measurement Matrix to evaluate the subsystems. Our top design, the "Snap Buddy," reduced the application time from 22.7 seconds to a verified <strong>10.33 seconds</strong> [18]. Crucially, we tested the applied pressure using a scale-based setup, measuring between <strong>3.24 to 7.25 kPa</strong>—well below our maximum safety threshold of 10 kPa [18]. Upon presenting this verified data to the daycare, they confirmed that if the high-fidelity prototype maintains this safety and efficiency, they are open to implementing it.</p>
+                
+                <img src="final-cad.jpg" alt="CAD model of final wristband applicator" class="project-image" style="max-width: 600px; display: block; margin: 15px auto;">
+                <div class="image-caption">Fig 12: Final CAD representation of the automated wristband applicator [18].</div>
 
                 <div class="reflection-box">
                     <h3>Influence of My Position & What I Learned</h3>
@@ -515,10 +580,10 @@
                 <li>
                     <span class="ctmf-title">1. Managing Complexity: The Morphological Chart</span>
                     <span class="ctmf-subtitle">Description & Application</span>
-                    <p>Because automating the wristband application involved multiple sequential steps (feeding, wrapping, fastening, cutting), attempting to brainstorm complete, all-in-one solutions was overwhelming. We utilized a Morphological Chart to deconstruct the device into discrete sub-functions [18]. We then diverged on each sub-function independently.</p>
+                    <p>Because automating the wristband application involved multiple sequential steps (feeding, wrapping, fastening, cutting), attempting to brainstorm complete, all-in-one solutions was overwhelming. We utilized a Morphological Chart to deconstruct the device into discrete sub-functions [11]. We then diverged on each sub-function independently.</p>
                     
                     <span class="ctmf-subtitle">Critique & Effectiveness</span>
-                    <p>This tool was highly effective for breaking down a daunting engineering challenge into solvable pieces. It allowed us to generate creative mechanisms (like the "Air Puff" or "Ziptron") for specific tasks without worrying about how the entire machine would look [18]. However, the limitation of a Morph Chart is that combining the sub-solutions can create compatibility issues later on.</p>
+                    <p>This tool was highly effective for breaking down a daunting engineering challenge into solvable pieces. It allowed us to generate creative mechanisms (like the "Air Puff" or "Ziptron") for specific tasks without worrying about how the entire machine would look [11]. However, the limitation of a Morph Chart is that combining the sub-solutions can create compatibility issues later on.</p>
 
                     <div class="future-self-box">
                         <strong>Note to Future Self:</strong> Use Morph Charts for highly complex, multi-step mechanical designs, but always follow up with immediate interface analysis to ensure the chosen sub-components can actually physically connect to one another.
@@ -528,7 +593,7 @@
                 <li>
                     <span class="ctmf-title">2. Granular Convergence: Function-Level Pairwise Comparison</span>
                     <span class="ctmf-subtitle">Description & Application</span>
-                    <p>Due to the massive number of permutations generated by our Morph Chart, converging on an entire device at once was impossible. Instead, we adapted the Pairwise Comparison tool to evaluate the mechanisms at the <em>sub-function</em> level (e.g., comparing feeding mechanisms against each other, rather than whole devices against each other) [18].</p>
+                    <p>Due to the massive number of permutations generated by our Morph Chart, converging on an entire device at once was impossible. Instead, we adapted the Pairwise Comparison tool to evaluate the mechanisms at the <em>sub-function</em> level (e.g., comparing feeding mechanisms against each other, rather than whole devices against each other) [11].</p>
 
                     <span class="ctmf-subtitle">Impact on My Position</span>
                     <p>This granular application of Pairwise Comparison saved us from analysis paralysis. It allowed us to systematically lock in the best components one by one. It reinforced my "Timeout" philosophy: when the game feels chaotic and overwhelming, break it down into the smallest controllable parts, evaluate, and then move forward.</p>
@@ -537,13 +602,18 @@
                 <li>
                     <span class="ctmf-title">3. Breaking Paralysis: Low-Fidelity Physical Prototyping</span>
                     <span class="ctmf-subtitle">Description & Application</span>
-                    <p>Representation is a core component of FDCR. In Praxis II, I relied heavily on rapid physical prototyping using cardboard, string, and tape, alongside extensive sketching, to test our fastening mechanisms [18].</p>
+                    <p>Representation is a core component of FDCR. In Praxis II, I relied heavily on rapid physical prototyping using cardboard, string, and tape, alongside extensive sketching, to test our fastening mechanisms [11].</p>
 
-                    <img src="prototypes-sketches.jpg" alt="Physical prototypes and design sketches of the wristband applicator" class="project-image">
-                    <div class="image-caption">Fig 12: Low-fidelity physical prototypes and design sketches used to visualize mechanism limitations [18].</div>
+                    <div class="prototype-gallery">
+                        <img src="sketch-1.jpg" alt="Mechanism sketch">
+                        <img src="sketch-2.jpg" alt="Mechanism sketch">
+                        <img src="cardboard-1.jpg" alt="Cardboard prototype">
+                        <img src="cardboard-2.jpg" alt="Cardboard prototype">
+                    </div>
+                    <div class="image-caption">Fig 13: A collection of rapid sketches and low-fidelity cardboard prototypes used to quickly visualize and test mechanism limitations [11].</div>
                     
                     <span class="ctmf-subtitle">Critique & Effectiveness</span>
-                    <p>This was arguably the most impactful "tool" I used this semester. While I had been stuck reading research papers, spending 20 minutes building a physical model immediately highlighted friction points and alignment issues that were invisible on paper [18]. It proved that in engineering design, failing fast in the physical world is more efficient than succeeding slowly in theory.</p>
+                    <p>This was arguably the most impactful "tool" I used this semester. While I had been stuck reading research papers, spending 20 minutes building a physical model immediately highlighted friction points and alignment issues that were invisible on paper [11]. It proved that in engineering design, failing fast in the physical world is more efficient than succeeding slowly in theory.</p>
                 </li>
 
                 <li>
