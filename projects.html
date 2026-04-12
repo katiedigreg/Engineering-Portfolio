@@ -304,11 +304,11 @@
             display: flex;
             gap: 15px;
             justify-content: center;
-            flex-wrap: nowrap; /* Forces them to stay in a row */
+            flex-wrap: nowrap;
             margin: 30px 0 10px 0;
         }
         .prototype-gallery img {
-            width: 145px; /* Smaller to fit 4 across cleanly */
+            width: 145px;
             height: 145px;
             object-fit: contain; 
             border-radius: 6px;
@@ -323,7 +323,7 @@
         }
         @media (max-width: 650px) {
             .prototype-gallery {
-                flex-wrap: wrap; /* Allows wrapping only on very small screens */
+                flex-wrap: wrap; 
             }
         }
 
@@ -353,6 +353,10 @@
             border-radius: 6px;
             border: 1px solid var(--accent-line);
             box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .component-item.text-only {
+            align-items: flex-start;
         }
 
         .component-image {
@@ -432,25 +436,25 @@
                 <div class="op-grid-2">
                     <div>
                         <h3>Background & Opportunity</h3>
-                        <p>This design brief outlines the limitations of the everyday hand-held broom (HHB), emphasizing the posed harm for individuals with mobility restrictions to pick up the broom when it has fallen. When individuals accidentally drop the broom or want to momentarily rest it to do another task, they would inevitably need to pick it up to continue their cleaning. The bending motion to pick up the broom from the floor can be uncomfortable for those with mobility issues, causing unnecessary stress to their limbs. This design brief provides a document of requirements to improve the current design of the HHB to inspire design solutions that prioritize accessibility and safety [5].</p>
+                        <p>This design brief outlines the limitations of the everyday hand-held broom (HHB), emphasizing the posed harm for individuals with mobility restrictions to pick up the broom when it has fallen. When individuals accidentally drop the broom or want to momentarily rest it to do another task, they would inevitably need to pick it up to continue their cleaning. The bending motion to pick up the broom from the floor can be uncomfortable for those with mobility issues, causing unnecessary stress to their limbs. <strong>The opportunity is to improve the current design of the HHB to inspire design solutions that prioritize accessibility and safety</strong>, preventing the broom from falling in the first place [5].</p>
                         
                         <img src="falling-broom.jpg" alt="A hand-held broom falling against a wall" class="project-image" style="max-height: 250px; object-fit: contain; margin-top: 15px;">
                         <div class="image-caption">hand-held broom falling after being rested against a wall</div>
                     </div>
                     <div>
-                        <h3>Rigorous Framing</h3>
+                        <h3>Reframing & Key Requirements</h3>
                         <p>To ensure our design truly solved the problem, we established strict Requirements and Evaluation Criteria (ECs). The design needed to:</p>
                         <ul>
-                            <li>Withstand an accidental sideways force exerted at the top of the broom of at least 1.5 N when placed on white oak hardwood flooring [5].</li>
-                            <li>Allow the broom to be retrieved from the design in under 5 steps [5].</li>
-                            <li>Take up no more than 0.35m x 0.35m while not in use and placed down at any location in the room [5].</li>
-                            <li>Weigh no more than 0.7kg in total, including any additional attachment used to permit retrievability from a neutral standing body position [5].</li>
+                            <li><strong>Force Resistance:</strong> Withstand an accidental sideways force exerted at the top of the broom of at least 1.5 N when placed on white oak hardwood flooring [5].</li>
+                            <li><strong>Retrieval Efficiency:</strong> Allow the broom to be retrieved from the design in under 5 steps [5].</li>
+                            <li><strong>Compactability:</strong> Take up no more than 0.35m x 0.35m while not in use and placed down at any location in the room [5].</li>
+                            <li><strong>Weight Limit:</strong> Weigh no more than 0.7kg in total, including any additional attachment used to permit retrievability from a neutral standing body position [5].</li>
                         </ul>
                     </div>
                 </div>
 
                 <h3>Diverging & Exploring Possibilities</h3>
-                <p>Guided by our framing, we engaged in structured divergence to generate multiple potential solutions [5]. We developed four distinct concepts:</p>
+                <p>Guided by our framing, we engaged in structured theoretical divergence to generate multiple potential solutions without committing to physical prototyping at this stage [5]. We developed four distinct high-level concepts:</p>
                 
                 <div class="concept-grid">
                     <div class="concept-card">
@@ -479,8 +483,37 @@
                     </div>
                 </div>
 
-                <h3>Converging on a Solution</h3>
-                <p>We utilized a Measurement Matrix, Pugh Charts, and Pairwise Comparison to evaluate our designs [5]. While the Magnetic Stand was the fastest to retrieve (2 steps), horizontal force resistance was our most critical metric. Engineering calculations revealed the Suction Cup could withstand an incredible 14.33 N of horizontal force—vastly outperforming the others (which all withstood under 2.1 N) while remaining exceptionally lightweight at 0.471 kg [5]. Consequently, the Suction Cup was selected as the optimal recommendation.</p>
+                <h3>Converging & System Integration</h3>
+                <p>We utilized a Measurement Matrix, Pugh Charts, and Pairwise Comparison to evaluate our theoretical designs [5]. While the Magnetic Stand was the fastest to retrieve (2 steps), horizontal force resistance was our most critical metric. Engineering calculations revealed the Suction Cup could withstand an incredible 14.33 N of horizontal force—vastly outperforming the others (which all withstood under 2.1 N) while remaining exceptionally lightweight at 0.471 kg [5]. Consequently, the Suction Cup was selected as the optimal recommendation.</p>
+
+                <div class="final-design-block">
+                    <h3 style="margin-top: 0; border-bottom: none; padding-bottom: 0;">The Final Design: Actuated Suction Base</h3>
+                    <p>This design consists of a moveable nitrile suction cup that allows the broom to be secured to the floor when not in use. When deployed using a foot-actuated handle, the suction cup is released overtop of the broom bristles such that enough rubber is protruding underneath to create a firm seal with white oak hardwood flooring, allowing the broom to be held upright.</p>
+                    
+                    <div class="component-list">
+                        <div class="component-item text-only">
+                            <div class="component-number">1</div>
+                            <div class="component-text">
+                                <h4>Foot-Actuated Handle</h4>
+                                <p>A foot-actuated handle enables the deployment and retractability of the suction cup from a standing neutral position, eliminating annoyance or discomfort associated with bending. The handle is made of aluminum for its ideal characteristics.</p>
+                            </div>
+                        </div>
+                        <div class="component-item text-only">
+                            <div class="component-number">2</div>
+                            <div class="component-text">
+                                <h4>Nitrile Material</h4>
+                                <p>Nitrile was chosen as the optimal material due to its increased tensile strength and resistance to scratches. Its high physical durability will help lengthen the lifespan of the design and allow it to withstand regular wear. Most nitrile compounds have a lower density compared to silicon, lowering the weight of the design and improving its performance against EC1.5. It also does not tend to scratch most surfaces, improving its performance against EC3.1.</p>
+                            </div>
+                        </div>
+                        <div class="component-item text-only">
+                            <div class="component-number">3</div>
+                            <div class="component-text">
+                                <h4>Dimensional Optimization</h4>
+                                <p>The dimensions were chosen to satisfy R1.4, allowing the design to minimally extend outwards from the broomhead such that it does not compromise compactability (EC1.4). The width of the suction cup was hence chosen to be 35.00 cm, the maximum permissible width to ensure equitable testing against R1.2, allowing for the suction cup to extend outwards from the broomhead by approximately 3.34 cm. The following dimensions were calculated so as to keep this outwards extension roughly uniform along the entire perimeter of the broomhead, resulting in a length of 12.93 cm when viewed from the side and a depth of 2.00 cm, causing the total height of the design to be 18.73cm.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="reflection-box">
                     <h3>Influence of My Position & What I Learned</h3>
@@ -585,12 +618,25 @@
                 </li>
 
                 <li>
-                    <span class="ctmf-title">4. Systematic Convergence: Measurement Matrices & Pugh Charts</span>
-                    <span class="ctmf-subtitle">Description & Application</span>
-                    <p>To narrow down our four concepts, we utilized a combination of a Measurement Matrix (to quantify physical capabilities) and Pugh Charts (rotating the reference design to compare concepts qualitatively against our Evaluation Criteria) [5].</p>
+                    <span class="ctmf-title">4. Systematic Convergence: Pugh Charts & Objective Evaluation</span>
+                    <span class="ctmf-subtitle">Description</span>
+                    <p>A Pugh Chart is a criteria-based decision matrix that utilizes relative scoring to compare concepts. One concept is established as the "reference" or baseline (scoring all 0s), and all other alternative concepts are scored as better (+), worse (-), or the same (0) against the established Evaluation Criteria.</p>
+
+                    <span class="ctmf-subtitle">Application in Praxis I</span>
+                    <p>During the "Timeout" phase of our project, we utilized Pugh Charts to converge on our final design. I initially heavily favored the Suction Cup design, so we set it as the baseline reference to objectively test its viability against the Tripod, Weighted Base, and Magnetic Stand across our rigorous metrics [5].</p>
+
+                    <img src="pugh-chart.jpg" alt="Pugh Chart comparing broom attachment concepts" class="project-image" style="max-width: 650px; display: block; margin: 15px auto;">
+                    <div class="image-caption">Fig 11: Pugh Chart evaluating alternative concepts against the Suction Cup baseline [5].</div>
+
+                    <span class="ctmf-subtitle">Critique & Effectiveness</span>
+                    <p>The Pugh chart was highly effective at eliminating my personal bias and highlighting the Suction Cup's specific weaknesses. It clearly showed that while the Suction Cup was strong in some areas, it suffered from limited compatibility (EC2.1), as it relied on fitting specific broomhead dimensions, whereas the Tripod scored a (+) in this category [13]. However, a major limitation of the Pugh Chart is its inefficiency. Because a Pugh chart only evaluates designs <em>relative</em> to a baseline, determining the true optimal design requires creating a new chart for every single concept to act as the reference [13]. It highlighted <em>where</em> designs differed, but didn't quantify <em>by how much</em>, and it treats all criteria equally rather than weighting safety metrics appropriately.</p>
 
                     <span class="ctmf-subtitle">Impact on My Position in Context</span>
-                    <p>These tools provided objective, undeniable evidence. Seeing the raw math—that the suction cup held 14.33 N compared to the tripod's 1.717 N—removed my personal bias and grounded our convergence in reality [5]. Furthermore, the Pugh charts clearly highlighted the suction cup's weakness regarding compatibility with different brooms. It forced me to acknowledge the flaws in my favored design, validating the crucial "Timeout" phase of my design process where reflection and objective review must trump ego.</p>
+                    <p>This tool fundamentally shifted my understanding of the "Timeout" phase of my design philosophy. I entered this convergence phase heavily biased, wanting to jump straight into executing my favored Suction Cup design. The Pugh Chart acted like an objective coach—it stripped away my ego and forced me to confront the fact that my "star player" had serious flaws compared to the Tripod. It taught me that convergence cannot be driven by intuition or attachment; it must be an evidence-based elimination process. Acknowledging these flaws didn't mean abandoning the design; it meant we knew exactly what trade-offs we were making when we ultimately selected it for its vastly superior force resistance [5].</p>
+
+                    <div class="future-self-box">
+                        <strong>Note to Future Self:</strong> Use Pugh Charts early in the "Timeout" phase as a quick, relative screening tool to eliminate clearly unviable concepts. However, to solve the time-consuming limitation of rotating baselines, graduate immediately to a Weighted Decision Matrix for final convergence. This allows for simultaneous, absolute evaluation across all designs and accounts for the fact that critical safety requirements must be weighted higher than convenience metrics.
+                    </div>
                 </li>
             </ul>
         </section>
@@ -605,9 +651,9 @@
             <div class="one-pager-container">
                 <div class="op-grid-2">
                     <div>
-                        <h3>Background & Opportunity</h3>
                         <img src="balmy-beach-logo.png" alt="Balmy Beach Day Care Logo" class="project-image" style="max-width: 200px; display: block; border: none; box-shadow: none; margin: 10px auto 20px auto; object-fit: contain;">
                         
+                        <h3>Background & Opportunity</h3>
                         <p>Balmy Beach Community Day Care serves 166 children in a fast-paced environment. During high-stress transitions like field trips, staff must manage rolling arrivals while maintaining strict 1:13 supervision ratios. Currently, staff must manually wrap, fasten, and cut wristbands for each child. This manual application takes an average of 22.7 seconds per child, creating severe bottlenecks, cognitive overload, and potential safety risks (using scissors near active kids) [18]. <strong>The opportunity is to improve the wristband application process within the daycare environment</strong>, ensuring a safer and more efficient transition for both staff and children.</p>
                     </div>
                     <div>
@@ -621,7 +667,7 @@
                         </ul>
                         
                         <img src="wristband-dimensions.png" alt="Dimensions of the standard snap-closure wristband" class="project-image" style="max-width: 350px; display: block; margin: 20px auto 10px auto; border: 1px solid var(--accent-line); border-radius: 4px; box-shadow: none;">
-                        <div class="image-caption">Existing standard adjustable snap-closure ID wristband utilized by daycare [11].</div>
+                        <div class="image-caption">Fig 12: Existing standard adjustable snap-closure ID wristband utilized by daycare [11].</div>
                     </div>
                 </div>
 
@@ -631,19 +677,19 @@
                 <div class="pokemon-grid">
                     <div>
                         <img src="pokemon-card-1.jpg" alt="Pokemon Concept Card 1">
-                        <div class="image-caption">Fig 11.1: Concept Generation Card 1</div>
+                        <div class="image-caption">Fig 13.1: Concept Generation Card 1</div>
                     </div>
                     <div>
                         <img src="pokemon-card-2.jpg" alt="Pokemon Concept Card 2">
-                        <div class="image-caption">Fig 11.2: Concept Generation Card 2</div>
+                        <div class="image-caption">Fig 13.2: Concept Generation Card 2</div>
                     </div>
                     <div>
                         <img src="pokemon-card-3.jpg" alt="Pokemon Concept Card 3">
-                        <div class="image-caption">Fig 11.3: Concept Generation Card 3</div>
+                        <div class="image-caption">Fig 13.3: Concept Generation Card 3</div>
                     </div>
                     <div>
                         <img src="pokemon-card-4.jpg" alt="Pokemon Concept Card 4">
-                        <div class="image-caption">Fig 11.4: Concept Generation Card 4</div>
+                        <div class="image-caption">Fig 13.4: Concept Generation Card 4</div>
                     </div>
                 </div>
 
@@ -655,7 +701,7 @@
                     <img src="cardboard-1.jpg" alt="Cardboard prototype">
                     <img src="cardboard-2.jpg" alt="Cardboard prototype">
                 </div>
-                <div class="image-caption">Fig 11.5: Rapid sketches and low-fidelity cardboard prototypes used during divergence to visualize mechanism limitations [11].</div>
+                <div class="image-caption">Fig 14: Rapid sketches and low-fidelity cardboard prototypes used during divergence to visualize mechanism limitations [11].</div>
 
                 <h3>Converging & System Integration</h3>
                 <p>Due to the complexity of the device, converging on a single holistic design immediately was impossible. Instead, we utilized <strong>Pairwise Comparisons</strong> to evaluate the mechanisms at the sub-function level (e.g., comparing feeding mechanisms against each other, wrapping mechanisms against each other). By systematically locking in the highest-scoring components for each function—based on our strict criteria for child safety and application speed—we combined these optimized parts to engineer our final holistic solution.</p>
@@ -700,7 +746,7 @@
                     </div>
 
                     <img src="final-cad.jpg" alt="CAD model of final wristband applicator" class="project-image" style="max-width: 600px; display: block; margin: 30px auto 10px auto;">
-                    <div class="image-caption">Fig 12: Final CAD representation of the Automated Wristband Applicator outlining the 4-stage mechanism [18].</div>
+                    <div class="image-caption">Fig 15: Final CAD representation of the Automated Wristband Applicator outlining the 4-stage mechanism [18].</div>
                 </div>
 
                 <p>Crucially, our physical proxy tests verified that the Snap Buddy reduced the application time from 22.7 seconds down to <strong>10.33 seconds</strong> [18]. Upon presenting this verified data to the daycare, they confirmed that if the high-fidelity prototype maintains this safety and efficiency, they are open to implementing it.</p>
@@ -740,7 +786,7 @@
                 <li>
                     <span class="ctmf-title">3. Breaking Paralysis: Low-Fidelity Physical Prototyping</span>
                     <span class="ctmf-subtitle">Description & Application</span>
-                    <p>Representation is a core component of FDCR. In Praxis II, I relied heavily on rapid physical prototyping using cardboard, string, and tape, alongside extensive sketching, to test our fastening mechanisms [11]. (See Fig 11.5 in the Divergence section for visual evidence).</p>
+                    <p>Representation is a core component of FDCR. In Praxis II, I relied heavily on rapid physical prototyping using cardboard, string, and tape, alongside extensive sketching, to test our fastening mechanisms [11]. (See Fig 14 in the Divergence section for visual evidence).</p>
                     
                     <span class="ctmf-subtitle">Critique & Effectiveness</span>
                     <p>This was arguably the most impactful "tool" I used this semester. While I had been stuck reading research papers, spending 20 minutes building a physical model immediately highlighted friction points and alignment issues that were invisible on paper [11]. It proved that in engineering design, failing fast in the physical world is more efficient than succeeding slowly in theory.</p>
