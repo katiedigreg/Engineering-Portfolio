@@ -320,7 +320,7 @@
             transform: scale(1.05);
         }
 
-        /* Final Design Description Block */
+        /* Final Design Description Block & Components */
         .final-design-block {
             background-color: rgba(184, 139, 142, 0.04);
             border: 1px solid var(--accent-line);
@@ -328,6 +328,52 @@
             padding: 35px;
             margin-top: 40px;
             margin-bottom: 40px;
+        }
+        
+        .component-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .component-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid var(--accent-line);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        
+        .component-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 40px;
+            height: 40px;
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .component-text h4 {
+            margin: 0 0 5px 0;
+            color: var(--text-main);
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
+        }
+        
+        .component-text p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -576,10 +622,41 @@
                 
                 <div class="final-design-block">
                     <h3 style="margin-top: 0; border-bottom: none; padding-bottom: 0;">The Final Design: The Snap Buddy</h3>
-                    <p>The Snap Buddy is a fully automated wristband applicator designed to streamline daycare field trip preparations. The device operates through a sequential, electromechanical process: first, it smoothly feeds the existing daycare wristband through a guided track. Next, padded, C-shaped mechanical jaws safely wrap the band around the child's wrist. A motorized tensioning system ensures a secure fit while keeping the applied pressure strictly between 3.24 and 7.25 kPa, guaranteeing child comfort. Finally, an enclosed, guarded cutting mechanism trims the excess band, completely eliminating the safety hazard of open scissors.</p>
+                    <p>The Snap Buddy is a fully automated wristband applicator designed to streamline daycare field trip preparations. By integrating optimized subsystems, the device executes a seamless application process:</p>
                     
-                    <img src="final-cad.jpg" alt="CAD model of final wristband applicator" class="project-image" style="max-width: 600px; display: block; margin: 20px auto 10px auto;">
-                    <div class="image-caption">Fig 12: Final CAD representation of the Automated Wristband Applicator [18].</div>
+                    <div class="component-list">
+                        <div class="component-item">
+                            <div class="component-number">1</div>
+                            <div class="component-text">
+                                <h4>Friction Rollers</h4>
+                                <p>Powered by the DC motors, these friction rollers respectively feed the bracelet through the mechanism [18].</p>
+                            </div>
+                        </div>
+                        <div class="component-item">
+                            <div class="component-number">2</div>
+                            <div class="component-text">
+                                <h4>Thin Film Pressure Sensor</h4>
+                                <p>A sensor whose resistance changes with applied force. The Arduino reads this as a 0-1023 signal, which can be calibrated to estimate force [18].</p>
+                            </div>
+                        </div>
+                        <div class="component-item">
+                            <div class="component-number">3</div>
+                            <div class="component-text">
+                                <h4>Buttoning Mechanism</h4>
+                                <p>A servo bends the bracelet tab into place, followed by a small piston that secures the button [18].</p>
+                            </div>
+                        </div>
+                        <div class="component-item">
+                            <div class="component-number">4</div>
+                            <div class="component-text">
+                                <h4>Cutting Mechanism</h4>
+                                <p>A linear actuator raises a razor blade that pushes the bracelet tail towards the button, then cuts the excess bracelet after the buttoning mechanism completes [18].</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <img src="final-cad.jpg" alt="CAD model of final wristband applicator" class="project-image" style="max-width: 600px; display: block; margin: 30px auto 10px auto;">
+                    <div class="image-caption">Fig 12: Final CAD representation of the Automated Wristband Applicator outlining the 4-stage mechanism [18].</div>
                 </div>
 
                 <p>Crucially, our physical proxy tests verified that the Snap Buddy reduced the application time from 22.7 seconds down to <strong>10.33 seconds</strong> [18]. Upon presenting this verified data to the daycare, they confirmed that if the high-fidelity prototype maintains this safety and efficiency, they are open to implementing it.</p>
