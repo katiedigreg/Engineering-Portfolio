@@ -299,21 +299,23 @@
             box-shadow: 0 4px 10px var(--shadow-rose);
         }
 
-        /* Prototype Small Gallery */
+        /* Prototype Gallery - RESIZED BIGGER & CONTAINED */
         .prototype-gallery {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 20px 0;
+            margin: 30px 0 10px 0;
         }
         .prototype-gallery img {
-            width: 130px;
-            height: 130px;
-            object-fit: cover;
+            width: 200px; /* Bigger squares */
+            height: 200px;
+            object-fit: contain; /* Prevents cutting off, adds letterboxing if needed */
             border-radius: 6px;
             border: 1px solid var(--accent-line);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            background-color: #ffffff; /* Clean bg for containment */
+            padding: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
             transition: transform 0.2s ease;
         }
         .prototype-gallery img:hover {
@@ -491,7 +493,7 @@
                     <p>The Lotus Blossom Technique is a structured brainstorming tool used to expand a central concept outward into multiple sub-concepts. We used this as our primary divergence tool to generate a vast, uninhibited array of solutions for the HHB splartz without overanalyzing feasibility (e.g., generating ideas ranging from magnetic stands to "robots that follow the broom") [16].</p>
                     
                     <span class="ctmf-subtitle">Application</span>
-                    <p>I analyzed my experience using this tool through the lens of the Perry Model of Cognitive Development [13]. This model tracks intellectual growth from <em>Dualism</em> (believing there is only one absolute right answer) through <em>Multiplicity</em> and into <em>Relativism</em> (understanding that knowledge is contextual and multiple valid solutions exist).</p>
+                    <p>I analyzed my experience using this tool through the lens of the Perry Model of Cognitive Development [13]. This model tracks intellectual growth from <em>Dualism</em> (believing there is only one absolute right answer) through <em>Multiplicity</em> and into <em>Relativism</em> (understanding that knowledge and Contextual and multiple valid solutions exist).</p>
                     
                     <img src="lotus-blossom.jpg" alt="Whiteboard image of the Lotus Blossom brainstorming technique" class="project-image" style="max-width: 350px; display: block; margin: 0 auto;">
                     <div class="image-caption">Fig 5: Lotus Blossom brainstorming technique mapped on a whiteboard during initial divergence [16].</div>
@@ -598,6 +600,8 @@
             <div class="one-pager-container">
                 <div class="op-grid-2">
                     <div>
+                        <img src="balmy-beach-logo.png" alt="Balmy Beach Day Care Logo" class="project-image" style="max-width: 200px; display: block; border: none; box-shadow: none; margin: 0 auto 20px auto; object-fit: contain;">
+                        
                         <h3>Background & Opportunity</h3>
                         <p>Balmy Beach Community Day Care serves 166 children in a fast-paced environment. During high-stress transitions like field trips, staff must manage rolling arrivals while maintaining strict 1:13 supervision ratios. Currently, staff must manually wrap, fasten, and cut wristbands for each child. This manual application takes an average of 22.7 seconds per child, creating severe bottlenecks, cognitive overload, and potential safety risks (using scissors near active kids) [18]. <strong>The opportunity is to improve the wristband application process within the daycare environment</strong>, ensuring a safer and more efficient transition for both staff and children.</p>
                     </div>
@@ -610,6 +614,9 @@
                             <li><strong>Application Efficiency:</strong> Must significantly reduce the current 22.7-second application time [18].</li>
                             <li><strong>Force Safety:</strong> The applied pressure on the child's wrist must remain safely below the 10 kPa threshold [18].</li>
                         </ul>
+                        
+                        <img src="wristband-dimensions.png" alt="Dimensions of the standard snap-closure wristband" class="project-image" style="max-width: 350px; display: block; margin: 20px auto 10px auto; border: 1px solid var(--accent-line); border-radius: 4px; box-shadow: none;">
+                        <div class="image-caption">Existing standard adjustable snap-closure ID wristband utilized by daycare [11].</div>
                     </div>
                 </div>
 
@@ -635,7 +642,7 @@
                     </div>
                 </div>
 
-                <p>To break through our initial analysis paralysis, we relied heavily on rapid physical prototyping. By immediately translating our ideas from paper into low-fidelity cardboard models, we were able to physically visualize the mechanisms, test constraints, and quickly iterate on our designs.</p>
+                <p>To break through our initial analysis paralysis, we relied heavily on rapid physical prototyping. By immediately translating our ideas from paper into low-fidelity cardboard models, we were able to physically visualize the mechanisms, test constraints, and quickly iterate on our designs without committing to detailed CAD too early.</p>
                 
                 <div class="prototype-gallery">
                     <img src="sketch-1.jpg" alt="Mechanism sketch">
@@ -643,7 +650,7 @@
                     <img src="cardboard-1.jpg" alt="Cardboard prototype">
                     <img src="cardboard-2.jpg" alt="Cardboard prototype">
                 </div>
-                <div class="image-caption">Fig 11.5: Rapid sketches and low-fidelity cardboard prototypes used during divergence [11].</div>
+                <div class="image-caption">Fig 11.5: Rapid sketches and low-fidelity cardboard prototypes used during divergence to visualize mechanism limitations [11].</div>
 
                 <h3>Converging & System Integration</h3>
                 <p>Due to the complexity of the device, converging on a single holistic design immediately was impossible. Instead, we utilized <strong>Pairwise Comparisons</strong> to evaluate the mechanisms at the sub-function level (e.g., comparing feeding mechanisms against each other, wrapping mechanisms against each other). By systematically locking in the highest-scoring components for each function—based on our strict criteria for child safety and application speed—we combined these optimized parts to engineer our final holistic solution.</p>
@@ -728,7 +735,7 @@
                 <li>
                     <span class="ctmf-title">3. Breaking Paralysis: Low-Fidelity Physical Prototyping</span>
                     <span class="ctmf-subtitle">Description & Application</span>
-                    <p>Representation is a core component of FDCR. In Praxis II, I relied heavily on rapid physical prototyping using cardboard, string, and tape, alongside extensive sketching, to test our fastening mechanisms [11]. (See Fig 11.5 above for visual examples).</p>
+                    <p>Representation is a core component of FDCR. In Praxis II, I relied heavily on rapid physical prototyping using cardboard, string, and tape, alongside extensive sketching, to test our fastening mechanisms [11]. (See Fig 11.5 in the Divergence section for visual evidence).</p>
                     
                     <span class="ctmf-subtitle">Critique & Effectiveness</span>
                     <p>This was arguably the most impactful "tool" I used this semester. While I had been stuck reading research papers, spending 20 minutes building a physical model immediately highlighted friction points and alignment issues that were invisible on paper [11]. It proved that in engineering design, failing fast in the physical world is more efficient than succeeding slowly in theory.</p>
