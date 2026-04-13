@@ -222,7 +222,7 @@
         }
 
         /* ========================================= */
-        /* INTERACTIVE FDCR DASHBOARD (HORIZONTAL)   */
+        /* INTERACTIVE FDCR DASHBOARD (STATIC ROW)   */
         /* ========================================= */
         .ctmf-dashboard {
             margin: 20px 0 60px 0;
@@ -249,15 +249,15 @@
 
         .dashboard-project-row {
             display: flex;
-            gap: 20px;
+            gap: 15px; /* Tighter gap to maximize horizontal space */
             margin-bottom: 25px;
         }
         
         .dashboard-project-header {
-            flex: 0 0 250px; /* Fixed width for the dark project block */
+            flex: 0 0 200px; /* Narrower width to allow 5 cards to fit */
             background-color: var(--text-main);
             color: var(--bg-color);
-            padding: 30px 25px;
+            padding: 25px 20px;
             border-radius: 6px;
             text-decoration: none;
             display: flex;
@@ -271,7 +271,7 @@
             box-shadow: 0 8px 20px rgba(43, 58, 66, 0.2);
         }
         .dashboard-project-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--accent-rose);
@@ -280,71 +280,56 @@
         }
         .dashboard-project-title {
             font-family: 'Lora', serif;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin: 0;
             line-height: 1.3;
             color: white;
         }
 
-        /* Horizontal Scrolling Grid for CTMFs */
+        /* Responsive Shrink-to-Fit Grid for CTMFs */
         .dashboard-ctmf-grid {
             display: flex;
             flex-wrap: nowrap;
-            overflow-x: auto;
-            gap: 15px;
-            flex: 1;
-            padding-bottom: 10px; /* Breathing room for the scrollbar */
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
+            gap: 10px; /* Tighter gap to squeeze cards in */
+            flex: 1; /* Automatically fill remaining horizontal space */
         }
         
-        /* Custom Dashboard Scrollbar */
-        .dashboard-ctmf-grid::-webkit-scrollbar {
-            height: 6px;
-        }
-        .dashboard-ctmf-grid::-webkit-scrollbar-track {
-            background: rgba(184, 139, 142, 0.1);
-            border-radius: 10px;
-        }
-        .dashboard-ctmf-grid::-webkit-scrollbar-thumb {
-            background: rgba(184, 139, 142, 0.4);
-            border-radius: 10px;
-        }
-        .dashboard-ctmf-grid::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-rose);
-        }
-
         .dashboard-ctmf-card {
-            flex: 0 0 200px; /* Locks each card to a fixed width so they stay in a row */
-            padding: 25px 20px;
+            flex: 1 1 0; /* This forces all cards to be equal width and shrink together */
+            min-width: 0; /* Prevents text overflow from breaking flex layout */
+            padding: 15px 12px; /* Smaller padding to maximize text space */
             border-radius: 6px;
             text-decoration: none;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             border: none;
-            scroll-snap-align: start;
         }
         .dashboard-ctmf-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(0,0,0,0.06);
         }
         .dashboard-ctmf-label {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             text-transform: uppercase;
             font-weight: 700;
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             color: inherit;
             opacity: 0.75;
+            white-space: nowrap; /* Keeps tag on one line */
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .dashboard-ctmf-title {
             font-family: 'Lora', serif;
-            font-size: 1.1rem;
+            font-size: 0.9rem; /* Scaled down slightly to fit long titles cleanly */
             font-weight: 500;
-            line-height: 1.3;
+            line-height: 1.25;
             margin: 0;
             color: inherit;
+            word-wrap: break-word;
         }
 
         @media (max-width: 900px) {
@@ -354,51 +339,32 @@
             .dashboard-project-header {
                 flex: auto;
             }
+            .dashboard-ctmf-grid {
+                flex-wrap: wrap; /* Only wrap on mobile screens */
+            }
+            .dashboard-ctmf-card {
+                flex: 1 1 150px;
+            }
         }
 
         /* ========================================= */
-        /* DETAILED CTMF LIST (HORIZONTAL SCROLL)    */
+        /* DETAILED CTMF LIST (VERTICAL LAYOUT)      */
         /* ========================================= */
         .ctmf-list {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            gap: 30px;
-            padding: 10px 0 30px 0;
-            margin-top: 25px;
             list-style-type: none;
-            scroll-snap-type: x mandatory;
-            scroll-padding: 20px;
-            -webkit-overflow-scrolling: touch;
+            padding: 0;
+            margin-top: 25px;
         }
         .ctmf-list li {
-            flex: 0 0 85%;
-            max-width: 750px;
-            scroll-snap-align: center;
             background-color: var(--card-bg);
             border: 1px solid var(--accent-line);
             border-top: 4px solid var(--accent-rose);
             border-radius: 6px;
             padding: 40px;
+            margin-bottom: 40px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            scroll-margin-top: 120px; 
+            scroll-margin-top: 40px; 
         }
-        
-        .ctmf-list::-webkit-scrollbar {
-            height: 10px;
-        }
-        .ctmf-list::-webkit-scrollbar-track {
-            background: rgba(184, 139, 142, 0.15);
-            border-radius: 10px;
-        }
-        .ctmf-list::-webkit-scrollbar-thumb {
-            background: var(--accent-rose);
-            border-radius: 10px;
-        }
-        .ctmf-list::-webkit-scrollbar-thumb:hover {
-            background: #a37578;
-        }
-
         .ctmf-title {
             font-family: 'Lora', serif;
             color: var(--text-main);
@@ -475,7 +441,7 @@
             box-shadow: 0 4px 10px var(--shadow-rose);
         }
 
-        /* Prototype Gallery - SIZED TO FIT SIDE BY SIDE */
+        /* Prototype Gallery */
         .prototype-gallery {
             display: flex;
             gap: 15px;
@@ -604,7 +570,7 @@
 
     <main>
         <h1>Design Experiences</h1>
-        <p>This section documents my primary engineering design activities. Navigate through my projects and specific Concepts, Tools, Models, and Frameworks (CTMFs) below, categorized by their function within the FDCR lifecycle. Scroll horizontally through the CTMF sections to explore my reflective analyses.</p>
+        <p>This section documents my primary engineering design activities. Navigate through my projects and specific Concepts, Tools, Models, and Frameworks (CTMFs) below, categorized by their function within the FDCR lifecycle.</p>
 
         <section class="ctmf-dashboard">
             
@@ -623,7 +589,7 @@
                 <div class="dashboard-ctmf-grid">
                     <a href="#p1-c1" class="dashboard-ctmf-card bg-diverge">
                         <span class="dashboard-ctmf-label">Diverging</span>
-                        <h4 class="dashboard-ctmf-title">Lotus Blossom Technique & The Perry Model</h4>
+                        <h4 class="dashboard-ctmf-title">Lotus Blossom & The Perry Model</h4>
                     </a>
                     <a href="#p1-c2" class="dashboard-ctmf-card bg-frame">
                         <span class="dashboard-ctmf-label">Framing</span>
