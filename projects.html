@@ -329,22 +329,51 @@
             color: #e0e5e8;
         }
 
-        /* CTMF List Enhanced Styling */
+        /* ========================================= */
+        /* HORIZONTAL CTMF LIST (NEW LAYOUT)         */
+        /* ========================================= */
         .ctmf-list {
-            list-style-type: none;
-            padding: 0;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 10px 0 30px 0;
             margin-top: 25px;
+            list-style-type: none;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 20px;
+            -webkit-overflow-scrolling: touch;
         }
         .ctmf-list li {
+            flex: 0 0 85%;
+            max-width: 750px;
+            scroll-snap-align: center;
             background-color: var(--card-bg);
             border: 1px solid var(--accent-line);
             border-top: 4px solid var(--accent-rose);
             border-radius: 6px;
             padding: 40px;
-            margin-bottom: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            scroll-margin-top: 30px; /* Offset for smooth scrolling */
+            /* Gives enough room for anchor links */
+            scroll-margin-top: 120px; 
         }
+        
+        /* Custom Elegant Scrollbar for the horizontal row */
+        .ctmf-list::-webkit-scrollbar {
+            height: 10px;
+        }
+        .ctmf-list::-webkit-scrollbar-track {
+            background: rgba(184, 139, 142, 0.15);
+            border-radius: 10px;
+        }
+        .ctmf-list::-webkit-scrollbar-thumb {
+            background: var(--accent-rose);
+            border-radius: 10px;
+        }
+        .ctmf-list::-webkit-scrollbar-thumb:hover {
+            background: #a37578;
+        }
+
         .ctmf-title {
             font-family: 'Lora', serif;
             color: var(--text-main);
@@ -389,7 +418,6 @@
             object-fit: cover;
         }
         
-        /* Unified Image Caption Styling */
         .image-caption {
             font-size: 0.85rem;
             color: var(--text-light);
@@ -399,8 +427,30 @@
             margin-bottom: 20px;
             line-height: 1.4;
         }
+        .concept-card .image-caption {
+            margin-bottom: 10px;
+        }
 
-        /* Prototype Galleries */
+        /* 2x2 Grid for Pokemon Cards */
+        .pokemon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        @media (max-width: 600px) {
+            .pokemon-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .pokemon-grid img {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid var(--accent-line);
+            box-shadow: 0 4px 10px var(--shadow-rose);
+        }
+
+        /* Prototype Gallery - SIZED TO FIT SIDE BY SIDE */
         .prototype-gallery {
             display: flex;
             gap: 15px;
@@ -419,8 +469,11 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
             transition: transform 0.2s ease;
         }
-        .prototype-gallery img:hover { transform: scale(1.05); }
-
+        .prototype-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Larger 5-Image Gallery for Prototyping CTMF */
         .large-prototype-gallery {
             display: flex;
             gap: 15px;
@@ -439,13 +492,23 @@
             flex: 1 1 150px;
             max-width: 200px;
         }
+
         @media (max-width: 650px) {
-            .prototype-gallery { flex-wrap: wrap; }
-            .large-prototype-gallery { flex-direction: column; align-items: center; }
-            .large-prototype-gallery img { width: 100%; max-width: none; height: auto; }
+            .prototype-gallery {
+                flex-wrap: wrap; 
+            }
+            .large-prototype-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+            .large-prototype-gallery img {
+                width: 100%;
+                max-width: none;
+                height: auto;
+            }
         }
 
-        /* Component List Layout */
+        /* Final Design Description Block & Components */
         .final-design-block {
             background-color: rgba(184, 139, 142, 0.04);
             border: 1px solid var(--accent-line);
@@ -454,12 +517,14 @@
             margin-top: 40px;
             margin-bottom: 40px;
         }
+        
         .component-list {
             display: flex;
             flex-direction: column;
             gap: 15px;
             margin-top: 30px;
         }
+        
         .component-item {
             display: flex;
             align-items: center;
@@ -470,7 +535,11 @@
             border: 1px solid var(--accent-line);
             box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
-        .component-item.text-only { align-items: flex-start; }
+
+        .component-item.text-only {
+            align-items: flex-start;
+        }
+
         .component-image {
             width: 90px;
             height: 90px;
@@ -481,6 +550,7 @@
             padding: 5px;
             flex-shrink: 0;
         }
+        
         .component-number {
             display: flex;
             justify-content: center;
@@ -494,20 +564,26 @@
             font-size: 1.2rem;
             flex-shrink: 0;
         }
-        .component-text h4 { margin: 0 0 5px 0; color: var(--text-main); font-family: 'Lora', serif; font-size: 1.15rem; }
-        .component-text p { margin: 0; font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
         
-        .pokemon-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin: 20px 0;
+        .component-text h4 {
+            margin: 0 0 5px 0;
+            color: var(--text-main);
+            font-family: 'Lora', serif;
+            font-size: 1.15rem;
         }
-        .pokemon-grid img { width: 100%; border-radius: 6px; border: 1px solid var(--accent-line); box-shadow: 0 4px 10px var(--shadow-rose); }
         
+        .component-text p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
         @media (max-width: 600px) {
-            .component-item { flex-direction: column; align-items: flex-start; }
-            .pokemon-grid { grid-template-columns: 1fr; }
+            .component-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -528,7 +604,7 @@
 
     <main>
         <h1>Design Experiences</h1>
-        <p>This section documents my primary engineering design activities. Navigate through my projects and specific Concepts, Tools, Models, and Frameworks (CTMFs) below, categorized by their function within the FDCR lifecycle.</p>
+        <p>This section documents my primary engineering design activities. Navigate through my projects and specific Concepts, Tools, Models, and Frameworks (CTMFs) below, categorized by their function within the FDCR lifecycle. Scroll horizontally through the CTMF sections to explore my reflective analyses.</p>
 
         <section class="ctmf-dashboard">
             
@@ -547,7 +623,7 @@
                 <div class="dashboard-ctmf-grid">
                     <a href="#p1-c1" class="dashboard-ctmf-card bg-diverge">
                         <span class="dashboard-ctmf-label">Diverging</span>
-                        <h4 class="dashboard-ctmf-title">Lotus Blossom & The Perry Model</h4>
+                        <h4 class="dashboard-ctmf-title">Lotus Blossom Technique & The Perry Model</h4>
                     </a>
                     <a href="#p1-c2" class="dashboard-ctmf-card bg-frame">
                         <span class="dashboard-ctmf-label">Framing</span>
@@ -555,11 +631,11 @@
                     </a>
                     <a href="#p1-c3" class="dashboard-ctmf-card bg-frame">
                         <span class="dashboard-ctmf-label">Framing</span>
-                        <h4 class="dashboard-ctmf-title">The CRAAP Test & Primary Research</h4>
+                        <h4 class="dashboard-ctmf-title">The CRAAP Test</h4>
                     </a>
                     <a href="#p1-c4" class="dashboard-ctmf-card bg-converge">
                         <span class="dashboard-ctmf-label">Converging</span>
-                        <h4 class="dashboard-ctmf-title">Pugh Charts & Objective Evaluation</h4>
+                        <h4 class="dashboard-ctmf-title">Pugh Chart</h4>
                     </a>
                 </div>
             </div>
@@ -572,27 +648,23 @@
                 <div class="dashboard-ctmf-grid">
                     <a href="#p2-c1" class="dashboard-ctmf-card bg-frame">
                         <span class="dashboard-ctmf-label">Framing</span>
-                        <h4 class="dashboard-ctmf-title">Deep Stakeholder Analysis</h4>
+                        <h4 class="dashboard-ctmf-title">Stakeholder Analysis</h4>
                     </a>
                     <a href="#p2-c2" class="dashboard-ctmf-card bg-diverge">
                         <span class="dashboard-ctmf-label">Diverging</span>
-                        <h4 class="dashboard-ctmf-title">The Morphological Chart</h4>
+                        <h4 class="dashboard-ctmf-title">Morphological Chart</h4>
                     </a>
                     <a href="#p2-c3" class="dashboard-ctmf-card bg-converge">
                         <span class="dashboard-ctmf-label">Converging</span>
-                        <h4 class="dashboard-ctmf-title">Function-Level Pairwise Comparison</h4>
+                        <h4 class="dashboard-ctmf-title">Pairwise Comparison</h4>
                     </a>
                     <a href="#p2-c4" class="dashboard-ctmf-card bg-represent">
                         <span class="dashboard-ctmf-label">Representing</span>
-                        <h4 class="dashboard-ctmf-title">Low-Fidelity Physical Prototyping</h4>
+                        <h4 class="dashboard-ctmf-title">Physical Prototyping</h4>
                     </a>
                     <a href="#p2-c5" class="dashboard-ctmf-card bg-converge">
                         <span class="dashboard-ctmf-label">Converging</span>
-                        <h4 class="dashboard-ctmf-title">The Measurement Matrix</h4>
-                    </a>
-                    <a href="#p2-c6" class="dashboard-ctmf-card bg-converge">
-                        <span class="dashboard-ctmf-label">Converging</span>
-                        <h4 class="dashboard-ctmf-title">Active Stakeholder Validation</h4>
+                        <h4 class="dashboard-ctmf-title">Stakeholder Validation</h4>
                     </a>
                 </div>
             </div>
@@ -699,7 +771,7 @@
             <h3>CTMFs Assessed (Praxis I)</h3>
             <ul class="ctmf-list">
                 <li id="p1-c1">
-                    <span class="ctmf-title">1. Divergence & Cognitive Development: Lotus Blossom Technique & The Perry Model</span>
+                    <span class="ctmf-title">1. Lotus Blossom Technique & The Perry Model</span>
                     
                     <span class="ctmf-subtitle">Description</span>
                     <p>The Lotus Blossom Technique is a structured brainstorming tool used to expand a central concept outward into multiple sub-concepts. We used this as our primary divergence tool to generate a vast, uninhibited array of solutions for the HHB splartz without overanalyzing feasibility (e.g., generating ideas ranging from magnetic stands to "robots that follow the broom") [16].</p>
@@ -722,7 +794,7 @@
                 </li>
 
                 <li id="p1-c2">
-                    <span class="ctmf-title">2. Framing the Argument: Toulmin's Structure of Argument</span>
+                    <span class="ctmf-title">2. Toulmin's Structure of Argument</span>
                     
                     <span class="ctmf-subtitle">Description</span>
                     <p>Toulmin's Structure of Argument is a philosophical and logical framework used to make reasoning explicit by connecting a <em>Claim</em> (an assertion) to <em>Evidence</em> (data) via a <em>Justification</em> or <em>Warrant</em> (the logical reasoning that links the two together) [14]. In engineering design, this tool ensures that parameters are not arbitrary, but are defensible and rooted in verifiable reality.</p>
@@ -761,7 +833,7 @@
                 </li>
 
                 <li id="p1-c3">
-                    <span class="ctmf-title">3. Evaluating Evidence: The CRAAP Test & Primary Research</span>
+                    <span class="ctmf-title">3. The CRAAP Test</span>
                     
                     <span class="ctmf-subtitle">Description</span>
                     <p>The CRAAP Test is a framework used to critically evaluate sources based on Currency, Relevance, Authority, Accuracy, and Purpose [15]. In engineering design, it serves as a critical filter to ensure that the data driving your design decisions—such as setting performance metrics or safety limits—is trustworthy, methodologically sound, and contextually appropriate.</p>
@@ -792,7 +864,7 @@
                 </li>
 
                 <li id="p1-c4">
-                    <span class="ctmf-title">4. Systematic Convergence: Pugh Charts & Objective Evaluation</span>
+                    <span class="ctmf-title">4. Pugh Chart</span>
                     <span class="ctmf-subtitle">Description</span>
                     <p>A Pugh Chart is a criteria-based decision matrix that utilizes relative scoring to compare concepts. One concept is established as the "reference" or baseline (scoring all 0s), and all other alternative concepts are scored as better (+), worse (-), or the same (0) against the established Evaluation Criteria.</p>
 
@@ -923,7 +995,7 @@
                     <div class="image-caption">Fig 15: Final CAD representation of the Automated Wristband Applicator outlining the 4-stage mechanism [18].</div>
                 </div>
 
-                <p>Crucially, our physical proxy tests verified that the Snap Buddy reduced the application time from 22.7 seconds down to <strong>10.33 seconds</strong> [18]. Upon presenting this verified data to the daycare, they confirmed that if the high-fidelity prototype maintains this safety and efficiency, they are open to implementing it.</p>
+                <p>Crucially, our physical proxy testing verified that the Snap Buddy reduced the application time from 22.7 seconds down to <strong>10.33 seconds</strong> [18]. Upon presenting this verified data to the daycare, they confirmed that if the high-fidelity prototype maintains this safety and efficiency, they are open to implementing it.</p>
 
                 <div class="reflection-box">
                     <h3>Influence of My Position & What I Learned</h3>
@@ -936,7 +1008,7 @@
             <ul class="ctmf-list">
 
                 <li id="p2-c1">
-                    <span class="ctmf-title">1. Empathy & Contextual Inquiry: Deep Stakeholder Analysis</span>
+                    <span class="ctmf-title">1. Stakeholder Analysis</span>
                     <span class="ctmf-subtitle">Description & Application</span>
                     <p>Stakeholder analysis in engineering design extends beyond merely listing individuals affected by a product; it requires active, empathetic engagement to uncover lived experiences, operational pain points, and latent needs. Rather than relying solely on secondary research, we anchored our Framing phase in direct contextual inquiry. For our Request for Proposal (RFP), we traveled directly to the community to engage with Balmy Beach Day Care staff [11]. Through extended conversations, follow-up emails, and Zoom calls with our primary contact, Christine, we identified that manual wristband application was a severe operational bottleneck. We also interviewed parents to understand their safety expectations [11].</p>
                     
@@ -957,7 +1029,7 @@
                 </li>
                 
                 <li id="p2-c2">
-                    <span class="ctmf-title">2. Managing Complexity: The Morphological Chart</span>
+                    <span class="ctmf-title">2. Morphological Chart</span>
                     <span class="ctmf-subtitle">Description</span>
                     <p>The Morphological Chart is a systematic divergence tool used to manage highly complex systems. Rather than attempting to brainstorm a complete, holistic product all at once, the chart forces designers to deconstruct the system into its essential sub-functions. It then acts as a matrix, allowing for targeted, independent ideation to generate multiple distinct options for each individual function.</p>
                     
@@ -982,7 +1054,7 @@
                 </li>
 
                 <li id="p2-c3">
-                    <span class="ctmf-title">3. Granular Convergence: Function-Level Pairwise Comparison</span>
+                    <span class="ctmf-title">3. Pairwise Comparison</span>
                     
                     <span class="ctmf-subtitle">Description</span>
                     <p>Pairwise Comparison is a structured decision-making tool that evaluates concepts by pitting them against one another in a series of direct, one-on-one matchups. Rather than trying to rank all options simultaneously against multiple criteria, this method forces the designer to make binary choices (which option is better?), simplifying complex evaluations and revealing clear relative preferences.</p>
@@ -1011,7 +1083,7 @@
                 </li>
 
                 <li id="p2-c4">
-                    <span class="ctmf-title">4. Breaking Paralysis: Physical Prototyping & Iteration</span>
+                    <span class="ctmf-title">4. Physical Prototyping</span>
                     <span class="ctmf-subtitle">Description & Application</span>
                     <p>Physical prototyping is a core component of Representing in the FDCR model. It bridges the gap between theoretical engineering math and real-world mechanics. For Praxis II, instead of just sketching concepts on paper, we began building low-fidelity physical prototypes early in the design cycle [270, 271, 274].</p>
                     
@@ -1040,16 +1112,7 @@
                 </li>
 
                 <li id="p2-c5">
-                    <span class="ctmf-title">5. Quantitative Verification: The Measurement Matrix</span>
-                    <span class="ctmf-subtitle">Description & Application</span>
-                    <p>To ensure our design was viable, we built a comprehensive Measurement Matrix. We conducted physical proxy tests to determine that our "Snap Buddy" concept applied the wristband in 10.33 seconds (a 54% reduction in time) [11]. Furthermore, we built a scale-based testing setup to measure applied pressure, verifying our device operated between 3.24 and 7.25 kPa (safely below the 10 kPa limit) [11].</p>
-
-                    <span class="ctmf-subtitle">Impact on My Position</span>
-                    <p>This confirmed the lesson I learned in Praxis I: intuition must be backed by data. Proving mathematically that our device would not harm a child gave us the absolute confidence required to proceed with the design and present it to our stakeholders.</p>
-                </li>
-
-                <li id="p2-c6">
-                    <span class="ctmf-title">6. Empathy & Impact: Active Stakeholder Validation</span>
+                    <span class="ctmf-title">5. Stakeholder Validation</span>
                     <span class="ctmf-subtitle">Description & Application</span>
                     <p>Engineering design operates in a continuous loop, and validation is the critical final check against reality. Validation answers the ultimate question: does this device actually work for the people who need it? After assembling our near-final physical prototype, we returned directly to Balmy Beach Day Care to conduct field testing with our actual users.</p>
                     
