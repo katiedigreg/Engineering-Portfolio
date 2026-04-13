@@ -23,7 +23,7 @@
             --shadow-rose: rgba(184, 139, 142, 0.15);
             --card-bg: #ffffff;
             
-            /* FDCR Palette */
+            /* FDCR Palette for Dashboard */
             --fdcr-frame-bg: #f6e8e8;
             --fdcr-frame-text: #8a5a5a;
             --fdcr-diverge-bg: #e6f0eb;
@@ -124,7 +124,7 @@
             padding-bottom: 15px;
             margin-bottom: 30px;
             margin-top: 80px;
-            scroll-margin-top: 40px; /* Gives breathing room when smoothly scrolling to section */
+            scroll-margin-top: 40px; 
         }
         h3 {
             font-family: 'Lora', serif;
@@ -140,112 +140,6 @@
             color: var(--text-main);
         }
 
-        /* FDCR Interactive Dashboard */
-        .ctmf-dashboard {
-            background-color: var(--card-bg);
-            border: 1px solid var(--accent-line);
-            border-radius: 8px;
-            padding: 35px;
-            margin: 40px 0 60px 0;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
-        }
-        .fdcr-legend {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 35px;
-            justify-content: center;
-        }
-        .fdcr-pill {
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .bg-frame { background-color: var(--fdcr-frame-bg); color: var(--fdcr-frame-text); }
-        .bg-diverge { background-color: var(--fdcr-diverge-bg); color: var(--fdcr-diverge-text); }
-        .bg-converge { background-color: var(--fdcr-converge-bg); color: var(--fdcr-converge-text); }
-        .bg-represent { background-color: var(--fdcr-represent-bg); color: var(--fdcr-represent-text); }
-
-        .dashboard-project-row {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        @media (max-width: 768px) {
-            .dashboard-project-row {
-                flex-direction: column;
-            }
-        }
-        
-        .dashboard-project-header {
-            flex: 0 0 220px;
-            background-color: var(--text-main);
-            color: var(--bg-color);
-            padding: 25px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .dashboard-project-header:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(43, 58, 66, 0.2);
-        }
-        .dashboard-project-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent-rose);
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-        .dashboard-project-title {
-            font-family: 'Lora', serif;
-            font-size: 1.3rem;
-            margin: 0;
-            line-height: 1.3;
-            color: white;
-        }
-
-        .dashboard-ctmf-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 15px;
-            flex: 1;
-        }
-        .dashboard-ctmf-card {
-            padding: 20px 15px;
-            border-radius: 6px;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-        .dashboard-ctmf-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
-        }
-        .dashboard-ctmf-label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-        .dashboard-ctmf-title {
-            font-family: 'Lora', serif;
-            font-size: 1.05rem;
-            font-weight: 500;
-            line-height: 1.3;
-            margin: 0;
-        }
-
         /* Shared Styles for Content */
         .annotation-box {
             background-color: rgba(184, 139, 142, 0.05);
@@ -259,7 +153,6 @@
             border-radius: 0 4px 4px 0;
         }
         
-        /* One-Pager Specific Layout */
         .one-pager-container {
             background-color: var(--card-bg);
             border: 1px solid var(--accent-line);
@@ -310,7 +203,6 @@
             border: 1px solid var(--accent-line);
         }
 
-        /* Highlighted Reflection Box */
         .reflection-box {
             background-color: var(--text-main);
             color: var(--bg-color);
@@ -330,50 +222,136 @@
         }
 
         /* ========================================= */
-        /* HORIZONTAL CTMF LIST (NEW LAYOUT)         */
+        /* INTERACTIVE FDCR DASHBOARD (NEW LAYOUT)   */
+        /* ========================================= */
+        .ctmf-dashboard {
+            margin: 20px 0 60px 0;
+        }
+        .fdcr-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 35px;
+            justify-content: center;
+        }
+        .fdcr-pill {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .bg-frame { background-color: var(--fdcr-frame-bg); color: var(--fdcr-frame-text); }
+        .bg-diverge { background-color: var(--fdcr-diverge-bg); color: var(--fdcr-diverge-text); }
+        .bg-converge { background-color: var(--fdcr-converge-bg); color: var(--fdcr-converge-text); }
+        .bg-represent { background-color: var(--fdcr-represent-bg); color: var(--fdcr-represent-text); }
+
+        .dashboard-project-row {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .dashboard-project-header {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            padding: 30px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .dashboard-project-header:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(43, 58, 66, 0.2);
+        }
+        .dashboard-project-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-rose);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .dashboard-project-title {
+            font-family: 'Lora', serif;
+            font-size: 1.4rem;
+            margin: 0;
+            line-height: 1.3;
+            color: white;
+        }
+
+        .dashboard-ctmf-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            align-content: start;
+        }
+        
+        .dashboard-ctmf-card {
+            padding: 25px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+        }
+        .dashboard-ctmf-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+        }
+        .dashboard-ctmf-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: inherit;
+            opacity: 0.75;
+        }
+        .dashboard-ctmf-title {
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.3;
+            margin: 0;
+            color: inherit;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-project-row {
+                grid-template-columns: 1fr;
+            }
+            .dashboard-ctmf-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        /* ========================================= */
+        /* DETAILED CTMF LIST (VERTICAL LAYOUT)      */
         /* ========================================= */
         .ctmf-list {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            gap: 30px;
-            padding: 10px 0 30px 0;
-            margin-top: 25px;
             list-style-type: none;
-            scroll-snap-type: x mandatory;
-            scroll-padding: 20px;
-            -webkit-overflow-scrolling: touch;
+            padding: 0;
+            margin-top: 25px;
         }
         .ctmf-list li {
-            flex: 0 0 85%;
-            max-width: 750px;
-            scroll-snap-align: center;
             background-color: var(--card-bg);
             border: 1px solid var(--accent-line);
             border-top: 4px solid var(--accent-rose);
             border-radius: 6px;
             padding: 40px;
+            margin-bottom: 40px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            /* Gives enough room for anchor links */
-            scroll-margin-top: 120px; 
+            scroll-margin-top: 40px; /* Offset for smooth scrolling */
         }
-        
-        /* Custom Elegant Scrollbar for the horizontal row */
-        .ctmf-list::-webkit-scrollbar {
-            height: 10px;
-        }
-        .ctmf-list::-webkit-scrollbar-track {
-            background: rgba(184, 139, 142, 0.15);
-            border-radius: 10px;
-        }
-        .ctmf-list::-webkit-scrollbar-thumb {
-            background: var(--accent-rose);
-            border-radius: 10px;
-        }
-        .ctmf-list::-webkit-scrollbar-thumb:hover {
-            background: #a37578;
-        }
-
         .ctmf-title {
             font-family: 'Lora', serif;
             color: var(--text-main);
@@ -450,7 +428,7 @@
             box-shadow: 0 4px 10px var(--shadow-rose);
         }
 
-        /* Prototype Gallery - SIZED TO FIT SIDE BY SIDE */
+        /* Prototype Gallery */
         .prototype-gallery {
             display: flex;
             gap: 15px;
@@ -494,18 +472,9 @@
         }
 
         @media (max-width: 650px) {
-            .prototype-gallery {
-                flex-wrap: wrap; 
-            }
-            .large-prototype-gallery {
-                flex-direction: column;
-                align-items: center;
-            }
-            .large-prototype-gallery img {
-                width: 100%;
-                max-width: none;
-                height: auto;
-            }
+            .prototype-gallery { flex-wrap: wrap; }
+            .large-prototype-gallery { flex-direction: column; align-items: center; }
+            .large-prototype-gallery img { width: 100%; max-width: none; height: auto; }
         }
 
         /* Final Design Description Block & Components */
@@ -536,9 +505,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
-        .component-item.text-only {
-            align-items: flex-start;
-        }
+        .component-item.text-only { align-items: flex-start; }
 
         .component-image {
             width: 90px;
@@ -565,25 +532,11 @@
             flex-shrink: 0;
         }
         
-        .component-text h4 {
-            margin: 0 0 5px 0;
-            color: var(--text-main);
-            font-family: 'Lora', serif;
-            font-size: 1.15rem;
-        }
-        
-        .component-text p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
+        .component-text h4 { margin: 0 0 5px 0; color: var(--text-main); font-family: 'Lora', serif; font-size: 1.15rem; }
+        .component-text p { margin: 0; font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
 
         @media (max-width: 600px) {
-            .component-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+            .component-item { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -604,7 +557,7 @@
 
     <main>
         <h1>Design Experiences</h1>
-        <p>This section documents my primary engineering design activities. Navigate through my projects and specific Concepts, Tools, Models, and Frameworks (CTMFs) below, categorized by their function within the FDCR lifecycle. Scroll horizontally through the CTMF sections to explore my reflective analyses.</p>
+        <p>This section documents my primary engineering design activities. Navigate through my projects and specific Concepts, Tools, Models, and Frameworks (CTMFs) below, categorized by their function within the FDCR lifecycle.</p>
 
         <section class="ctmf-dashboard">
             
@@ -995,7 +948,7 @@
                     <div class="image-caption">Fig 15: Final CAD representation of the Automated Wristband Applicator outlining the 4-stage mechanism [18].</div>
                 </div>
 
-                <p>Crucially, our physical proxy testing verified that the Snap Buddy reduced the application time from 22.7 seconds down to <strong>10.33 seconds</strong> [18]. Upon presenting this verified data to the daycare, they confirmed that if the high-fidelity prototype maintains this safety and efficiency, they are open to implementing it.</p>
+                <p>Crucially, our physical proxy tests verified that the Snap Buddy reduced the application time from 22.7 seconds down to <strong>10.33 seconds</strong> [18]. Upon presenting this verified data to the daycare, they confirmed that if the high-fidelity prototype maintains this safety and efficiency, they are open to implementing it.</p>
 
                 <div class="reflection-box">
                     <h3>Influence of My Position & What I Learned</h3>
