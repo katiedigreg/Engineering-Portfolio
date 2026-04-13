@@ -299,7 +299,7 @@
             box-shadow: 0 4px 10px var(--shadow-rose);
         }
 
-        /* Prototype Gallery - SIZED TO FIT SIDE BY SIDE */
+        /* Prototype Gallery */
         .prototype-gallery {
             display: flex;
             gap: 15px;
@@ -320,11 +320,6 @@
         }
         .prototype-gallery img:hover {
             transform: scale(1.05);
-        }
-        @media (max-width: 650px) {
-            .prototype-gallery {
-                flex-wrap: wrap; 
-            }
         }
 
         /* Larger 5-Image Gallery for Prototyping CTMF */
@@ -348,6 +343,9 @@
         }
 
         @media (max-width: 650px) {
+            .prototype-gallery {
+                flex-wrap: wrap; 
+            }
             .large-prototype-gallery {
                 flex-direction: column;
                 align-items: center;
@@ -898,12 +896,24 @@
                 </li>
 
                 <li>
-                    <span class="ctmf-title">5. Quantitative Verification: The Measurement Matrix</span>
+                    <span class="ctmf-title">5. Empathy & Impact: Active Stakeholder Validation</span>
                     <span class="ctmf-subtitle">Description & Application</span>
-                    <p>To ensure our design was viable, we built a comprehensive Measurement Matrix. We conducted physical proxy tests to determine that our "Snap Buddy" concept applied the wristband in 10.33 seconds (a 54% reduction in time) [11]. Furthermore, we built a scale-based testing setup to measure applied pressure, verifying our device operated between 3.24 and 7.25 kPa (safely below the 10 kPa limit) [11].</p>
+                    <p>Engineering design operates in a continuous loop, and validation is the critical final check against reality. Validation answers the ultimate question: does this device actually work for the people who need it? After assembling our near-final physical prototype, we returned directly to Balmy Beach Day Care to conduct field testing with our actual users.</p>
+                    
+                    <p>We tested strict physical constraints—such as verifying that the largest child could comfortably fit their hand through the wristband loop (Requirement 7). Beyond physical metrics, we evaluated emotional and psychological engagement. We observed the children interacting with the device's video and color feedback, explicitly asking if the mechanism frightened them. The children were engaged and unafraid, and our primary stakeholder, Christine, confirmed she liked the concept and would be willing to actively incorporate the device into their routines.</p>
 
-                    <span class="ctmf-subtitle">Impact on My Position</span>
-                    <p>This confirmed the lesson I learned in Praxis I: intuition must be backed by data. Proving mathematically that our device would not harm a child gave us the absolute confidence required to proceed with the design and present it to our stakeholders.</p>
+                    <img src="validation-test.jpg" alt="Child testing the wristband applicator loop" class="project-image" style="max-width: 600px; display: block; margin: 15px auto;">
+                    <div class="image-caption">Fig 20: Conducting stakeholder validation to ensure the wristband loop comfortably fits the largest child [292].</div>
+
+                    <span class="ctmf-subtitle">Critique & Effectiveness</span>
+                    <p>An engineering design, no matter how technically brilliant or mathematically verified, is fundamentally useless if it does not serve its intended purpose or solve the root problem for the user. Going back to the daycare was absolutely necessary to measure our true effectiveness. While calculations can prove a device is safe, only field validation can prove if it is actually helpful, reduces staff burden, and engages children effectively.</p>
+
+                    <span class="ctmf-subtitle">Impact on My Position in Context</span>
+                    <p>This final validation phase was incredibly inspirational and provided profound clarity. Throughout the rigorous "Practice" and "Game" phases of calculating, building, and converging, it is easy to get lost in the technical weeds and forget the human element. Returning to the daycare brought my entire engineering journey full circle back to my core motivation: making a tangible, positive difference. It served as a powerful reminder that we aren't just engineering for a grade; we are structuring disorder to improve the daily lives of real people.</p>
+
+                    <div class="future-self-box">
+                        <strong>Note to Future Self:</strong> Always prioritize stakeholder validation, but strive to integrate it earlier and more frequently in the design process. Do not wait until the prototype is nearly finished to seek user feedback; continuous, iterative validation ensures the project never strays from its fundamental purpose.
+                    </div>
                 </li>
 
             </ul>
